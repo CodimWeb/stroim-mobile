@@ -1,0 +1,29 @@
+/* BS Abstract */
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+/*BS reboot*/
+@import "~bootstrap/scss/reboot";
+
+/* BS grid */
+@import "~bootstrap/scss/grid";
+//@import "~bootstrap/dist/css/bootstrap-grid.css";
+
+/*BS components*/ 
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/nav";
+
+// plugins
+@import "~slick-carousel/slick/slick";
+
+/*base custom*/ 
+@import "base/ui";
+@import "base/fonts";
+@import "base/typography";
+
+/*custom components*/
+@import "components/grid"; 
+@import "components/inputs"; 
