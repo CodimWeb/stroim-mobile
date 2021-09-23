@@ -1,0 +1,37 @@
+.status{
+  display: inline-block;
+  font-size: 14px;
+  line-height: 17px;
+  color: $text_color;
+  padding: 6px 12px;
+  border-radius: 8px;
+
+  &.orange{
+    background-color: #FFF1BE;
+  }
+
+  &.red{
+    background-color: #FFA6A6;
+  }
+
+  &.blue {
+    background-color: #A5E9ED;
+  }
+
+  &.green {
+    background-color: #E6F4D7;
+  }
+
+  &.violet {
+    background-color: #DBBEFF;
+  }
+
+  &.green-light {
+    background-color: #BEFBC4;
+  }
+
+  &.sm {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

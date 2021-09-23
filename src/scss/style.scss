@@ -20,10 +20,13 @@
 @import "~slick-carousel/slick/slick";
 
 /*base custom*/ 
-@import "base/ui";
+@import "pages/ui";
 @import "base/fonts";
 @import "base/typography";
+@import "base/inputs";
+@import "base/buttons";
 
 /*custom components*/
 @import "components/grid"; 
-@import "components/inputs"; 
+@import "components/loader";
+@import "components/status";

@@ -1,0 +1,363 @@
+@import '../abstract/variables';
+.base-input {
+  height: 40px;
+  background: #F2F2F2;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 26px;
+  padding: 7px 16px;
+  border: none;
+  border: 1px solid #F2F2F2;
+  color: rgba(0, 29, 58, 0.9);
+  width: 100%;
+
+
+  ::placeholder {
+    color: #646464;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+    background: #fff;
+    border-color: #3275EE;
+  }
+  &:disabled,
+  &[readonly] {
+    background: #F2F2F2;
+  }
+
+  &.sm {
+    height: 38px;
+  }
+
+  &.lg {
+    height: 52px;
+    font-size: 16px;
+  }
+}
+
+
+// Input and Textarea с динамическим плесхолдером
+.materil-group {
+  display: block;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.materil-group__label {
+  position: absolute;
+  left: 16px;
+  top: 13px;
+  z-index: 2;
+  color: #646464;
+  font-size: 16px;
+  line-height: 26px;
+  transition: 0.15s ease-in-out;
+  margin-bottom: 24px;
+}
+
+.materil-group__input,
+.materil-group__textarea {
+  height: 52px;
+  padding: 20px 16px 6px;
+  overflow: hidden;
+  &::placeholder {
+    color: transparent;
+    width: 100%;
+  }
+}
+
+.materil-group--with-icon {
+  .materil-group__input,
+  .materil-group__textarea{
+    padding-right: 40px;
+  }
+}
+
+.materil-group__icon{
+  position: absolute;
+  right: 16px;
+  top: 16px;
+}
+
+.materil-group__textarea {
+  height: auto;
+  min-height: 40px!important;
+  resize: none;
+}
+
+.materil-group.active .materil-group__label {
+  left: 16px;
+  top: 6px;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.materil-group__label-backdrop {
+  display: block;
+  height: 21px;
+  position: absolute;
+  left: 2px;
+  right: 22px;
+  top: 1px;
+  //background: #F2F2F2;
+  border-radius: 8px;
+}
+
+.materil-group__textarea:focus+.materil-group__label-backdrop {
+  background: #fff;
+}
+
+.materil-group.error .materil-group__input {
+  background-color: #FFD9D9;
+  border-color: $red;
+}
+
+.materil-group__error-text {
+  font-size: 12px;
+  line-height: 17px;
+  color: $red;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin-top: 3px;
+}
+
+.materil-group.error .materil-group__error-text {
+  display: block;
+}
+
+
+
+
+
+/* ******************* Search-input */
+.search-input {
+  position: relative;
+  width: 100%;
+}
+
+.search-input__field {
+  padding-left: 40px;
+  background: #F9F9F9;
+  border-color: #F9F9F9;
+  &::placeholder {
+    font-size: 14px;
+    color: #646464;
+  }
+
+  .search-input--right & {
+    padding-right: 40px;
+    padding-left: 16px;
+  }
+}
+
+.search-input__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 41px;
+  padding: 0;
+  border-radius: 8px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  img {
+    width: 16px;
+    height: auto;
+  }
+  .search-input--right & {
+    left: initial;
+    right: 0;
+  }
+}
+
+
+
+
+/* ******************* Checkbox */
+
+label {
+  position: relative;
+  cursor: pointer;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  position: absolute;
+  left: -999em;
+  display: none;
+}
+
+input[type="checkbox"]+span {
+  padding-left: 24px;
+  color: $text_color;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+input[type="checkbox"]+span:before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-9px);
+  vertical-align: middle;
+  border: 2px solid #646464;
+  border-radius: 2px;
+  color: $text_color;
+}
+
+input[type="checkbox"]:checked+span:before {
+  content: "";
+  background-color: #3275EE;
+  border-color: #3275EE;
+}
+
+input[type="checkbox"]:checked+span:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-9px);
+  width: 16px;
+  height: 16px;
+  background-image: url(../img/icons/check.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+
+
+
+// ******************* Radio
+
+input[type="radio"]:checked,
+input[type="radio"]:not(:checked) {
+  display: none;
+  position: absolute;
+  left: -9999px;
+}
+
+input[type="radio"]:checked+label,
+input[type="radio"]:not(:checked)+label {
+  position: relative;
+  padding-left: 24px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+  color: $text_color;
+  font-size: 14px;
+}
+
+input[type="radio"]:checked+label:before,
+input[type="radio"]:not(:checked)+label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #646464;
+  border-radius: 100%;
+  background: #fff;
+}
+
+input[type="radio"]:checked+label:before {
+  border: 4px solid #3275EE;
+}
+
+
+
+
+
+// ******************* filereader
+
+.file-reader {
+  position: relative;
+}
+
+.file-reader__label {
+  display: inline-flex;
+  padding: 11px 30px;
+  background: #F2F2F2;
+  color: $text_color;
+  font-size: 16px;
+  line-height: 160%;
+  transition: all .4s;
+  cursor: pointer;
+  border-radius: 8px;
+  &.loading {
+    .file-reader__icon-clip {
+      display: none;
+    }
+    .file-reader__loader {
+      display: block;
+    }
+  }
+}
+
+.file-reader__loader {
+  display: none;
+}
+
+.file-reader__icon-clip {
+  width: 24px;
+  padding-right: 4px;
+  height: auto;
+}
+
+.file-reader__input-text {
+  padding-left: 9px;
+  display: block;
+}
+
+.file-reader__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 225px;
+  opacity: 0;
+  padding: 14px 0;
+  cursor: pointer;
+}
+
+.file-reader__icon-close {
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.file-reader__return {
+  display: none;
+  padding: 0 16px 0 16px;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 42px;
+  font-size: 16px;
+  font-weight: $font-weight-medium;
+  background: #CCDCF7;
+  opacity: 0.8;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  max-width: 343px;
+}
+
+.file-reader__return-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+

@@ -6,17 +6,234 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <style>
+        .ui {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+            border-bottom: 1px dashed #ddd;
+            padding: 20px 0;
+        }
+
+        .row {
+           margin-bottom: 15px;
+        }
+
+        .form-group__row {
+            display: flex;
+            margin: 0 -15px;
+            width: auto;
+        }
+
+        .form-group__column {
+            padding: 0 15px
+        }
+
+        .form-group__column--2 {
+            width: 50%;
+        }
+
+    </style>
 </head>
 
 <body>
 <div class="header">
     
 </div>
-<div class="content">
+<div class="content ui">
     <div class="container-fluid">
+
+         <!--заголовки-->
+        <h2>Заголовки</h2>
+        <div class="form-group">
+            <h2>Заголовок h2</h2>
+            <h3>Заголовок h3</h3>
+            <h4>Заголовок h4</h4>
+        </div>
+
+        <!--текст-параграфы-->
+        <h2>Параграфы</h2>
+        <div class="form-group">
+            <p>стандартный текст 16px</p>
+            <p class="sm">текст мелкий 14px</p>
+            <p class="sm">текст очень мелкий 12px</p>
+            <strong>текст жирный</strong>
+        </div>
+
+        <!--ссылки-->
+        <h2>Ссылки</h2>
+        <div class="form-group">
+            <div>
+                <a class="link">Стандартная ссылка 16px</a>
+            </div>
+            <div>
+                <a class="link red">Стандартная красная ссылка 16px</a>
+            </div>
+            <div>
+                <a class="link sm">Маленькая ссылка 14px</a>
+            </div>
+            <div>
+                <a class="link sm red">Маленькая красная ссылка 14px</a>
+            </div>
+        </div>
+
+        <h2>Кнопки</h2>
+        <div class="form-group">
+            <div class="row">
+                <button class="btn btn-primary">Кнопка primary</button>
+            </div>
+            <div class="row">
+                <button class="btn btn-secondary">Кнопка secondary</button>
+            </div>
+            <div class="row">
+                <button class="btn btn-grey">Кнопка grey</button>
+            </div>
+            <div class="row">
+                <button class="btn grey btn-secondary">Кнопка secondary grey</button>
+            </div>
+            <div class="row">
+                <button class="btn btn-primary is-loading js-basket-send">
+                    <span>Отправить поставщикам</span>
+                    <div class="loader"></div>
+                </button>
+            </div>
+        </div>
+        <h3>Кнопки маленькие</h3>
+        <div class="form-group">
+            <div class="row">
+                <button class="btn btn-primary sm">Кнопка primary</button>
+            </div>
+            <div class="row">
+                <button class="btn btn-secondary sm">Кнопка secondary</button>
+            </div>
+            <div class="row">
+                <button class="btn btn-grey sm">Кнопка grey</button>
+            </div>
+            <div class="row">
+                <button class="btn grey btn-secondary sm">Кнопка secondary grey</button>
+            </div>
+        </div>
+
+        <h2>Статусы</h2>
+        <div class="form-group">
+            <div class="row">
+                <div class="form-group__column--2">
+                    <p class="status orange">Статус orange</p>
+                </div>
+                <div class="form-group__column--2">
+                    <p class="status orange sm">Статус orange sm</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group__column--2">
+                    <p class="status red">Статус red</p>
+                </div>
+                <div class="form-group__column--2">
+                    <p class="status red sm">Статус red sm</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group__column--2">
+                    <p class="status blue">Статус blue</p>
+                </div>
+                <div class="form-group__column--2">
+                    <p class="status blue sm">Статус blue sm</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group__column--2">
+                    <p class="status green">Статус green</p>
+                </div>
+                <div class="form-group__column--2">
+                    <p class="status green sm">Статус green sm</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group__column--2">
+                    <p class="status orange">Статус orange</p>
+                </div>
+                <div class="form-group__column--2">
+                    <p class="status orange sm">Статус orange sm</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group__column--2">
+                    <p class="status green-light">Статус green-light</p>
+                </div>
+                <div class="form-group__column--2">
+                    <p class="status green-light sm">Статус green-light sm</p>
+                </div>
+            </div>
+        </div>
+
         <h2>Inputs</h2>
         <div class="form-group">
-            <input type="text" class="form-control base-input" placeholder="placeholder">
+            <div class="row">
+                <input type="text" class="form-control base-input" placeholder="Стандартный инпут высотой 40px">
+            </div>
+            <div class="row">
+                <input type="text" class="form-control base-input sm" placeholder="Маленький инпут высотой 38px">
+            </div>
+            <div class="row">
+                <input type="text" class="form-control base-input lg" placeholder="Большой инпут высотой 52px">
+            </div>
+            <h3>Input-ы с динамическим плейсхолдером</h3>
+            <div class="row">
+                <label class="materil-group">
+                    <span class="materil-group__label">Контактное лицо*</span>
+                    <input type="text" class="form-control base-input materil-group__input">
+                </label>
+            </div>
+            <div class="row">
+                <label class="materil-group error">
+                    <span class="materil-group__label">Контактное лицо*</span>
+                    <input type="text" class="form-control base-input materil-group__input">
+                </label>
+            </div>
+            <div class="row">
+                <label class="search-input">
+                    <input type="text" class="form-control base-input search-input__field" placeholder="Поиск">
+                    <button class="search-input__btn">
+                        <img src="img/icons/search-gray.svg" alt="">
+                    </button>
+                </label>
+            </div>
+            <div class="row">
+                <label class="materil-group">
+                    <span class="materil-group__label">Textarea*</span>
+                    <textarea class="form-control base-input materil-group__input materil-group__textarea"></textarea>
+                    <span class="materil-group__label-backdrop"></span>
+                </label>
+            </div>
+            <div class="row">
+                <label class="materil-group materil-group--with-icon basket__suppliers-field">
+                    <span class="materil-group__label">Период проведения конкурса*</span>
+                    <input type="text" name="daterange" class="form-control base-input materil-group__input" value="20.08.2021 - 30.08.2021" />
+                    <img class="materil-group__icon" src="img/icons/calendar.svg" alt="">
+                    <div class="materil-group__error-text">Укажите Период проведения конкурса</div>
+                </label>
+            </div>
+            <div class="row">
+                <p>
+                    <input type="radio" id="test1" name="radio-group" checked>
+                    <label for="test1">Физическое лицо</label>
+                </p>
+                <p>
+                    <input type="radio" id="test2" name="radio-group">
+                    <label for="test2">Юридическое лицо</label>
+                </p>
+            </div>
+            <div class="row">
+                <label>
+                    <input type="checkbox" name="check-one" value="check-one" />
+                    <span>Кликни меня</span>
+                </label>
+            </div>
         </div>
     </div>
 </div>

@@ -1,0 +1,90 @@
+@import '../abstract/_variables.scss';
+
+body {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+h2, .h2 {
+  font-size: 28px;
+  line-height: 140%;
+  font-weight: $font-weight-medium;
+  margin: 0;
+}
+
+h3, .h3 {
+  font-size: 18px;
+  line-height: 160%;
+  font-weight: $font-weight-medium;
+  margin: 0;
+}
+
+h4, .h4 {
+  font-size: 16px;
+  line-height: 160%;
+  font-weight: $font-weight-medium;
+  margin: 0;
+}
+
+p {
+  font-size: 16px;
+  line-height: 160%;
+  margin: 0;
+  &.sm {
+    font-size: 14px;
+  }
+
+  &.xs {
+    font-size: 12px;
+  }
+}
+
+strong {
+  font-weight: 500;
+}
+
+.link {
+  font-size: 16px;
+  color: #3275EE;
+  transition: color .2s;
+  text-decoration: none;
+
+  &:hover {
+    color: #225ECA;
+    text-decoration: none;
+  }
+  &:active {
+    color: #1C4A9D;
+  }
+
+  &.red {
+    &:hover {
+      color: darken($red, 20%)
+    }
+  }
+  &.sm{
+    font-size: 14px;
+
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+
+.grey {
+  color: $grey;
+}
+.blue {
+  color: $blue;
+}
+.green {
+  color: $green;
+}
+.red {
+  color: $red;
+}
+
