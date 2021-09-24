@@ -1,4 +1,29 @@
-body {
-    overflow-x: hidden;
-    background: #fff;
+.ui {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+  border-bottom: 1px dashed #ddd;
+  padding: 20px 0;
+}
+
+.row {
+  margin-bottom: 15px;
+}
+
+.form-group__row {
+  display: flex;
+  margin: 0 -15px;
+  width: auto;
+}
+
+.form-group__column {
+  padding: 0 15px
+}
+
+.form-group__column--2 {
+  width: 50%;
 }

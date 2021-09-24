@@ -1,41 +1,36 @@
 @import '../abstract/_variables.scss';
 
-body {
-  font-size: 14px;
-  line-height: 22px;
-}
-
 h2, .h2 {
-  font-size: 28px;
+  font-size: 2.8rem;
   line-height: 140%;
   font-weight: $font-weight-medium;
   margin: 0;
 }
 
 h3, .h3 {
-  font-size: 18px;
+  font-size: 1.8rem;
   line-height: 160%;
   font-weight: $font-weight-medium;
   margin: 0;
 }
 
 h4, .h4 {
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 160%;
   font-weight: $font-weight-medium;
   margin: 0;
 }
 
 p {
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 160%;
   margin: 0;
   &.sm {
-    font-size: 14px;
+    font-size: 1.4rem;
   }
 
   &.xs {
-    font-size: 12px;
+    font-size: 1.2rem;
   }
 }
 
@@ -44,7 +39,7 @@ strong {
 }
 
 .link {
-  font-size: 16px;
+  font-size: 1.6rem;
   color: #3275EE;
   transition: color .2s;
   text-decoration: none;
@@ -63,7 +58,7 @@ strong {
     }
   }
   &.sm{
-    font-size: 14px;
+    font-size: 1.4rem;
 
   }
 }

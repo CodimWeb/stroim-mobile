@@ -1,0 +1,35 @@
+.pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 480px;
+}
+
+.pagination__box{
+  width: 100%;
+}
+
+.pagination__link {
+  display: inline-block;
+  width: 34px;
+  height: 38px;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 8px;
+  background-color: #F9F9F9;
+  margin-right: 12px;
+
+  &.active {
+    background: #C1D6FA;
+  }
+
+  &.pagination__link-next {
+    display: block;
+    width: 100%;
+    height: 51px;
+    line-height: 51px;
+    background: #C1D6FA;
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+}

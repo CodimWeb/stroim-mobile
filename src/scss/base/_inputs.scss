@@ -3,10 +3,9 @@
   height: 40px;
   background: #F2F2F2;
   border-radius: 8px;
-  font-size: 14px;
-  line-height: 26px;
+  font-size: 1.4rem;
+  line-height: 185%;
   padding: 7px 16px;
-  border: none;
   border: 1px solid #F2F2F2;
   color: rgba(0, 29, 58, 0.9);
   width: 100%;
@@ -33,7 +32,7 @@
 
   &.lg {
     height: 52px;
-    font-size: 16px;
+    font-size: 1.6rem;
   }
 }
 
@@ -53,8 +52,8 @@
   top: 13px;
   z-index: 2;
   color: #646464;
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 1.6rem;
+  line-height: 160%;
   transition: 0.15s ease-in-out;
   margin-bottom: 24px;
 }
@@ -92,8 +91,8 @@
 .materil-group.active .materil-group__label {
   left: 16px;
   top: 6px;
-  font-size: 10px;
-  line-height: 14px;
+  font-size: 1rem;
+  line-height: 140%;
 }
 
 .materil-group__label-backdrop {
@@ -117,8 +116,8 @@
 }
 
 .materil-group__error-text {
-  font-size: 12px;
-  line-height: 17px;
+  font-size: 1.2rem;
+  line-height: 140%;
   color: $red;
   display: none;
   position: absolute;
@@ -146,7 +145,7 @@
   background: #F9F9F9;
   border-color: #F9F9F9;
   &::placeholder {
-    font-size: 14px;
+    font-size: 1.4rem;
     color: #646464;
   }
 
@@ -200,8 +199,8 @@ input[type="radio"] {
 input[type="checkbox"]+span {
   padding-left: 24px;
   color: $text_color;
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 1.4rem;
+  line-height: 160%;
 }
 
 input[type="checkbox"]+span:before {
@@ -258,7 +257,7 @@ input[type="radio"]:not(:checked)+label {
   line-height: 20px;
   display: inline-block;
   color: $text_color;
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 
 input[type="radio"]:checked+label:before,
@@ -293,7 +292,7 @@ input[type="radio"]:checked+label:before {
   padding: 11px 30px;
   background: #F2F2F2;
   color: $text_color;
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 160%;
   transition: all .4s;
   cursor: pointer;
@@ -345,8 +344,8 @@ input[type="radio"]:checked+label:before {
   padding: 0 16px 0 16px;
   justify-content: space-between;
   align-items: center;
-  line-height: 42px;
-  font-size: 16px;
+  line-height: 260%;
+  font-size: 1.6rem;
   font-weight: $font-weight-medium;
   background: #CCDCF7;
   opacity: 0.8;
