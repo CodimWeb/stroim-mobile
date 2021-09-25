@@ -10,6 +10,10 @@
 @import "~bootstrap/scss/grid";
 //@import "~bootstrap/dist/css/bootstrap-grid.css";
 
+//abstract
+@import "abstract/mixins";
+@import "abstract/variables";
+
 /*BS components*/ 
 @import "~bootstrap/scss/transitions";
 @import "~bootstrap/scss/modal";
@@ -26,8 +30,10 @@
 @import "base/inputs";
 @import "base/buttons";
 @import "base/pagination";
+@import "base/breadcrumbs";
 
 /*custom components*/
 @import "components/grid"; 
 @import "components/loader";
 @import "components/status";
+

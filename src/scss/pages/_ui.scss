@@ -1,7 +1,12 @@
 .ui {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px;
+  .row {
+    margin-bottom: 15px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
 }
 
 .form-group {
@@ -10,9 +15,6 @@
   padding: 20px 0;
 }
 
-.row {
-  margin-bottom: 15px;
-}
 
 .form-group__row {
   display: flex;
