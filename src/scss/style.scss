@@ -8,7 +8,7 @@
 
 /* BS grid */
 @import "~bootstrap/scss/grid";
-//@import "~bootstrap/dist/css/bootstrap-grid.css";
+@import "~bootstrap/dist/css/bootstrap-grid.css";
 
 //abstract
 @import "abstract/mixins";
@@ -31,9 +31,12 @@
 @import "base/buttons";
 @import "base/pagination";
 @import "base/breadcrumbs";
+@import "base/menu";
 
 /*custom components*/
 @import "components/grid"; 
 @import "components/loader";
 @import "components/status";
+@import "components/announcement-card";
+@import "components/tender-card";
 

@@ -1,36 +1,37 @@
 @import '../abstract/_variables.scss';
 
 h2, .h2 {
-  font-size: 2.8rem;
+  font-size: 28px;
   line-height: 140%;
   font-weight: $font-weight-medium;
   margin: 0;
 }
 
 h3, .h3 {
-  font-size: 1.8rem;
+  font-size: 18px;
   line-height: 160%;
   font-weight: $font-weight-medium;
   margin: 0;
 }
 
 h4, .h4 {
-  font-size: 1.6rem;
+  font-size: 16px;
   line-height: 160%;
   font-weight: $font-weight-medium;
   margin: 0;
 }
 
-p {
-  font-size: 1.6rem;
+p, .text {
+  font-size: 16px;
+  font-weight: normal;
   line-height: 160%;
   margin: 0;
   &.sm {
-    font-size: 1.4rem;
+    font-size: 14px;
   }
 
   &.xs {
-    font-size: 1.2rem;
+    font-size: 12px;
   }
 }
 
@@ -39,7 +40,7 @@ strong {
 }
 
 .link {
-  font-size: 1.6rem;
+  font-size: 16px;
   color: #3275EE;
   transition: color .2s;
   text-decoration: none;
