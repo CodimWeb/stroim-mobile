@@ -59,7 +59,9 @@ $(document).ready(function(){
     })
 
 
-    initialDatePicker()
+    initialDatePicker();
+    initCeniSlider();
+    initProductsSlider();
 });
 
 function initialDatePicker() {
@@ -97,3 +99,24 @@ function initialDatePicker() {
         });
     }
 };
+
+function initCeniSlider() {
+    const $slider = $(".js-slider-ceni .slider-wrapper");
+
+    $slider.slick({
+        dots: true,
+        arrows: false,
+    });
+}
+
+function initProductsSlider() {
+    const $slider = $(".js-slider-products .slider-wrapper");
+
+    $slider.slick({
+        dots: true,
+        arrows: false,
+        slidesToShow: 2.1,
+        // centerMode: true,
+        // centerPadding: '20%',
+    });
+}

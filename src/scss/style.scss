@@ -21,10 +21,14 @@
 @import "~bootstrap/scss/nav";
 
 // plugins
-@import "~slick-carousel/slick/slick";
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+// pages
+@import "pages/ui";
+@import "pages/ceni";
 
 /*base custom*/ 
-@import "pages/ui";
 @import "base/fonts";
 @import "base/typography";
 @import "base/inputs";
@@ -34,9 +38,10 @@
 @import "base/menu";
 
 /*custom components*/
-@import "components/grid"; 
+@import "components/grid";
 @import "components/loader";
 @import "components/status";
 @import "components/announcement-card";
 @import "components/tender-card";
+@import "components/sliders";
 

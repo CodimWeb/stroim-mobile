@@ -8,6 +8,7 @@
 
 .pagination__box{
   width: 100%;
+  font-size: 0;
 }
 
 .pagination__link {
@@ -19,6 +20,7 @@
   border-radius: 8px;
   background-color: #F9F9F9;
   margin-right: 12px;
+  margin-bottom: 12px;
 
   &.active {
     background: #C1D6FA;

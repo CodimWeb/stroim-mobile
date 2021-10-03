@@ -1,0 +1,22 @@
+@import '../abstract/variables';
+@import '../abstract/mixins';
+
+.ceni {
+
+}
+
+.ceni__product-inner{
+
+  @include min-w($mobile_lg){
+    display: flex;
+  }
+}
+
+.ceni__slider-images,
+.ceni__slider-description{
+  @include min-w($mobile_lg){
+    width: 50%;
+  }
+}
+
+

@@ -1,0 +1,94 @@
+//ceni
+
+.slider-ceni{
+  margin-bottom: 16px;
+
+  .slick-slide {
+
+  }
+
+  .slick-dotted.slick-slider{
+    margin: 0;
+  }
+
+  .slider-wrapper {
+    font-size: 0;
+    position: relative;
+  }
+
+  .slick-dots{
+    bottom: 14px;
+  }
+
+  .slick-dots li {
+    width: 8px;
+    height: 8px;
+    margin-left: 6px;
+    margin-right: 6px;
+
+    button{
+      background-color: #fff;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+
+
+      &:before {
+        display: none;
+      }
+    }
+
+    &.slick-active button{
+      background-color: $blue;
+    }
+  }
+}
+
+.slider-ceni__slide{
+  border-radius: 4px;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  position: relative;
+  z-index: 1;
+
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+}
+
+//products
+.slider-products{
+  width: auto;
+  margin-right: -16px;
+
+  .slick-list {
+    margin: 0 -6px;
+    width: auto;
+  }
+
+  .slick-slide{
+    padding: 0 6px;
+  }
+
+}
+
+.slider-products__slide{
+  width: 100%;
+  border: 1px solid #DFDEE2;
+  border-radius: 8px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.slider-products__content {
+  padding: 8px 12px 16px;
+}
