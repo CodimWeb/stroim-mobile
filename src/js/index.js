@@ -6,7 +6,8 @@ import Util from 'bootstrap/js/dist/util.js'
 import Modal from 'bootstrap/js/dist/modal'
 import slick from 'slick-carousel';
 import moment from 'moment';
-import daterangepicker from 'jquery-date-range-picker'
+import daterangepicker from 'jquery-date-range-picker';
+import select2 from 'select2';
 
 
 //styles
@@ -40,6 +41,12 @@ $(document).ready(function(){
         prevArrow: $('.review-slider-prev'),
         nextArrow: $('.review-slider-next'),
         dots: false
+    });
+
+    $('.select').select2({
+        width: '100%',
+        selectionCssClass: 'base-select',
+        dropdownCssClass: 'base-select-dropdown'
     });
 
     $(document).on('focus', '.materil-group__input', function() {

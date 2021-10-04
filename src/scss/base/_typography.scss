@@ -50,6 +50,7 @@ p, .text {
 }
 
 strong {
+  font-size: inherit;
   font-weight: 500;
 }
 
@@ -100,6 +101,9 @@ ul {
 .red {
   color: $red;
 }
+.text-color {
+  color: $text_color;
+}
 
 .mb-12{
   margin-bottom: 12px;
@@ -109,7 +113,15 @@ ul {
   margin-bottom: 32px;
 }
 
+.pb-32 {
+  padding-bottom: 32px;
+}
+
 .border-bottom{
   border-bottom: 1px solid #DFDEE2;
+}
+
+.text-center{
+  text-align: center;
 }
 

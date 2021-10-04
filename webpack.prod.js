@@ -73,6 +73,14 @@ module.exports = {
             template: './src/announcements.html'
         }),
         new HtmlWebpackPlugin({
+            filename: 'proposal-no-auth.html',
+            template: './src/proposal-no-auth.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'proposal-auth.html',
+            template: './src/proposal-auth.html'
+        }),
+        new HtmlWebpackPlugin({
             filename: 'announcement.html',
             template: './src/announcement.html'
         }),
