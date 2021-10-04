@@ -111,12 +111,10 @@ function initCeniSlider() {
 
 function initProductsSlider() {
     const $slider = $(".js-slider-products .slider-wrapper");
-
     $slider.slick({
         dots: true,
         arrows: false,
-        slidesToShow: 2.1,
-        // centerMode: true,
-        // centerPadding: '20%',
+        slidesToShow: 1,
+        variableWidth: true
     });
 }

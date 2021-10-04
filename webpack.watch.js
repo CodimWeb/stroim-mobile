@@ -68,6 +68,10 @@ module.exports = {
             template: './src/announcement.html'
         }),
         new HtmlWebpackPlugin({
+            filename: 'announcements.html',
+            template: './src/announcements.html'
+        }),
+        new HtmlWebpackPlugin({
             filename: 'tenders.html',
             template: './src/tenders.html'
         }),

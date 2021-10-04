@@ -72,6 +72,9 @@ strong {
       color: darken($red, 20%)
     }
   }
+  &.dark {
+    color: $text_color;
+  }
   &.sm{
     font-size: 14px;
 
@@ -103,7 +106,7 @@ ul {
 }
 
 .mb-32{
-  margin-bottom: 12px;
+  margin-bottom: 32px;
 }
 
 .border-bottom{

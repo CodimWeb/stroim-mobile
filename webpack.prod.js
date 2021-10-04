@@ -69,6 +69,10 @@ module.exports = {
             template: './src/ceni-postavshikov.html'
         }),
         new HtmlWebpackPlugin({
+            filename: 'announcements.html',
+            template: './src/announcements.html'
+        }),
+        new HtmlWebpackPlugin({
             filename: 'announcement.html',
             template: './src/announcement.html'
         }),
