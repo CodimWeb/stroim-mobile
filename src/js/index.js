@@ -69,6 +69,8 @@ $(document).ready(function(){
     initialDatePicker();
     initCeniSlider();
     initProductsSlider();
+    fileReader();
+    phoneBtn();
 });
 
 function initialDatePicker() {
@@ -124,4 +126,53 @@ function initProductsSlider() {
         slidesToShow: 1,
         variableWidth: true
     });
-}
+};
+
+function fileReader() {
+    const fileReaders = document.querySelectorAll(".file-reader");
+
+    if (!(fileReaders && fileReaders.length)) return;
+
+    fileReaders.forEach((fileReader) => {
+        var fileInput = fileReader.querySelector(".file-reader__input");
+        var button = fileReader.querySelector(".file-reader__label");
+        var theReturn = fileReader.querySelector(".file-reader__return")
+        var theReturnText = fileReader.querySelector(".file-reader__return-text");
+        var closeBnt = fileReader.querySelector('.file-reader__icon-close');
+        fileInput.addEventListener("change", function() {
+            button.classList.add('loading');
+            getData();
+        });
+
+        function getData() {
+            const files = fileInput.files[0];
+            if (files) {
+                const fileReader = new FileReader();
+                fileReader.readAsDataURL(files);
+                fileReader.addEventListener("load", function(e) {
+                    setTimeout(() => {
+                        button.classList.remove('loading')
+                    }, 500)
+                    theReturnText.textContent = files.name;
+                    theReturn.style.display = "flex";
+                });
+                closeBnt.addEventListener('click', function() {
+                    theReturn.style.display = "none";
+                    fileReader.abort()
+                    $(this).closest('.file-reader').find('.file-reader__input').val('');
+                })
+            }
+            setTimeout(() => {
+                button.classList.remove('loading')
+            }, 500)
+        }
+    })
+};
+
+function phoneBtn() {
+    const $links = $('.js-show-phone');
+    if(!$links) return;
+    $links.on('click', function (e) {
+        $(e.target).closest('.phone-btn').toggleClass('show-number')
+    })
+};

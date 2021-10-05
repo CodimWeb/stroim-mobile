@@ -89,6 +89,18 @@ module.exports = {
             template: './src/tenders.html'
         }),
         new HtmlWebpackPlugin({
+            filename: 'tender.html',
+            template: './src/tender.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'tender-after-click.html',
+            template: './src/tender-after-click.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'tender-no-auth.html',
+            template: './src/tender-no-auth.html'
+        }),
+        new HtmlWebpackPlugin({
             filename: 'ui.html',
             template: './src/ui.html'
         }),

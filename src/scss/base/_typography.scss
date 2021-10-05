@@ -114,7 +114,7 @@ ul {
 }
 
 .pb-32 {
-  padding-bottom: 32px;
+  padding-bottom: 32px!important;
 }
 
 .border-bottom{
@@ -125,3 +125,10 @@ ul {
   text-align: center;
 }
 
+.bg-grey-light {
+  background-color: $grey-light;
+}
+
+.bg-violet {
+  background-color: $violet;
+}

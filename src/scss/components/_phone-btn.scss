@@ -1,0 +1,19 @@
+.phone-btn{
+
+}
+
+.phone-btn__text{
+  display: inline;
+
+  .show-number & {
+    display: none;
+  }
+}
+
+.phone-btn__number{
+  display: none;
+
+  .show-number & {
+    display: inline;
+  }
+}
