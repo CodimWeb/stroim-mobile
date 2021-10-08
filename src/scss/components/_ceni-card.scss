@@ -1,0 +1,27 @@
+.ceni-card{
+  display: flex;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #DFDEE2;
+}
+
+.ceni-card__image {
+  width: 120px;
+  height: 162px;
+  flex-shrink: 0;
+  margin-right: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.ceni-card__rating{
+  display: inline-block;
+  line-height: 16px;
+  padding-left: 6px;
+}

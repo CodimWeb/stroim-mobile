@@ -69,8 +69,16 @@ module.exports = {
             template: './src/ceni-postavshikov.html'
         }),
         new HtmlWebpackPlugin({
+            filename: 'ceni-postavshikov-card.html',
+            template: './src/ceni-postavshikov-card.html'
+        }),
+        new HtmlWebpackPlugin({
             filename: 'announcements.html',
             template: './src/announcements.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'proposals.html',
+            template: './src/proposals.html'
         }),
         new HtmlWebpackPlugin({
             filename: 'proposal-no-auth.html',

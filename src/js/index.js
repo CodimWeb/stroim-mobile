@@ -4,15 +4,18 @@ import $ from 'jquery';
 
 import Util from 'bootstrap/js/dist/util.js'
 import Modal from 'bootstrap/js/dist/modal'
+import collapse from 'bootstrap/js/dist/collapse'
 import slick from 'slick-carousel';
 import moment from 'moment';
 import daterangepicker from 'jquery-date-range-picker';
 import select2 from 'select2';
+import magnificPopup from 'magnific-popup/dist/jquery.magnific-popup';
 
 
 //styles
 import "jquery-date-range-picker/dist/daterangepicker.min.css"
 import 'slick-carousel';
+import 'magnific-popup/dist/magnific-popup.css';
 import '../scss/style.scss';
 
 $(document).ready(function(){
@@ -71,6 +74,8 @@ $(document).ready(function(){
     initProductsSlider();
     fileReader();
     phoneBtn();
+    filterModal();
+    collapseFilter();
 });
 
 function initialDatePicker() {
@@ -173,6 +178,30 @@ function phoneBtn() {
     const $links = $('.js-show-phone');
     if(!$links) return;
     $links.on('click', function (e) {
+        e.preventDefault();
         $(e.target).closest('.phone-btn').toggleClass('show-number')
     })
 };
+
+function filterModal() {
+    $('.js-filter').length && $('.js-filter').magnificPopup({
+        type: 'inline',
+        fixedContentPos: true,
+        removalDelay: 500, //delay removal by X to allow out-animation
+        callbacks: {
+            beforeOpen: function() {
+                this.st.mainClass = this.st.el.attr('data-effect');
+            }
+        },
+    });
+}
+
+function collapseFilter() {
+    const $links = $('.js-filter-show-more');
+    $links.on('click', function(e) {
+        e.preventDefault();
+        const $target = $(e.target);
+        $target.closest('.filter-collapse').find('.filter-collapse__box').toggleClass('show');
+        $target.closest('.js-filter-show-more').hide();
+    })
+}

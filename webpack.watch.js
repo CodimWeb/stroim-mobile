@@ -72,6 +72,10 @@ module.exports = {
             template: './src/announcements.html'
         }),
         new HtmlWebpackPlugin({
+            filename: 'proposals.html',
+            template: './src/proposals.html'
+        }),
+        new HtmlWebpackPlugin({
             filename: 'proposal-no-auth.html',
             template: './src/proposal-no-auth.html'
         }),
@@ -96,8 +100,12 @@ module.exports = {
             template: './src/tender-no-auth.html'
         }),
         new HtmlWebpackPlugin({
-            filename: 'customers-requests.html',
-            template: './src/customers-requests.html'
+            filename: 'ceni-postavshikov-card.html',
+            template: './src/ceni-postavshikov-card.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'ceni-postavshikov.html',
+            template: './src/ceni-postavshikov.html'
         }),
         new MiniCssExtractPlugin({
             // filename: "[name].[hash].css"

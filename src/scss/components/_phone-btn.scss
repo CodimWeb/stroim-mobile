@@ -1,3 +1,5 @@
+@import '../abstract/variables';
+
 .phone-btn{
 
 }
@@ -15,5 +17,12 @@
 
   .show-number & {
     display: inline;
+  }
+}
+
+.show-number {
+  &.btn {
+    color: $text_color;
+    border-color: #646464;
   }
 }
