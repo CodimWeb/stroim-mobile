@@ -3,6 +3,13 @@
 .tabs{
   overflow-x: auto;
   padding: 8px 0;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+  width: 0;
 }
 
 .tabs__inner {

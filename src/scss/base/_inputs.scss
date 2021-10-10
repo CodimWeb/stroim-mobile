@@ -219,13 +219,7 @@ input[type="checkbox"]+span:before {
   color: $text_color;
 }
 
-input[type="checkbox"]:checked+span:before {
-  content: "";
-  background-color: #3275EE;
-  border-color: #3275EE;
-}
-
-input[type="checkbox"]:checked+span:after {
+input[type="checkbox"]+span:after {
   content: "";
   position: absolute;
   top: 5px;
@@ -235,6 +229,17 @@ input[type="checkbox"]:checked+span:after {
   background-image: url(../img/icons/check.svg);
   background-repeat: no-repeat;
   background-position: center center;
+  opacity: 0;
+}
+
+input[type="checkbox"]:checked+span:before {
+  content: "";
+  background-color: #3275EE;
+  border-color: #3275EE;
+}
+
+input[type="checkbox"]:checked+span:after {
+  opacity: 1;
 }
 
 
