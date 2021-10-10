@@ -1,0 +1,27 @@
+.table {
+  border: 1px solid #DFDEE2;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.table__row {
+  display: flex;
+  border-top: 1px solid #DFDEE2;
+
+  &:first-child{
+    border-top: none;
+  }
+}
+
+.table__col{
+  padding: 8px 16px;
+  border-left: 1px solid #DFDEE2;
+
+  &:first-child{
+    border-left: none;
+  }
+
+  &--num {
+    width: 48px;
+  }
+}

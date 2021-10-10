@@ -1,7 +1,5 @@
 .breadcrumbs {
   display: flex;
-  padding-top: 24px;
-  margin-bottom: 16px;
 }
 
 .breadcrumbs__item {
@@ -44,6 +42,7 @@
 }
 
 .move-back{
+  display: inline-block;
   padding-left: 20px;
   position: relative;
   font-size: 14px;
@@ -52,12 +51,17 @@
 
   &:before {
     content: '';
-    width: 6px;
-    height: 9px;
+    width: 7px;
+    height: 12px;
     background: url(../img/breadcrumbs-right.svg) no-repeat center center /contain;
-    transform: translateY(-50%) rotate(180deg);
+    transform: rotate(180deg);
     position: absolute;
     left: 0;
-    top: 50%;
+    top: 5px;
+  }
+
+  &:hover{
+    text-decoration: none;
+    color: rgba(0, 29, 58, 0.9);
   }
 }

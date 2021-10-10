@@ -1,0 +1,68 @@
+.proposal-card {
+  position: relative;
+}
+
+.proposal-card__head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F2F2F2;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #DFDEE2;
+}
+
+.proposal-card__naming,
+.proposal-card__row {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #DFDEE2;
+
+  &.grey {
+    background-color: #F2F2F2;
+  }
+}
+
+.proposal-card__row{
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 14px;
+}
+
+.proposal-card__delivery{
+  padding-left: 26px;
+  position: relative;
+  font-size: 14px;
+}
+
+.proposal-card__delivery-icon{
+  position: absolute;
+  top: 3px;
+  left: 0;
+}
+
+.proposal-card__field{
+  line-height: 0;
+}
+
+.proposal-card__field--price{
+  width: calc(58% - 35px)
+}
+
+.proposal-card__field--count{
+  width: calc(42% - 35px)
+}
+
+.proposal-card__field-label {
+  font-size: 12px;
+  width: 70px;
+  text-align: center;
+  flex-shrink: 0;
+  line-height: 52px;
+}
+
+.proposal-card__action{
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #DFDEE2;
+}

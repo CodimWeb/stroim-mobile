@@ -1,0 +1,17 @@
+.catalog-link {
+  display: flex;
+  border-bottom: 1px solid #DFDEE2;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  width: 100%;
+
+  &--first{
+    padding-top: 0px;
+  }
+}
+
+.catalog-link__icon{
+  transform: rotate(90deg);
+  width: 12px;
+}

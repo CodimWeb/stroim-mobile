@@ -1,0 +1,40 @@
+@import '../abstract/variables';
+
+.tabs{
+  overflow-x: auto;
+  padding: 8px 0;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+.tabs__inner {
+  display: flex;
+}
+
+.tab__link{
+  font-size: 14px;
+  line-height: 34px;
+  padding: 0 12px;
+  border-radius: 30px;
+  background-color: #F5F5F5;
+  color: $text_color;
+  
+  &:hover {
+    text-decoration: none;
+    color: $text_color;
+  }
+
+  & + & {
+    margin-left: 16px;
+  }
+
+  &.active{
+    background-color: #3275EE;
+    color: #fff;
+  }
+}

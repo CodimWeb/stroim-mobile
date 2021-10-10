@@ -1,0 +1,40 @@
+@import '../abstract/variables';
+
+.sort{
+  display: flex;
+}
+
+.sort__link{
+  padding-right: 16px;
+  margin-right: 10px;
+  position: relative;
+  font-size: 14px;
+  color: $text_color;
+  display: inline-block;
+  text-decoration: none;
+
+  img{
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+  }
+
+  &.up {
+    color: #3275EE;
+
+    img {
+      display: inline;
+    }
+  }
+
+  &.down {
+    color: #3275EE;
+
+    img {
+      transform: translateY(-50%) rotate(180deg);
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@import '../abstract/variables';
+
+.footer-menu{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  border-top: 1px solid #DFDEE2;
+}
+
+.footer-menu__list{
+  display: flex;
+}
+
+.footer-menu__link{
+  display: block;
+  color: $grey;
+  text-align: center;
+  padding: 7px 0;
+
+
+  &.active,
+  &:hover {
+    color: #3275EE;
+    text-decoration: none;
+  }
+}
+
+.footer-menu__icon {
+  display: inline-block;
+
+  .active & {
+    display: none;
+  }
+}
+
+.footer-menu__icon--active {
+  display: none;
+
+  .active & {
+    display: inline-block;
+  }
+}
+
+.footer-menu__item {
+  flex: 1;
+}
+
+.footer-menu__name {
+  font-size: 10px;
+  line-height: 12px;
+  margin-top: 5px;
+}

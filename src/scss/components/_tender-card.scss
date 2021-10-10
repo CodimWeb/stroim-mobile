@@ -1,0 +1,28 @@
+.tender-card{
+
+}
+
+.tender-card__section,
+.tender-card__footer,
+.tender-card__head {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #DFDEE2;
+}
+
+.tender-card__head {
+  background-color: #F2F2F2;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.tender-card__footer{
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.tender-card__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

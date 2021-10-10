@@ -1,0 +1,28 @@
+@import '../abstract/variables';
+
+.phone-btn{
+
+}
+
+.phone-btn__text{
+  display: inline;
+
+  .show-number & {
+    display: none;
+  }
+}
+
+.phone-btn__number{
+  display: none;
+
+  .show-number & {
+    display: inline;
+  }
+}
+
+.show-number {
+  &.btn {
+    color: $text_color;
+    border-color: #646464;
+  }
+}
