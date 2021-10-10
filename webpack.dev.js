@@ -61,67 +61,83 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'home.html',
-            template: './src/home.html'
+            template: './src/home.html',
+            inject: 'body',
         }),
         new HtmlWebpackPlugin({
             filename: 'ceni-postavshikov.html',
-            template: './src/ceni-postavshikov.html'
+            template: './src/ceni-postavshikov.html',
+            inject: 'body',
         }),
         new HtmlWebpackPlugin({
             filename: 'ceni-postavshikov-card.html',
-            template: './src/ceni-postavshikov-card.html'
+            template: './src/ceni-postavshikov-card.html',
+            inject: 'body',
         }),
         new HtmlWebpackPlugin({
             filename: 'announcements.html',
-            template: './src/announcements.html'
+            template: './src/announcements.html',
+            inject: 'body',
         }),
         new HtmlWebpackPlugin({
             filename: 'announcement-card.html',
-            template: './src/announcement-card.html'
+            template: './src/announcement-card.html',
+            inject: 'body',
         }),
         new HtmlWebpackPlugin({
             filename: 'proposals.html',
-            template: './src/proposals.html'
+            template: './src/proposals.html',
+            inject: 'body',
         }),
         new HtmlWebpackPlugin({
             filename: 'proposal-no-auth.html',
-            template: './src/proposal-no-auth.html'
+            template: './src/proposal-no-auth.html',
+            inject: 'body',
         }),
         new HtmlWebpackPlugin({
             filename: 'proposal-auth.html',
-            template: './src/proposal-auth.html'
+            template: './src/proposal-auth.html',
+            inject: 'body',
         }),
         new HtmlWebpackPlugin({
             filename: 'tenders.html',
-            template: './src/tenders.html'
+            template: './src/tenders.html',
+            inject: 'body',
         }),
         new HtmlWebpackPlugin({
             filename: 'tender-card.html',
-            template: './src/tender-card.html'
+            template: './src/tender-card.html',
+            inject: 'body',
         }),
         new HtmlWebpackPlugin({
             filename: 'tender-after-click.html',
-            template: './src/tender-after-click.html'
+            template: './src/tender-after-click.html',
+            inject: 'body',
         }),
         new HtmlWebpackPlugin({
             filename: 'tender-no-auth.html',
-            template: './src/tender-no-auth.html'
+            template: './src/tender-no-auth.html',
+            inject: 'body',
         }),
         new HtmlWebpackPlugin({
             filename: 'catalog.html',
-            template: './src/catalog.html'
+            template: './src/catalog.html',
+            inject: 'body',
         }),
         new HtmlWebpackPlugin({
             filename: 'catalog-category.html',
-            template: './src/catalog-category.html'
+            template: './src/catalog-category.html',
+            inject: 'body',
         }),
         new HtmlWebpackPlugin({
             filename: 'catalog-subcategory.html',
-            template: './src/catalog-subcategory.html'
+            template: './src/catalog-subcategory.html',
+            inject: 'body',
         }),
         new HtmlWebpackPlugin({
             filename: 'ui.html',
-            template: './src/ui.html'
+            template: './src/ui.html',
+            inject: 'body',
         }),
         new MiniCssExtractPlugin({
             filename: "css/style.css"

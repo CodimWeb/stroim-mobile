@@ -9,12 +9,62 @@
 </head>
 
 <body>
-<div class="header">
-    <div class="container-fluid">
-        
+<header class="header">
+    <div class="header__container container-fluid">
+        <div class="header__search">
+            <a href="/" class="header__search-reset header__search-reset--outside">
+                <img src="img/icons/back-arrow.svg" alt="">
+            </a>
+            <label class="search-input">
+                <input type="text" class="form-control base-input search-input__field" placeholder="Поиск продукции">
+                <button class="search-input__btn">
+                    <img src="img/icons/search-gray.svg" alt="">
+                </button>
+                <a class="header__search-reset header__search-reset--inside">
+                    <img src="img/icons/close-dark.svg" alt="">
+                </a>
+            </label>
+        </div>
+        <div class="header__menu">
+            <a href="#header-menu" class="header__menu-btn js-header-menu" data-effect="mfp-move-from-right">
+                <span></span>
+                <span></span>
+            </a>
+        </div>
     </div>
-</div>
-<div class="content">
+    <div class="header__dropdown container-fluid">
+        <a href="" class="link dark catalog-link">
+            <span>Лист рифленый</span>
+            <img src="img/icons/arrow.svg" class="catalog-link__icon" alt="">
+        </a>
+        <a href="" class="link dark catalog-link">
+            <span>Тендеры</span>
+            <img src="img/icons/arrow.svg" class="catalog-link__icon" alt="">
+        </a>
+    </div>
+</header>
+<main class="content">
+    <section class="main-slider">
+        <div class="container-fluid">
+            <div class="slider slick-slider">
+                <div class="slick-item">
+                    <div class="slick-img">
+                        <img src="img/main-slide.jpg" alt="">
+                    </div>
+                </div>
+                <div class="slick-item">
+                    <div class="slick-img">
+                        <img src="img/main-slide.jpg" alt="">
+                    </div>
+                </div>
+                <div class="slick-item">
+                    <div class="slick-img">
+                        <img src="img/main-slide.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="capabilities">
         <div class="container-fluid">
             <div class="row">
@@ -450,7 +500,7 @@
             
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                         <div class="faq-item__body">
-                            Мы абсолютно уверены в том, что вы будете получать заявки и звонки с нашего портала. Помимо опыта наших партнеров, об этом говорит статистика — 150 тыс. уникальных посетителей сайта (70% новых), 1.5 миллиона просмотров, более 5000 “горячих” покупателей в день переходят на сайты наших клиентов. <code>.show</code>.
+                            Мы абсолютно уверены в том, что вы будете получать заявки и звонки с нашего портала. Помимо опыта наших партнеров, об этом говорит статистика — 150 тыс. уникальных посетителей сайта (70% новых), 1.5 миллиона просмотров, более 5000 “горячих” покупателей в день переходят на сайты наших клиентов.
                         </div>
                     </div>
                 </div>
@@ -520,9 +570,86 @@
             </div>
         </div>
     </section>
-</div>
-<div class="footer">
-    
+</main>
+<footer class="footer-menu">
+    <ul class="footer-menu__list">
+        <li class="footer-menu__item">
+            <a href="" class="footer-menu__link active">
+                <img src="img/icons/menu-main.svg" alt="" class="footer-menu__icon">
+                <img src="img/icons/menu-main-active.svg" alt="" class="footer-menu__icon footer-menu__icon--active">
+                <p class="footer-menu__name">
+                    Главная
+                </p>
+            </a>
+        </li>
+        <li class="footer-menu__item">
+            <a href="" class="footer-menu__link">
+                <img src="img/icons/menu-catalog.svg" alt="" class="footer-menu__icon">
+                <img src="img/icons/menu-catalog-active.svg" alt="" class="footer-menu__icon footer-menu__icon--active">
+                <p class="footer-menu__name">
+                    Каталог
+                </p>
+            </a>
+        </li>
+        <li class="footer-menu__item">
+            <a href="" class="footer-menu__link">
+                <img src="img/icons/menu-location.svg" alt="" class="footer-menu__icon">
+                <img src="img/icons/menu-location-active.svg" alt=""
+                     class="footer-menu__icon footer-menu__icon--active">
+                <p class="footer-menu__name">
+                    Москва
+                </p>
+            </a>
+        </li>
+        <li class="footer-menu__item">
+            <a href="" class="footer-menu__link">
+                <img src="img/icons/menu-basket.svg" alt="" class="footer-menu__icon">
+                <img src="img/icons/menu-basket-active.svg" alt="" class="footer-menu__icon footer-menu__icon--active">
+                <p class="footer-menu__name">
+                    Корзина
+                </p>
+            </a>
+        </li>
+        <li class="footer-menu__item">
+            <a href="" class="footer-menu__link">
+                <img src="img/icons/menu-profile.svg" alt="" class="footer-menu__icon">
+                <img src="img/icons/menu-profile-active.svg" alt="" class="footer-menu__icon footer-menu__icon--active">
+                <p class="footer-menu__name">
+                    Профиль
+                </p>
+            </a>
+        </li>
+    </ul>
+</footer>
+
+<div id="header-menu" class="header-menu mfp-with-anim mfp-hide">
+    <div class="header-menu__content">
+        <ul class="header-menu__list">
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Объявления</a>
+            </li>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Услуги</a>
+            </li>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Реклама</a>
+            </li>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Справочник</a>
+            </li>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Черный список</a>
+            </li>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Контакты</a>
+            </li>
+        </ul>
+        <div class="header-menu__footer">
+            <p class="sm grey">Отдел Продаж:
+                <a href="tel:84992705845" class="link sm dark"><strong>8 (499) 270 58 45</strong></a>
+            </p>
+        </div>
+    </div>
 </div>
 
 </body>
