@@ -76,8 +76,8 @@ module.exports = {
             template: './src/announcements.html'
         }),
         new HtmlWebpackPlugin({
-            filename: 'announcement.html',
-            template: './src/announcement.html'
+            filename: 'announcement-card.html',
+            template: './src/announcement-card.html'
         }),
         new HtmlWebpackPlugin({
             filename: 'proposals.html',
@@ -96,8 +96,8 @@ module.exports = {
             template: './src/tenders.html'
         }),
         new HtmlWebpackPlugin({
-            filename: 'tender.html',
-            template: './src/tender.html'
+            filename: 'tender-card.html',
+            template: './src/tender-card.html'
         }),
         new HtmlWebpackPlugin({
             filename: 'tender-after-click.html',
@@ -106,6 +106,18 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'tender-no-auth.html',
             template: './src/tender-no-auth.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'catalog.html',
+            template: './src/catalog.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'catalog-category.html',
+            template: './src/catalog-category.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'catalog-subcategory.html',
+            template: './src/catalog-subcategory.html'
         }),
         new HtmlWebpackPlugin({
             filename: 'ui.html',

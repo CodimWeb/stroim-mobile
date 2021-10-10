@@ -31,12 +31,13 @@
 
 /*base custom*/ 
 @import "base/fonts";
+@import "base/header";
 @import "base/typography";
 @import "base/inputs";
 @import "base/buttons";
 @import "base/pagination";
 @import "base/breadcrumbs";
-@import "base/menu";
+@import "base/footer-menu";
 @import "base/select";
 
 /*custom components*/
@@ -51,6 +52,10 @@
 @import "components/table";
 @import "components/phone-btn";
 @import "components/ceni-card";
+@import "components/catalog-link";
+@import "components/sort";
+@import "components/tabs";
 
 @import "components/modals/modal-filter";
+@import "components/modals/header-menu";
 

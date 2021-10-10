@@ -52,6 +52,18 @@ $(document).ready(function(){
         dropdownCssClass: 'base-select-dropdown'
     });
 
+    $('.select-transparent').select2({
+        width: '100%',
+        selectionCssClass: 'select-transparent',
+        dropdownCssClass: 'select-transparent-dropdown',
+    });
+
+    $('.select-unborder').select2({
+        width: '100%',
+        selectionCssClass: 'select-unborder',
+        dropdownCssClass: 'select-transparent-dropdown',
+    });
+
     $(document).on('focus', '.materil-group__input', function() {
         $(this).closest('.materil-group').addClass('active');
     })
@@ -76,6 +88,7 @@ $(document).ready(function(){
     phoneBtn();
     filterModal();
     collapseFilter();
+    initHeader();
 });
 
 function initialDatePicker() {
@@ -204,4 +217,40 @@ function collapseFilter() {
         $target.closest('.filter-collapse').find('.filter-collapse__box').toggleClass('show');
         $target.closest('.js-filter-show-more').hide();
     })
+};
+
+function initHeader() {
+    const $header = $('.header');
+    if(!$header.length) return;
+
+    const $menuBtn = $header.find('.header__menu-btn');
+    const $backBtn = $header.find('.header__search-reset');
+    const $searchInput = $header.find('.search-input__field');
+
+    $menuBtn.length && $menuBtn.magnificPopup({
+        type: 'inline',
+        fixedContentPos: true,
+        removalDelay: 500, //delay removal by X to allow out-animation
+        callbacks: {
+            beforeOpen: function() {
+                this.st.mainClass = this.st.el.attr('data-effect');
+            }
+        },
+    });
+
+    $searchInput.on('input', function (e) {
+        const value = $(e.target).val();
+        if(value.length) {
+            if($header.hasClass('search-start')) return;
+            $header.addClass('search-start');
+        }else{
+            $header.removeClass('search-start');
+        }
+    });
+
+    $backBtn.on('click', function(e) {
+        e.preventDefault();
+        $header.removeClass('search-start');
+        $searchInput.val('');
+    });
 }

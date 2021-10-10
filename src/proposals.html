@@ -9,12 +9,51 @@
 </head>
 
 <body>
-<div class="header">
-
-</div>
-<div class="content">
-    <div class="container-fluid mb-12 pt-3">
-        <a href="/" class="move-back link">Каталог</a>
+<header class="header">
+    <div class="header__container container-fluid">
+        <div class="header__search">
+            <a href="/" class="header__search-reset header__search-reset--outside">
+                <img src="img/icons/back-arrow.svg" alt="">
+            </a>
+            <label class="search-input">
+                <input type="text" class="form-control base-input search-input__field" placeholder="Поиск продукции">
+                <button class="search-input__btn">
+                    <img src="img/icons/search-gray.svg" alt="">
+                </button>
+                <a class="header__search-reset header__search-reset--inside">
+                    <img src="img/icons/close-dark.svg" alt="">
+                </a>
+            </label>
+        </div>
+        <div class="header__menu">
+            <a href="#header-menu" class="header__menu-btn js-header-menu" data-effect="mfp-move-from-right">
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+    </div>
+    <div class="header__dropdown container-fluid">
+        <a href="" class="link dark catalog-link">
+            <span>Лист рифленый</span>
+            <img src="img/icons/arrow.svg" class="catalog-link__icon" alt="">
+        </a>
+        <a href="" class="link dark catalog-link">
+            <span>Тендеры</span>
+            <img src="img/icons/arrow.svg" class="catalog-link__icon" alt="">
+        </a>
+    </div>
+</header>
+<section class="container-fluid pt-2">
+    <select name="" id="" class="select-transparent select-unborder">
+        <option value="1"><a href="">Цены поставщиков</a></option>
+        <option value="2">Заявки покупателей</option>
+        <option value="3">Объявления</option>
+        <option value="4">Тендеры</option>
+    </select>
+</section>
+<main class="content">
+    <div class="container-fluid mb-12 ">
+        <a href="/" class="move-back link mb-12">Каталог</a>
         <h2 class="h2">Бетон гранит
             <span class="text sm grey">340 товаров</span>
         </h2>
@@ -22,7 +61,7 @@
     <div class="container-fluid d-flex justify-content-end mb-4">
         <a href="#filter-modal" class="link sm dark js-filter" data-effect="mfp-move-from-top">
             <img src="img/icons/filter.svg" alt="">
-            <span class="pl-2">Фильры</span>
+            <span class="pl-2">Фильтры</span>
         </a>
     </div>
     <div class="proposal-card">
@@ -192,59 +231,91 @@
             </div>
         </div>
     </div>
+</main>
 
-    <menu class="menu">
-        <ul class="menu__list">
-            <li class="menu__item">
-                <a href="" class="menu__link active">
-                    <img src="img/icons/menu-main.svg" alt="" class="menu__icon">
-                    <img src="img/icons/menu-main-active.svg" alt="" class="menu__icon menu__icon--active">
-                    <p class="menu__name">
-                        Главная
-                    </p>
-                </a>
+
+<footer class="footer-menu">
+    <ul class="footer-menu__list">
+        <li class="footer-menu__item">
+            <a href="" class="footer-menu__link active">
+                <img src="img/icons/menu-main.svg" alt="" class="footer-menu__icon">
+                <img src="img/icons/menu-main-active.svg" alt="" class="footer-menu__icon footer-menu__icon--active">
+                <p class="footer-menu__name">
+                    Главная
+                </p>
+            </a>
+        </li>
+        <li class="footer-menu__item">
+            <a href="" class="footer-menu__link">
+                <img src="img/icons/menu-catalog.svg" alt="" class="footer-menu__icon">
+                <img src="img/icons/menu-catalog-active.svg" alt="" class="footer-menu__icon footer-menu__icon--active">
+                <p class="footer-menu__name">
+                    Каталог
+                </p>
+            </a>
+        </li>
+        <li class="footer-menu__item">
+            <a href="" class="footer-menu__link">
+                <img src="img/icons/menu-location.svg" alt="" class="footer-menu__icon">
+                <img src="img/icons/menu-location-active.svg" alt=""
+                     class="footer-menu__icon footer-menu__icon--active">
+                <p class="footer-menu__name">
+                    Москва
+                </p>
+            </a>
+        </li>
+        <li class="footer-menu__item">
+            <a href="" class="footer-menu__link">
+                <img src="img/icons/menu-basket.svg" alt="" class="footer-menu__icon">
+                <img src="img/icons/menu-basket-active.svg" alt="" class="footer-menu__icon footer-menu__icon--active">
+                <p class="footer-menu__name">
+                    Корзина
+                </p>
+            </a>
+        </li>
+        <li class="footer-menu__item">
+            <a href="" class="footer-menu__link">
+                <img src="img/icons/menu-profile.svg" alt="" class="footer-menu__icon">
+                <img src="img/icons/menu-profile-active.svg" alt="" class="footer-menu__icon footer-menu__icon--active">
+                <p class="footer-menu__name">
+                    Профиль
+                </p>
+            </a>
+        </li>
+    </ul>
+</footer>
+
+<div id="header-menu" class="header-menu mfp-with-anim mfp-hide">
+    <div class="header-menu__content">
+        <ul class="header-menu__list">
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Объявления</a>
             </li>
-            <li class="menu__item">
-                <a href="" class="menu__link">
-                    <img src="img/icons/menu-catalog.svg" alt="" class="menu__icon">
-                    <img src="img/icons/menu-catalog-active.svg" alt="" class="menu__icon menu__icon--active">
-                    <p class="menu__name">
-                        Каталог
-                    </p>
-                </a>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Услуги</a>
             </li>
-            <li class="menu__item">
-                <a href="" class="menu__link">
-                    <img src="img/icons/menu-location.svg" alt="" class="menu__icon">
-                    <img src="img/icons/menu-location-active.svg" alt="" class="menu__icon menu__icon--active">
-                    <p class="menu__name">
-                        Москва
-                    </p>
-                </a>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Реклама</a>
             </li>
-            <li class="menu__item">
-                <a href="" class="menu__link">
-                    <img src="img/icons/menu-basket.svg" alt="" class="menu__icon">
-                    <img src="img/icons/menu-basket-active.svg" alt="" class="menu__icon menu__icon--active">
-                    <p class="menu__name">
-                        Корзина
-                    </p>
-                </a>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Справочник</a>
             </li>
-            <li class="menu__item">
-                <a href="" class="menu__link">
-                    <img src="img/icons/menu-profile.svg" alt="" class="menu__icon">
-                    <img src="img/icons/menu-profile-active.svg" alt="" class="menu__icon menu__icon--active">
-                    <p class="menu__name">
-                        Профиль
-                    </p>
-                </a>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Черный список</a>
+            </li>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Контакты</a>
             </li>
         </ul>
-    </menu>
+        <div class="header-menu__footer">
+            <p class="sm grey">Отдел Продаж:
+                <a href="tel:84992705845" class="link sm dark"><strong>8 (499) 270 58 45</strong></a>
+            </p>
+        </div>
+    </div>
 </div>
 
-<div id="filter-modal" class="modal-filter mfp-with-anim">
+<div id="filter-modal" class="modal-filter mfp-with-anim mfp-hide">
     <div class="modal-filter__head">
         <p><strong>Фильтр</strong></p>
     </div>

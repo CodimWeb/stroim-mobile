@@ -1,6 +1,6 @@
 @import '../abstract/variables';
 
-.menu{
+.footer-menu{
   position: fixed;
   bottom: 0;
   left: 0;
@@ -11,11 +11,11 @@
   border-top: 1px solid #DFDEE2;
 }
 
-.menu__list{
+.footer-menu__list{
   display: flex;
 }
 
-.menu__link{
+.footer-menu__link{
   display: block;
   color: $grey;
   text-align: center;
@@ -29,7 +29,7 @@
   }
 }
 
-.menu__icon {
+.footer-menu__icon {
   display: inline-block;
 
   .active & {
@@ -37,7 +37,7 @@
   }
 }
 
-.menu__icon--active {
+.footer-menu__icon--active {
   display: none;
 
   .active & {
@@ -45,11 +45,11 @@
   }
 }
 
-.menu__item {
+.footer-menu__item {
   flex: 1;
 }
 
-.menu__name {
+.footer-menu__name {
   font-size: 10px;
   line-height: 12px;
   margin-top: 5px;
