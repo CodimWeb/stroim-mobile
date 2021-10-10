@@ -4,6 +4,7 @@ import $ from 'jquery';
 
 import Util from 'bootstrap/js/dist/util.js'
 import Modal from 'bootstrap/js/dist/modal'
+import { Collapse } from 'bootstrap';
 import slick from 'slick-carousel';
 import moment from 'moment';
 import daterangepicker from 'jquery-date-range-picker'

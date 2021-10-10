@@ -1,0 +1,100 @@
+.tariff__title {
+    margin-top: 48px;
+    margin-bottom: 16px;
+}
+
+.tariff__notation {
+    margin-bottom: 24px;
+}
+
+.tariff__notation__fatty {
+    font-weight: 500;
+}
+
+.tariff-card {
+    display: block;
+    border: 2px solid #DFDEE2;
+    border-radius: 8px;
+    padding: 0 16px;
+    margin-bottom: 16px;
+}
+
+.tariff-card__label {
+    font-size: 2.2rem;
+    line-height: 140%;
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+.tariff-card__duration {
+    font-size: 2.8rem;
+    font-weight: 500;
+    line-height: 140%;
+    margin-bottom: 8px;
+}
+
+.tariff-card__price {
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 140%;
+}
+
+.tariff-card__location {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 160%;
+    color: #646464;
+}
+
+.tariff-card__notification {
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+.tariff-card__ratting {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 140%;
+    margin-bottom: 16px;
+}
+
+.tariff-card__rating-container {
+    margin-bottom: 32px;
+}
+
+.tariff-card__rating-container img {
+    margin-right: 8px;
+}
+
+.tariff-card__btn {
+    display: block;
+    margin-bottom: 24px;
+}
+
+.tariff-card--special {
+    border: 2px solid #3275EE;
+}
+
+.tariff-card--special .tariff-card__label {
+    font-weight: 500;
+    color: #3275EE;
+}
+
+.tariff-card--special .tariff-card__location {
+    color: #3275EE;
+}
+
+.tariff__info {
+    margin-top: 8px;
+}
+
+.tariff__email {
+    text-decoration: none;
+    color: #3275EE;
+}
+
+.tariff__phone {
+    text-decoration: none;
+    font-weight: 500;
+    color: #001D3A;
+}

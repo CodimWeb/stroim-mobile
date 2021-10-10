@@ -1,0 +1,35 @@
+.statistic__title {
+    margin-bottom: 24px;
+}
+
+.statistic-col {
+    margin-bottom: 16px;
+}
+
+.statistic-item {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 16px;
+    border: 1px solid #DFDEE2;
+    border-radius: 8px;
+}
+
+.statistic-icon {
+    width: 21%;
+    max-width: 21%;
+    margin-right: 24px;
+}
+
+.statistic-icon img {
+    width: 100%;
+}
+
+.statistic-text p {
+    max-width: 215px;
+}
+
+.statistic-text__number {
+    margin-bottom: 8px;
+    color: #646464;
+}

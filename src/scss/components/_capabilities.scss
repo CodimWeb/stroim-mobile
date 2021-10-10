@@ -1,0 +1,29 @@
+.capabilities {
+    margin-bottom: 80px;
+}
+
+.capabilities__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.capabilities__icon {
+    width: 23.3%;
+    max-width: 23.3%;
+    padding-right: 16px;
+}
+
+.capabilities__icon img {
+    width: 100%;
+}
+
+.capabilities__text {
+    width: 76.7%;
+    max-width: 76.7%;
+}
+
+.capabilities__text p {
+    max-width: 214px;
+}
+

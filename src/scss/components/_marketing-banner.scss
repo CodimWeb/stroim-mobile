@@ -1,0 +1,50 @@
+.marketing-banner {
+    margin-top: 80px;
+}
+
+.marketing-banner__content {
+    display: block;
+    padding: 40px 16px;
+    background-color: #FCF29C;
+    border-radius: 8px;
+}
+
+.marketing-banner__info {
+    margin-top: 12px;
+    margin-bottom: 24px;
+}
+
+.marketing-banner__price {
+    font-size: 3.6rem;
+    font-weight: 500;
+    line-height: 140%;
+    color: #3275EE;
+    margin-bottom: 4px;
+}
+
+.marketing-banner__location {
+    font-size: 2.2rem;
+    line-height: 140%;
+    color: #646464;
+    margin-bottom: 24px;
+}
+
+.marketing-banner__image {
+    margin-bottom: 24px;
+}
+
+.marketing-banner__image img {
+    max-width: 100%;
+}
+
+.marketing-banner__more {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 140%;
+    text-decoration: none;
+    color: #001D3A;
+}
+
+.marketing-banner__more svg {
+    margin-left: 8px;
+}
