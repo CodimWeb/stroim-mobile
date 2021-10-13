@@ -149,3 +149,16 @@ label {
 .bg-violet {
   background-color: $violet;
 }
+
+ul.list {
+  padding-left: 16px;
+
+  li {
+    list-style: disc;
+    margin-bottom: 12px;
+  }
+}
+
+.rounded-4{
+  border-radius: 4px;
+}

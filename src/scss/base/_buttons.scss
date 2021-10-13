@@ -71,7 +71,7 @@
 }
 
 .btn-secondary {
-  background-color: #fff;
+  background-color: transparent;
   border-color: #3275EE;
   color: #3275EE;
 
@@ -92,6 +92,14 @@
     color: #646464;
     font-weight: $font-weight-medium;
     border-color: #646464;
+  }
+
+  &.disabled{
+    background-color: transparent;
+    color: #646464;
+    border-color: #646464;
+    cursor: not-allowed;
+    pointer-events: none;
   }
 }
 

@@ -1,0 +1,23 @@
+.announcement-modal{
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 8px;
+  max-width: 360px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mfp-close{
+  font-size: 0;
+  background-image: url(../img/icons/close.svg) !important;
+  background-repeat: no-repeat!important;
+  background-position: center center!important;
+  opacity: 1;
+  right: 2px;
+  top: 5px;
+
+  &:active {
+    top: 5px!important;
+  }
+}

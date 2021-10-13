@@ -68,6 +68,7 @@ $(document).ready(function(){
     fileReader();
     phoneBtn();
     filterModal();
+    deleteAnnouncmentModal();
     collapseFilter();
     initHeader();
 });
@@ -233,5 +234,22 @@ function initHeader() {
         e.preventDefault();
         $header.removeClass('search-start');
         $searchInput.val('');
+    });
+};
+
+function deleteAnnouncmentModal() {
+    const $links = $('.js-delete-announcement');
+    if(!$links.length) return;
+    $links.magnificPopup({
+        type: 'inline',
+        fixedContentPos: true,
+        callbacks: {
+            open: function() {
+                $('.js-close-btn').on('click',function(event){
+                    event.preventDefault();
+                    $.magnificPopup.close();
+                });
+            }
+        }
     });
 }

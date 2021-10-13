@@ -85,8 +85,23 @@ module.exports = {
             inject: 'body',
         }),
         new HtmlWebpackPlugin({
+            filename: 'my-announcements.html',
+            template: './src/my-announcements.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
             filename: 'proposals.html',
             template: './src/proposals.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'my-proposals.html',
+            template: './src/my-proposals.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'my-response-proposals.html',
+            template: './src/my-response-proposals.html',
             inject: 'body',
         }),
         new HtmlWebpackPlugin({
@@ -105,6 +120,11 @@ module.exports = {
             inject: 'body',
         }),
         new HtmlWebpackPlugin({
+            filename: 'my-tenders.html',
+            template: './src/my-tenders.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
             filename: 'tender-card.html',
             template: './src/tender-card.html',
             inject: 'body',
@@ -120,6 +140,21 @@ module.exports = {
             inject: 'body',
         }),
         new HtmlWebpackPlugin({
+            filename: 'tender-success.html',
+            template: './src/tender-success.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'proposal-success.html',
+            template: './src/proposal-success.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'announce-tender.html',
+            template: './src/announce-tender.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
             filename: 'catalog.html',
             template: './src/catalog.html',
             inject: 'body',
@@ -132,6 +167,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'catalog-subcategory.html',
             template: './src/catalog-subcategory.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'add-proposal.html',
+            template: './src/add-proposal.html',
             inject: 'body',
         }),
         new HtmlWebpackPlugin({

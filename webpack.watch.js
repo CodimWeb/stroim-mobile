@@ -72,6 +72,11 @@ module.exports = {
             template: './src/announcements.html'
         }),
         new HtmlWebpackPlugin({
+            filename: 'my-announcements.html',
+            template: './src/my-announcements.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
             filename: 'proposals.html',
             template: './src/proposals.html'
         }),
@@ -84,8 +89,28 @@ module.exports = {
             template: './src/proposal-auth.html'
         }),
         new HtmlWebpackPlugin({
+            filename: 'my-proposals.html',
+            template: './src/my-proposals.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'my-response-proposals.html',
+            template: './src/my-response-proposals.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
             filename: 'tenders.html',
             template: './src/tenders.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'announce-tender.html',
+            template: './src/announce-tender.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'my-tenders.html',
+            template: './src/my-tenders.html',
+            inject: 'body',
         }),
         new HtmlWebpackPlugin({
             filename: 'tender-card.html',
@@ -118,6 +143,21 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'catalog-subcategory.html',
             template: './src/catalog-subcategory.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'tender-success.html',
+            template: './src/tender-success.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'proposal-success.html',
+            template: './src/proposal-success.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'add-proposal.html',
+            template: './src/add-proposal.html',
+            inject: 'body',
         }),
         new MiniCssExtractPlugin({
             // filename: "[name].[hash].css"
