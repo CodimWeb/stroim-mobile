@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Добавить прайс-лист</title>
+</head>
+
+<body>
+<header class="header">
+    <div class="header__container container-fluid">
+        <div class="header__search">
+            <a href="/" class="header__search-reset header__search-reset--outside">
+                <img src="img/icons/back-arrow.svg" alt="">
+            </a>
+            <label class="search-input">
+                <input type="text" class="form-control base-input search-input__field" placeholder="Поиск продукции">
+                <button class="search-input__btn">
+                    <img src="img/icons/search-gray.svg" alt="">
+                </button>
+                <a class="header__search-reset header__search-reset--inside">
+                    <img src="img/icons/close-dark.svg" alt="">
+                </a>
+            </label>
+        </div>
+        <div class="header__menu">
+            <a href="#header-menu" class="header__menu-btn js-header-menu" data-effect="mfp-move-from-right">
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+    </div>
+    <div class="header__dropdown container-fluid">
+        <a href="" class="link dark catalog-link">
+            <span>Лист рифленый</span>
+            <img src="img/icons/arrow.svg" class="catalog-link__icon" alt="">
+        </a>
+        <a href="" class="link dark catalog-link">
+            <span>Тендеры</span>
+            <img src="img/icons/arrow.svg" class="catalog-link__icon" alt="">
+        </a>
+    </div>
+</header>
+
+<main class="content">
+    <div class="container-fluid pb-4 border-bottom">
+        <a href="/" class="move-back link mb-3">Личный кабинет</a>
+        <h4 class="mb-3">Добавить прайс - лист</h4>
+        <a href="" class="link d-block">
+            <img src="img/icons/download.svg" alt="">
+            <span class="pl-2">Скачать пример прайс-листа</span>
+        </a>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="accordion filter-collapse" id="accordionExample">
+            <form class="filter-collapse">
+                <div class="filter-collapse__head border-bottom pt-3 pb-3" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    <strong>О прайс-листе</strong>
+                    <span class="filter-collapse__arrow">
+                            <img src="img/icons/arrow.svg" alt="">
+                    </span>
+                </div>
+                <div id="collapseOne" class="filter-collapse__body collapse show pt-4" aria-labelledby="headingOne" >
+                    <label class="materil-group mb-4">
+                        <span class="materil-group__label">Ссылка для Яндекс.Маркета (если есть)</span>
+                        <input type="text" class="form-control base-input materil-group__input">
+                    </label>
+                    <label class="materil-group mb-4">
+                        <span class="materil-group__label">Ваше имя <span class="red">*</span></span>
+                        <input type="text" class="form-control base-input materil-group__input">
+                    </label>
+                    <label class="materil-group mb-4">
+                        <span class="materil-group__label">Ваше город <span class="red">*</span></span>
+                        <input type="text" class="form-control base-input materil-group__input">
+                    </label>
+                    <label class="materil-group mb-4">
+                        <span class="materil-group__label">Email <span class="red">*</span></span>
+                        <input type="text" class="form-control base-input materil-group__input">
+                    </label>
+                    <label class="materil-group mb-4">
+                        <span class="materil-group__label">Пароль <span class="red">*</span></span>
+                        <input type="password" class="form-control base-input materil-group__input">
+                    </label>
+                    <label class="materil-group mb-4">
+                        <span class="materil-group__label">Телефон <span class="red">*</span></span>
+                        <input type="tel" class="form-control base-input materil-group__input">
+                    </label>
+                    <label class="materil-group mb-4">
+                        <span class="materil-group__label">Организация <span class="red">*</span></span>
+                        <input type="text" class="form-control base-input materil-group__input">
+                    </label>
+                    <div class="file-reader mb-4" style="max-width: 270px">
+                        <div class="file-reader__return">
+                            <span class="file-reader__return-text"></span>
+                            <svg class="file-reader__icon-close" width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.3848 2.82857L3.82843 18.3849C3.4381 18.7752 2.64615 18.6168 2.06066 18.0314C1.47517 17.4459 1.31678 16.6539 1.70711 16.2636L17.2635 0.707247C17.6538 0.316923 18.4457 0.475314 19.0312 1.0608C19.6167 1.64629 19.7751 2.43824 19.3848 2.82857Z" fill="#001D3A"/>
+                                <path d="M16.5562 18.3848L0.999849 2.82843C0.609525 2.4381 0.767916 1.64615 1.3534 1.06066C1.93889 0.475174 2.73084 0.316782 3.12117 0.707107L18.6775 16.2635C19.0678 16.6538 18.9095 17.4457 18.324 18.0312C17.7385 18.6167 16.9465 18.7751 16.5562 18.3848Z" fill="#001D3A"/>
+                            </svg>
+                        </div>
+
+                        <input class="file-reader__input" id="my-file-1" type="file">
+                        <label tabindex="0" for="my-file-1" class="file-reader__label">
+                            <svg class="file-reader__icon-clip" width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.6485 1.5L2.52475 12.6881C1.52512 13.792 0.978705 15.254 1.00064 16.7664C1.02257 18.2787 1.61112 19.7232 2.64232 20.7955C3.70234 21.8871 5.13724 22.5 6.63304 22.5C8.12884 22.5 9.56374 21.8871 10.6238 20.7955L19.3759 11.7017C19.7322 11.3351 20.0149 10.8993 20.2078 10.4192C20.4007 9.93924 20.5 9.42453 20.5 8.9047C20.5 8.38487 20.4007 7.87017 20.2078 7.39016C20.0149 6.91015 19.7322 6.47431 19.3759 6.10767C18.6583 5.36671 17.6858 4.95054 16.6719 4.95054C15.658 4.95054 14.6855 5.36671 13.9679 6.10767L7.43641 12.8638C7.04861 13.2545 6.81409 13.7796 6.77792 14.3383C6.74175 14.897 6.90649 15.4498 7.24047 15.8905C7.66534 16.2389 8.2004 16.4111 8.74135 16.3737C9.28231 16.3362 9.79039 16.0917 10.1666 15.6878L15.3917 10.283" stroke="#001D3A" stroke-opacity="0.9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <div class="file-reader__loader loader loader--dark">Loading...</div>
+                            <span class="file-reader__input-text">Загрузить прайс-лист</span>
+                        </label>
+                    </div>
+
+                    <button class="btn btn-primary block mb-3">Продолжить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</main>
+
+<footer class="footer-menu">
+    <ul class="footer-menu__list">
+        <li class="footer-menu__item">
+            <a href="" class="footer-menu__link">
+                <img src="img/icons/menu-main.svg" alt="" class="footer-menu__icon">
+                <img src="img/icons/menu-main-active.svg" alt="" class="footer-menu__icon footer-menu__icon--active">
+                <p class="footer-menu__name">
+                    Главная
+                </p>
+            </a>
+        </li>
+        <li class="footer-menu__item">
+            <a href="" class="footer-menu__link">
+                <img src="img/icons/menu-catalog.svg" alt="" class="footer-menu__icon">
+                <img src="img/icons/menu-catalog-active.svg" alt="" class="footer-menu__icon footer-menu__icon--active">
+                <p class="footer-menu__name">
+                    Каталог
+                </p>
+            </a>
+        </li>
+        <li class="footer-menu__item">
+            <a href="" class="footer-menu__link">
+                <img src="img/icons/menu-location.svg" alt="" class="footer-menu__icon">
+                <img src="img/icons/menu-location-active.svg" alt=""
+                     class="footer-menu__icon footer-menu__icon--active">
+                <p class="footer-menu__name">
+                    Москва
+                </p>
+            </a>
+        </li>
+        <li class="footer-menu__item">
+            <a href="" class="footer-menu__link">
+                <img src="img/icons/menu-basket.svg" alt="" class="footer-menu__icon">
+                <img src="img/icons/menu-basket-active.svg" alt="" class="footer-menu__icon footer-menu__icon--active">
+                <p class="footer-menu__name">
+                    Корзина
+                </p>
+            </a>
+        </li>
+        <li class="footer-menu__item">
+            <a href="" class="footer-menu__link active">
+                <img src="img/icons/menu-profile.svg" alt="" class="footer-menu__icon">
+                <img src="img/icons/menu-profile-active.svg" alt="" class="footer-menu__icon footer-menu__icon--active">
+                <p class="footer-menu__name">
+                    Профиль
+                </p>
+            </a>
+        </li>
+    </ul>
+</footer>
+
+<div id="header-menu" class="header-menu mfp-with-anim mfp-hide">
+    <div class="header-menu__content">
+        <ul class="header-menu__list">
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Объявления</a>
+            </li>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Услуги</a>
+            </li>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Реклама</a>
+            </li>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Справочник</a>
+            </li>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Черный список</a>
+            </li>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Контакты</a>
+            </li>
+        </ul>
+        <div class="header-menu__footer">
+            <p class="sm grey">Отдел Продаж:
+                <a href="tel:84992705845" class="link sm dark"><strong>8 (499) 270 58 45</strong></a>
+            </p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

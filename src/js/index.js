@@ -10,14 +10,17 @@ import moment from 'moment';
 import daterangepicker from 'jquery-date-range-picker';
 import select2 from 'select2';
 import magnificPopup from 'magnific-popup/dist/jquery.magnific-popup';
+import Dropzone from "dropzone";
 
 
 //styles
 import "jquery-date-range-picker/dist/daterangepicker.min.css"
 import 'slick-carousel';
 import 'magnific-popup/dist/magnific-popup.css';
+import "dropzone/dist/dropzone.css";
 import '../scss/style.scss';
 
+Dropzone.autoDiscover = false;
 $(document).ready(function(){
     
     $('.main-slider .slider').slick({
@@ -59,7 +62,7 @@ $(document).ready(function(){
         if($(item).val()) {
             $(item).closest('.materil-group').addClass('active');
         }
-    })
+    });
 
 
     initialDatePicker();
@@ -71,6 +74,8 @@ $(document).ready(function(){
     deleteAnnouncmentModal();
     collapseFilter();
     initHeader();
+    initImageLoader();
+    autoHeightTextarea();
 });
 
 function initialDatePicker() {
@@ -251,5 +256,42 @@ function deleteAnnouncmentModal() {
                 });
             }
         }
+    });
+};
+
+
+function initImageLoader() {
+    const dropzone = document.getElementById('my-form');
+    if(!dropzone) return;
+    let num = 1;
+    new Dropzone("#my-form", {
+        url: "/",
+        autoProcessQueue: false,
+        init: function() {
+            this.on("addedfile", function(file) {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = function(e) {
+                    let img = new Image();
+                    img.src = reader.result;
+                    $(`.preview-box--${num}`).html(img);
+                    $(`.preview-box--${num}`).append(`<span class="preview-box--bg" style="background-image: url(${reader.result})"></span>`)
+                    num === 5 ? num = 1 : num ++;
+                }
+            })
+        }
+    });
+};
+
+function autoHeightTextarea() {
+    document.querySelectorAll('textarea').forEach(el => {
+        el.style.height = el.setAttribute('style', 'height: ' + el.scrollHeight + 'px');
+        el.classList.add('auto');
+        console.log(el, 'target');
+        el.addEventListener('change', e => {
+            console.log('input');
+            el.style.height = 'auto';
+            el.style.height = (el.scrollHeight) + 'px';
+        });
     });
 }
