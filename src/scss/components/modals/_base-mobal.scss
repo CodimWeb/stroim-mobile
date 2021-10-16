@@ -1,0 +1,42 @@
+
+.base-modal{
+  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+  padding: 56px 0 63px;
+  position: relative;
+}
+
+.base-modal__head{
+  text-align: center;
+  padding: 15px;
+  border-bottom: 1px solid #DFDEE2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.base-modal__footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #DFDEE2;
+}
+
+.base-modal__body{
+  height: 100%;
+  overflow-y: auto;
+}
+
+.base-modal__content{
+  display: block;
+  overflow-y: auto;
+}
+
+.mfp-container{
+  padding-right: 0!important;
+  padding-left: 0!important;
+}
+

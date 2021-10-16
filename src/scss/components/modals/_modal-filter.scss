@@ -1,47 +1,7 @@
 
-.modal-filter{
-  background-color: #fff;
-  width: 100vw;
-  height: 100vh;
-  padding: 56px 0 63px;
-  position: relative;
-}
-
-.modal-filter__head{
-  text-align: center;
-  padding: 15px;
-  border-bottom: 1px solid #DFDEE2;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-.modal-filter__footer{
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border-top: 1px solid #DFDEE2;
-}
-
-.modal-filter__content{
-  display: block;
-  overflow-y: auto;
-}
-
-.modal-filter__body{
-  height: 100%;
-  overflow-y: auto;
-}
-
-
 .mfp-move-from-top {
 
-  .mfp-container{
-    padding-right: 0;
-    padding-left: 0;
-  }
+
 
   .mfp-close{
     font-size: 0;
