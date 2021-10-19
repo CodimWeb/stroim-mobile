@@ -136,6 +136,21 @@ module.exports = {
             inject: 'body',
         }),
         new HtmlWebpackPlugin({
+            filename: 'lk.html',
+            template: './src/lk.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'personal-information.html',
+            template: './src/personal-information.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'my-company.html',
+            template: './src/my-company.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
             filename: 'ui.html',
             template: './src/ui.html',
             inject: 'body',

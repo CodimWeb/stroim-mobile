@@ -1,0 +1,38 @@
+.lk-h4 {
+    line-height: 140%;
+    margin-top: 16px;
+    border-bottom: 1px solid #F2F2F2;
+    padding-bottom: 16px;
+}
+
+.link-lk {
+    border-bottom: 1px solid #F2F2F2;
+}
+
+.link-lk-number {
+    width: 32px;
+    height: 32px;
+    background: #F2F2F2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 48px;
+}
+
+.link-lk-number p {
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.link-lk__exit {
+    display: flex;
+    padding: 40px 0 32px;
+    border-bottom: 1px solid #F2F2F2;
+    margin-bottom: 56px;
+    text-decoration: none;
+}
+
+.link-lk__exit p {
+    margin-left: 8px;
+}
