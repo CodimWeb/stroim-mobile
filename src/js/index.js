@@ -10,14 +10,17 @@ import moment from 'moment';
 import daterangepicker from 'jquery-date-range-picker';
 import select2 from 'select2';
 import magnificPopup from 'magnific-popup/dist/jquery.magnific-popup';
+import Dropzone from "dropzone";
 
 
 //styles
 import "jquery-date-range-picker/dist/daterangepicker.min.css"
 import 'slick-carousel';
 import 'magnific-popup/dist/magnific-popup.css';
+import "dropzone/dist/dropzone.css";
 import '../scss/style.scss';
 
+Dropzone.autoDiscover = false;
 $(document).ready(function(){
     
     $('.main-slider .slider').slick({
@@ -59,7 +62,11 @@ $(document).ready(function(){
         if($(item).val()) {
             $(item).closest('.materil-group').addClass('active');
         }
-    })
+    });
+
+    $('.js-modal-close').on( "click", function() {
+        $.magnificPopup.close();
+    });
 
 
     initialDatePicker();
@@ -68,8 +75,14 @@ $(document).ready(function(){
     fileReader();
     phoneBtn();
     filterModal();
+    deleteAnnouncmentModal();
     collapseFilter();
     initHeader();
+    initImageLoader();
+    autoHeightTextarea();
+    positionModal();
+    locationModal();
+    categoryModal();
 });
 
 function initialDatePicker() {
@@ -178,7 +191,8 @@ function phoneBtn() {
 };
 
 function filterModal() {
-    $('.js-filter').length && $('.js-filter').magnificPopup({
+    const $link = $('.js-filter');
+    $link.length && $link.magnificPopup({
         type: 'inline',
         fixedContentPos: true,
         removalDelay: 500, //delay removal by X to allow out-animation
@@ -188,6 +202,138 @@ function filterModal() {
             }
         },
     });
+};
+
+function positionModal() {
+    const $link = $('.js-choose-position');
+    $link.length && $link.magnificPopup({
+        type: 'inline',
+        fixedContentPos: true,
+        callbacks: {
+            beforeOpen: function() {
+
+                const $search = $('.js-position-search');
+                const $showMore = $('.js-filter-show-more').closest('.filter-collapse__row');
+                const $box = $('.filter-collapse__box');
+                $search.on('input', function (e) {
+                    const substr = $(e.target).val().toLowerCase();
+                    const $checkbox = $(this).closest('.filter-collapse').find('input[type="checkbox"]');
+                    $box.is(':hidden') && $box.show();
+                    $showMore.is(':visible ') && $showMore.hide();
+                    $checkbox.each((_, item) => {
+                        const value = $(item).val().toLowerCase();
+                        if(!value.includes(substr)) {
+                            $(item).closest('.filter-collapse__row').hide()
+                        }else {
+                            $(item).closest('.filter-collapse__row').show()
+                        }
+                    })
+                });
+
+                //select checkbox
+                const $resultsContainer = $('.js-choose-position-result');
+                let accum = [];
+                $('.position-checkbox').on('input', function(e) {
+                    const $currentCheck = $(e.target);
+                    const checkedVal = $currentCheck.val();
+
+                    if($currentCheck.is(":checked")) {
+                        accum.push(checkedVal);
+                    }else {
+                        accum = accum.filter(item => item !== checkedVal);
+                    }
+                    $resultsContainer.text(accum.join(', '))
+                });
+            }
+        },
+    });
+};
+
+function locationModal() {
+    const $link = $('.js-choose-location');
+    $link.length && $link.magnificPopup({
+        type: 'inline',
+        fixedContentPos: true,
+        callbacks: {
+            beforeOpen: function() {
+
+                const $search = $('.js-location-search');
+                $search.on('input', function (e) {
+                    const substr = $(e.target).val().toLowerCase();
+                    $('.location-checkbox__input').each((_, item) => {
+                        const value = $(item).val().toLowerCase();
+                        console.log(value, 'value');
+                        if(!value.includes(substr)) {
+                            $(item).closest('.location-checkbox-wrap').hide()
+                        }else {
+                            $(item).closest('.location-checkbox-wrap').show()
+                        }
+                    })
+                });
+
+                //select checkbox
+                const $resultsContainer = $('.js-choose-location-result');
+                let accum = [];
+                $('.location-checkbox__input').on('input', function(e) {
+                    const $currentCheck = $(e.target);
+                    const checkedVal = $currentCheck.val();
+
+                    if($currentCheck.is(":checked")) {
+                        accum.push(checkedVal);
+                    }else {
+                        accum = accum.filter(item => item !== checkedVal);
+                    }
+                    $resultsContainer.text(accum.join(', '))
+                });
+            },
+        },
+    });
+};
+
+function categoryModal() {
+    const $link = $('.js-choose-category');
+    $link.length && $link.magnificPopup({
+        type: 'inline',
+        fixedContentPos: true,
+        callbacks: {
+            beforeOpen: function () {
+
+                const $search = $('.js-category-search');
+                const $showMore = $('.js-filter-show-more').closest('.filter-collapse__row');
+                const $box = $('.filter-collapse__box');
+                $search.on('input', function (e) {
+                    const substr = $(e.target).val().toLowerCase();
+                    const $checkbox = $(this).closest('.filter-collapse').find('input[type="radio"]');
+                    $box.is(':hidden') && $box.show();
+                    $showMore.is(':visible ') && $showMore.hide();
+                    $checkbox.each((_, item) => {
+                        const value = $(item).val().toLowerCase();
+                        if(!value.includes(substr)) {
+                            $(item).closest('.filter-collapse__row').hide()
+                        }else {
+                            $(item).closest('.filter-collapse__row').show()
+                        }
+                    })
+                });
+
+                //select checkbox
+                const $resultsContainer = $link.find('input[type="text"]');
+                let accum = [];
+                $('.category-radio').on('change', function(e) {
+                    const $currentCheck = $(e.target);
+                    const checkedVal = $currentCheck.val();
+
+                    if($currentCheck.is(":checked")) {
+                        accum.push(checkedVal);
+                    }else {
+                        accum = accum.filter(item => item !== checkedVal);
+                    }
+                    $resultsContainer.val(accum.join(', '))
+                });
+
+            }
+        }
+    })
 }
 
 function collapseFilter() {
@@ -233,5 +379,57 @@ function initHeader() {
         e.preventDefault();
         $header.removeClass('search-start');
         $searchInput.val('');
+    });
+};
+
+function deleteAnnouncmentModal() {
+    const $links = $('.js-delete-announcement');
+    if(!$links.length) return;
+    $links.magnificPopup({
+        type: 'inline',
+        fixedContentPos: true,
+        callbacks: {
+            open: function() {
+                $('.js-close-btn').on('click',function(event){
+                    event.preventDefault();
+                    $.magnificPopup.close();
+                });
+            }
+        }
+    });
+};
+
+
+function initImageLoader() {
+    const dropzone = document.getElementById('my-form');
+    if(!dropzone) return;
+    let num = 1;
+    new Dropzone("#my-form", {
+        url: "/",
+        autoProcessQueue: false,
+        init: function() {
+            this.on("addedfile", function(file) {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = function(e) {
+                    let img = new Image();
+                    img.src = reader.result;
+                    $(`.preview-box--${num}`).html(img);
+                    $(`.preview-box--${num}`).append(`<span class="preview-box--bg" style="background-image: url(${reader.result})"></span>`)
+                    num === 5 ? num = 1 : num ++;
+                }
+            })
+        }
+    });
+};
+
+function autoHeightTextarea() {
+    document.querySelectorAll('textarea').forEach(el => {
+        el.style.height = el.setAttribute('style', 'height: ' + el.scrollHeight + 'px');
+        el.classList.add('auto');
+        el.addEventListener('change', e => {
+            el.style.height = 'auto';
+            el.style.height = (el.scrollHeight) + 'px';
+        });
     });
 }

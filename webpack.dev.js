@@ -85,8 +85,23 @@ module.exports = {
             inject: 'body',
         }),
         new HtmlWebpackPlugin({
+            filename: 'my-announcements.html',
+            template: './src/my-announcements.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
             filename: 'proposals.html',
             template: './src/proposals.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'my-proposals.html',
+            template: './src/my-proposals.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'my-response-proposals.html',
+            template: './src/my-response-proposals.html',
             inject: 'body',
         }),
         new HtmlWebpackPlugin({
@@ -105,6 +120,11 @@ module.exports = {
             inject: 'body',
         }),
         new HtmlWebpackPlugin({
+            filename: 'my-tenders.html',
+            template: './src/my-tenders.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
             filename: 'tender-card.html',
             template: './src/tender-card.html',
             inject: 'body',
@@ -117,6 +137,21 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'tender-no-auth.html',
             template: './src/tender-no-auth.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'tender-success.html',
+            template: './src/tender-success.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'proposal-success.html',
+            template: './src/proposal-success.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'announce-tender.html',
+            template: './src/announce-tender.html',
             inject: 'body',
         }),
         new HtmlWebpackPlugin({
@@ -147,6 +182,26 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'my-company.html',
             template: './src/my-company.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'add-proposal.html',
+            template: './src/add-proposal.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'add-announcement.html',
+            template: './src/add-announcement.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'mailing-subscription.html',
+            template: './src/mailing-subscription.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'add-price-list.html',
+            template: './src/add-price-list.html',
             inject: 'body',
         }),
         new HtmlWebpackPlugin({
