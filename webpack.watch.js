@@ -174,6 +174,21 @@ module.exports = {
             template: './src/add-price-list.html',
             inject: 'body',
         }),
+        new HtmlWebpackPlugin({
+            filename: 'basket.html',
+            template: './src/basket.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'basket-empty.html',
+            template: './src/basket-empty.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'add-proposal-purchase.html',
+            template: './src/add-proposal-purchase.html',
+            inject: 'body',
+        }),
         new MiniCssExtractPlugin({
             // filename: "[name].[hash].css"
             filename: "css/style.[hash].css"
