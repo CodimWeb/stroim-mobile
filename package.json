@@ -39,6 +39,7 @@
     "@popperjs/core": "^2.9.3",
     "bootstrap": "^4.6.0",
     "dropzone": "^5.9.3",
+    "inputmask": "^5.0.6",
     "jquery": "^3.6.0",
     "jquery-date-range-picker": "^1.0.4",
     "magnific-popup": "^1.1.0",

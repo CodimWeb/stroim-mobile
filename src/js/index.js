@@ -3,10 +3,11 @@
 import $ from 'jquery';
 
 import Util from 'bootstrap/js/dist/util.js'
-import Modal from 'bootstrap/js/dist/modal'
+// import Modal from 'bootstrap/js/dist/modal'
 import { Collapse } from 'bootstrap';
 import slick from 'slick-carousel';
 import moment from 'moment';
+import Inputmask from "inputmask";
 import daterangepicker from 'jquery-date-range-picker';
 import select2 from 'select2';
 import magnificPopup from 'magnific-popup/dist/jquery.magnific-popup';
@@ -22,6 +23,11 @@ import '../scss/style.scss';
 
 Dropzone.autoDiscover = false;
 $(document).ready(function(){
+
+    var phones = document.querySelectorAll('.phone-input')
+    if (phones) {
+        Inputmask({ "mask": "+7(999) 999-99-99" }).mask(phones);
+    }
     
     $('.main-slider .slider').slick({
         dots: true,
