@@ -54,6 +54,12 @@ $(document).ready(function(){
         dropdownCssClass: 'select-transparent-dropdown',
     });
 
+    $('.select.select--sm').select2({
+        width: '100%',
+        selectionCssClass: 'base-select select--sm',
+        dropdownCssClass: 'base-select-dropdown',
+    })
+
     $(document).on('focus', '.materil-group__input', function() {
         $(this).closest('.materil-group').addClass('active');
     })
@@ -277,21 +283,25 @@ function locationModal() {
                     })
                 });
 
-                //select checkbox
-                const $resultsContainer = $('.js-choose-location-result');
-                let accum = [];
-                $('.location-checkbox__input').on('input', function(e) {
-                    const $currentCheck = $(e.target);
-                    const checkedVal = $currentCheck.val();
-
-                    if($currentCheck.is(":checked")) {
-                        accum.push(checkedVal);
-                    }else {
-                        accum = accum.filter(item => item !== checkedVal);
-                    }
-                    $resultsContainer.text(accum.join(', '))
-                });
             },
+            close: function () {
+                const $resultsContainer = $('.js-choose-location-result');
+                const $currentCheck = $('.location-checkbox__input');
+                let accum = [];
+
+                $currentCheck.each((i, el) => {
+                    if($(el).is(":checked")) {
+                        accum.push($(el).val());
+                    }
+                });
+                if($resultsContainer.is("input")){
+                    $resultsContainer.val(accum.join(', '));
+                    $resultsContainer.focus();
+                }else {
+                    $resultsContainer.text(accum.join(', '));
+                }
+
+            }
         },
     });
 };
