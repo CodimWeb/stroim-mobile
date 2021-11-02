@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Корзина - пустая</title>
+</head>
+
+<body>
+<header class="header">
+    <div class="header__container container-fluid">
+        <div class="header__search">
+            <a href="/" class="header__search-reset header__search-reset--outside">
+                <img src="img/icons/back-arrow.svg" alt="">
+            </a>
+            <label class="search-input">
+                <input type="text" class="form-control base-input search-input__field" placeholder="Поиск продукции">
+                <button class="search-input__btn">
+                    <img src="img/icons/search-gray.svg" alt="">
+                </button>
+                <a class="header__search-reset header__search-reset--inside">
+                    <img src="img/icons/close-dark.svg" alt="">
+                </a>
+            </label>
+        </div>
+        <div class="header__menu">
+            <a href="#header-menu" class="header__menu-btn js-header-menu" data-effect="mfp-move-from-right">
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+    </div>
+    <div class="header__dropdown container-fluid">
+        <a href="" class="link dark catalog-link">
+            <span>Лист рифленый</span>
+            <img src="img/icons/arrow.svg" class="catalog-link__icon" alt="">
+        </a>
+        <a href="" class="link dark catalog-link">
+            <span>Тендеры</span>
+            <img src="img/icons/arrow.svg" class="catalog-link__icon" alt="">
+        </a>
+    </div>
+</header>
+
+<main class="content">
+    <div class="container-fluid">
+        <h4 class="mb-3">Корзина</h4>
+        <p class="mb-4">Ваша корзина пуста</p>
+        <a href="/" class="btn btn-primary block mb-5">Перейти в каталог</a>
+    </div>
+</main>
+
+<footer class="footer-menu">
+    <ul class="footer-menu__list">
+        <li class="footer-menu__item">
+            <a href="" class="footer-menu__link">
+                <img src="img/icons/menu-main.svg" alt="" class="footer-menu__icon">
+                <img src="img/icons/menu-main-active.svg" alt="" class="footer-menu__icon footer-menu__icon--active">
+                <p class="footer-menu__name">
+                    Главная
+                </p>
+            </a>
+        </li>
+        <li class="footer-menu__item">
+            <a href="" class="footer-menu__link">
+                <img src="img/icons/menu-catalog.svg" alt="" class="footer-menu__icon">
+                <img src="img/icons/menu-catalog-active.svg" alt="" class="footer-menu__icon footer-menu__icon--active">
+                <p class="footer-menu__name">
+                    Каталог
+                </p>
+            </a>
+        </li>
+        <li class="footer-menu__item">
+            <a href="" class="footer-menu__link">
+                <img src="img/icons/menu-location.svg" alt="" class="footer-menu__icon">
+                <img src="img/icons/menu-location-active.svg" alt=""
+                     class="footer-menu__icon footer-menu__icon--active">
+                <p class="footer-menu__name">
+                    Москва
+                </p>
+            </a>
+        </li>
+        <li class="footer-menu__item">
+            <a href="" class="footer-menu__link">
+                <img src="img/icons/menu-basket.svg" alt="" class="footer-menu__icon">
+                <img src="img/icons/menu-basket-active.svg" alt="" class="footer-menu__icon footer-menu__icon--active">
+                <p class="footer-menu__name">
+                    Корзина
+                </p>
+            </a>
+        </li>
+        <li class="footer-menu__item">
+            <a href="" class="footer-menu__link active">
+                <img src="img/icons/menu-profile.svg" alt="" class="footer-menu__icon">
+                <img src="img/icons/menu-profile-active.svg" alt="" class="footer-menu__icon footer-menu__icon--active">
+                <p class="footer-menu__name">
+                    Профиль
+                </p>
+            </a>
+        </li>
+    </ul>
+</footer>
+
+<div id="header-menu" class="header-menu mfp-with-anim mfp-hide">
+    <div class="header-menu__content">
+        <ul class="header-menu__list">
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Объявления</a>
+            </li>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Услуги</a>
+            </li>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Реклама</a>
+            </li>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Справочник</a>
+            </li>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Черный список</a>
+            </li>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Контакты</a>
+            </li>
+        </ul>
+        <div class="header-menu__footer">
+            <p class="sm grey">Отдел Продаж:
+                <a href="tel:84992705845" class="link sm dark"><strong>8 (499) 270 58 45</strong></a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div id="choose-location" class="mfp-hide base-modal">
+    <div class="base-modal__head">
+        <p><strong>Выберите регионы</strong></p>
+    </div>
+    <div class="base-modal__body">
+        <form class="base-modal__content container-fluid">
+            <div class="pt-3 pb-3">
+                <label class="search-input mb-3">
+                    <input type="text" class="form-control base-input search-input__field js-location-search" placeholder="Название населенного пункта">
+                    <button class="search-input__btn">
+                        <img src="img/icons/search-gray.svg" alt="">
+                    </button>
+                </label>
+                <div class="mb-2 location-checkbox-wrap">
+                    <label class="location-checkbox">
+                        <input type="checkbox" name="check-one" value="Ростов на Дону" class="location-checkbox__input">
+                        <p class="location-checkbox__text">Ростов на Дону</p>
+                    </label>
+                </div>
+                <div class="mb-2 location-checkbox-wrap">
+                    <label class="location-checkbox">
+                        <input type="checkbox" name="check-one" value="Санкт - Петербург" class="location-checkbox__input">
+                        <p class="location-checkbox__text">Санкт - Петербург</p>
+                    </label>
+                </div>
+                <div class="mb-2 location-checkbox-wrap">
+                    <label class="location-checkbox">
+                        <input type="checkbox" name="check-one" value="Актау и Мангистау" class="location-checkbox__input">
+                        <p class="location-checkbox__text">Актау и Мангистау</p>
+                    </label>
+                </div>
+                <div class="mb-2 location-checkbox-wrap">
+                    <label class="location-checkbox">
+                        <input type="checkbox" name="check-one" value="Алматы" class="location-checkbox__input">
+                        <p class="location-checkbox__text">Алматы</p>
+                    </label>
+                </div>
+                <div class="mb-2 location-checkbox-wrap">
+                    <label class="location-checkbox">
+                        <input type="checkbox" name="check-one" value="Архангельск" class="location-checkbox__input">
+                        <p class="location-checkbox__text">Архангельск
+                        </p>
+                    </label>
+                </div>
+                <div class="mb-2 location-checkbox-wrap">
+                    <label class="location-checkbox">
+                        <input type="checkbox" name="check-one" value="Астана" class="location-checkbox__input">
+                        <p class="location-checkbox__text">Астана</p>
+                    </label>
+                </div>
+                <div class="mb-2 location-checkbox-wrap">
+                    <label class="location-checkbox">
+                        <input type="checkbox" name="check-one" value="Астрахань и область" class="location-checkbox__input">
+                        <p class="location-checkbox__text">Астрахань и область</p>
+                    </label>
+                </div>
+                <div class="mb-2 location-checkbox-wrap">
+                    <label class="location-checkbox">
+                        <input type="checkbox" name="check-one" value="Владикавказ и область" class="location-checkbox__input">
+                        <p class="location-checkbox__text">Владикавказ и область</p>
+                    </label>
+                </div>
+                <div class="mb-2 location-checkbox-wrap">
+                    <label class="location-checkbox">
+                        <input type="checkbox" name="check-one" value="Владимир" class="location-checkbox__input">
+                        <p class="location-checkbox__text">Владимир</p>
+                    </label>
+                </div>
+                <div class="mb-2 location-checkbox-wrap">
+                    <label class="location-checkbox">
+                        <input type="checkbox" name="check-one" value="Волгоград" class="location-checkbox__input">
+                        <p class="location-checkbox__text">Волгоград</p>
+                    </label>
+                </div>
+                <div class="mb-2 location-checkbox-wrap">
+                    <label class="location-checkbox">
+                        <input type="checkbox" name="check-one" value="Москва" class="location-checkbox__input">
+                        <p class="location-checkbox__text">Москва</p>
+                    </label>
+                </div>
+                <div class="mb-2 location-checkbox-wrap">
+                    <label class="location-checkbox">
+                        <input type="checkbox" name="check-one" value="Санкт - Петербург" class="location-checkbox__input">
+                        <p class="location-checkbox__text">Санкт - Петербург</p>
+                    </label>
+                </div>
+                <div class="mb-2 location-checkbox-wrap">
+                    <label class="location-checkbox">
+                        <input type="checkbox" name="check-one" value="Актау и Мангистау" class="location-checkbox__input">
+                        <p class="location-checkbox__text">Актау и Мангистау</p>
+                    </label>
+                </div>
+                <div class="mb-2 location-checkbox-wrap">
+                    <label class="location-checkbox">
+                        <input type="checkbox" name="check-one" value="Алматы" class="location-checkbox__input">
+                        <p class="location-checkbox__text">Алматы</p>
+                    </label>
+                </div>
+            </div>
+        </form>
+        <div class="base-modal__footer container-fluid pt-2 pb-2">
+            <button class="btn btn-primary block js-modal-close">Применить</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
