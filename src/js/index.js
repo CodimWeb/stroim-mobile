@@ -1,9 +1,10 @@
 'use strict'
 
-import $ from 'jquery';
+import JQuery from 'jquery';
+window.$ = window.JQuery = JQuery;
 
 import Util from 'bootstrap/js/dist/util.js'
-// import Modal from 'bootstrap/js/dist/modal'
+import Modal from 'bootstrap/js/dist/modal'
 import { Collapse } from 'bootstrap';
 import slick from 'slick-carousel';
 import moment from 'moment';
