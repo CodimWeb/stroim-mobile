@@ -1,0 +1,53 @@
+.services p {
+    font-size: 14px;
+}
+
+.services-argument p {
+    font-size: 16px;
+}
+
+.services-comparison {
+    background: #F2F2F2;
+    border-top: 1px solid #DFDEE2;
+    border-bottom: 1px solid #DFDEE2;
+    margin: 0 -16px;
+    padding: 8px 16px;
+}
+
+.services-comparison__line {
+    border-bottom: 1px solid #DFDEE2;
+    margin: 0 -16px;
+}
+
+.services-comparison__line p {
+    padding: 0 16px;
+}
+
+.services-text-italic p {
+    font-style: italic;
+}
+
+.services__img {
+    text-align: center;
+}
+
+.services__img img {
+    max-width: 100%;
+}
+
+.services-rating {
+    display: flex;
+}
+
+.services-rating p {
+    margin-top: auto;
+}
+
+.services-star {
+    margin-left: 12px;
+}
+
+.services-contacts {
+    margin: 48px 0;
+    text-align: right;
+}

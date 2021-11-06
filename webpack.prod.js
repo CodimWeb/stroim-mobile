@@ -211,6 +211,61 @@ module.exports = {
             inject: 'body',
         }),
         new HtmlWebpackPlugin({
+            filename: 'about-us.html',
+            template: './src/about-us.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'services.html',
+            template: './src/services.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'directory-pipe.html',
+            template: './src/directory-pipe.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'directory-staple.html',
+            template: './src/directory-staple.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'directory-gate.html',
+            template: './src/directory-gate.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'directory-muff.html',
+            template: './src/directory-muff.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'advertising.html',
+            template: './src/advertising.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'banner-advertising.html',
+            template: './src/banner-advertising.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'placing-a-price-list.html',
+            template: './src/placing-a-price-list.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'contacts.html',
+            template: './src/contacts.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'directory.html',
+            template: './src/directory.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
             filename: 'basket.html',
             template: './src/basket.html',
             inject: 'body',
