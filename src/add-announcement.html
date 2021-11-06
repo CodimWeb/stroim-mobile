@@ -112,9 +112,9 @@
                 </select>
             </label>
 
-            <a href="#choose-category" class="materil-group mb-4 js-choose-category">
+            <a href="javascript:void(0)" class="materil-group mb-4" data-toggle="modal" data-target="#choose-category">
                 <span class="materil-group__label">Категория</span>
-                <input type="text" class="form-control base-input materil-group__input">
+                <input type="text" class="form-control base-input materil-group__input js-choose-category-result">
             </a>
 
             <label class="materil-group mb-4">
@@ -210,200 +210,202 @@
     </div>
 </div>
 
-<div id="choose-category" class="mfp-hide base-modal">
-    <div class="base-modal__head">
-        <p><strong>Выберите категории</strong></p>
-    </div>
-    <div class="base-modal__body">
-        <form class="base-modal__content container-fluid">
-            <div class="accordion filter-collapse" id="accordionExample">
-                <div class="filter-collapse">
-                    <div class="filter-collapse__head" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                        <strong>ЖБИ</strong>
-                        <span class="filter-collapse__arrow">
-                            <img src="img/icons/arrow.svg" alt="">
-                        </span>
-
-                    </div>
-                    <div id="collapseOne" class="filter-collapse__body collapse show" aria-labelledby="headingOne" >
-                        <div class="filter-collapse__row">
-                            <label class="search-input">
-                                <input type="text" class="form-control base-input js-category-search" placeholder="Поиск">
-                            </label>
-                        </div>
-
-                        <div class="filter-collapse__row">
-                            <input type="radio" id="test1" name="radio-group" class="category-radio" value="Балка">
-                            <label for="test1">Балка <span class="grey">(24)</span></label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <input type="radio" id="test2" name="radio-group" class="category-radio" value="Ограждения">
-                            <label for="test2">Ограждения <span class="grey">(24)</span></label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <input type="radio" id="test3" name="radio-group" class="category-radio" value="Плиты">
-                            <label for="test3">Плиты <span class="grey">(24)</span></label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <input type="radio" id="test4" name="radio-group" class="category-radio" value="Кабельные каналы">
-                            <label for="test4">Кабельные каналы <span class="grey">(24)</span></label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <input type="radio" id="test5" name="radio-group" class="category-radio" value="Блок">
-                            <label for="test5">Блок <span class="grey">(24)</span></label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <input type="radio" id="test6" name="radio-group" class="category-radio" value="Бортовой камень">
-                            <label for="test6">Бортовой камень <span class="grey">(24)</span></label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <a href="" class="link js-filter-show-more">
-                                <span>Показать все</span>
-                                <img src="img/icons/arrow-blue-small.svg" alt="">
-                            </a>
-                        </div>
-                        <div class="filter-collapse__box">
-                            <div class="filter-collapse__row">
-                                <input type="radio" id="test7" name="radio-group" class="category-radio" value="М-450">
-                                <label for="test7">М-450 <span class="grey">(24)</span></label>
-                            </div>
-                            <div class="filter-collapse__row">
-                                <input type="radio" id="test8" name="radio-group" class="category-radio" value="М-550">
-                                <label for="test8">М-550 <span class="grey">(24)</span></label>
-                            </div>
-                            <div class="filter-collapse__row">
-                                <input type="radio" id="test9" name="radio-group" class="category-radio" value="М-650">
-                                <label for="test9">М-650 <span class="grey">(24)</span></label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="filter-collapse">
-                    <div class="filter-collapse__head collapsed" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        <strong>Фитинг для труб</strong>
-                        <span class="filter-collapse__arrow">
-                            <img src="img/icons/arrow.svg" alt="">
-                        </span>
-                    </div>
-                    <div id="collapseTwo" class="filter-collapse__body collapse" aria-labelledby="collapseTwo" >
-                        <div class="filter-collapse__row">
-                            <label class="search-input">
-                                <input type="text" class="form-control base-input js-category-search" placeholder="Поиск">
-                            </label>
-                        </div>
-
-                        <div class="filter-collapse__row">
-                            <input type="radio" id="test21" name="radio-group2" class="category-radio" value="Балка">
-                            <label for="test21">Балка <span class="grey">(24)</span></label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <input type="radio" id="test22" name="radio-group2" class="category-radio" value="Ограждения">
-                            <label for="test22">Ограждения <span class="grey">(24)</span></label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <input type="radio" id="test23" name="radio-group2" class="category-radio" value="Плиты">
-                            <label for="test23">Плиты <span class="grey">(24)</span></label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <input type="radio" id="test24" name="radio-group2" class="category-radio" value="Кабельные каналы">
-                            <label for="test24">Кабельные каналы <span class="grey">(24)</span></label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <input type="radio" id="test25" name="radio-group2" class="category-radio" value="Кабельные каналы">
-                            <label for="test25">Блок <span class="grey">(24)</span></label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <input type="radio" id="test26" name="radio-group2" class="category-radio" value="Бортовой камень">
-                            <label for="test26">Бортовой камень <span class="grey">(24)</span></label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <a href="" class="link js-filter-show-more">
-                                <span>Показать все</span>
-                                <img src="img/icons/arrow-blue-small.svg" alt="">
-                            </a>
-                        </div>
-                        <div class="filter-collapse__box">
-                            <div class="filter-collapse__row">
-                                <input type="radio" id="test27" name="radio-group2" class="category-radio" value="М-450">
-                                <label for="test27">М-450 <span class="grey">(24)</span></label>
-                            </div>
-                            <div class="filter-collapse__row">
-                                <input type="radio" id="test28" name="radio-group2" class="category-radio" value="М-550">
-                                <label for="test28">М-550 <span class="grey">(24)</span></label>
-                            </div>
-                            <div class="filter-collapse__row">
-                                <input type="radio" id="test29" name="radio-group2" class="category-radio" value="М-650">
-                                <label for="test29">М-650 <span class="grey">(24)</span></label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="filter-collapse">
-                    <div class="filter-collapse__head collapsed" id="headingTree" data-toggle="collapse" data-target="#collapseTree" aria-expanded="false" aria-controls="collapseTree">
-                        <strong>Цемент и бетон</strong>
-                        <span class="filter-collapse__arrow">
-                            <img src="img/icons/arrow.svg" alt="">
-                        </span>
-                    </div>
-                    <div id="collapseTree" class="filter-collapse__body collapse" aria-labelledby="collapseTree" >
-                        <div class="filter-collapse__row">
-                            <label class="search-input">
-                                <input type="text" class="form-control base-input js-category-search" placeholder="Поиск">
-                            </label>
-                        </div>
-
-                        <div class="filter-collapse__row">
-                            <input type="radio" id="test31" name="radio-group2" class="category-radio" value="Балка">
-                            <label for="test31">Балка <span class="grey">(24)</span></label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <input type="radio" id="test32" name="radio-group2" class="category-radio" value="Ограждения">
-                            <label for="test32">Ограждения <span class="grey">(24)</span></label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <input type="radio" id="test33" name="radio-group2" class="category-radio" value="Плиты">
-                            <label for="test33">Плиты <span class="grey">(24)</span></label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <input type="radio" id="test34" name="radio-group2" class="category-radio" value="Кабельные каналы">
-                            <label for="test34">Кабельные каналы <span class="grey">(24)</span></label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <input type="radio" id="test35" name="radio-group2" class="category-radio" value="Кабельные каналы">
-                            <label for="test35">Блок <span class="grey">(24)</span></label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <input type="radio" id="test36" name="radio-group2" class="category-radio" value="Бортовой камень">
-                            <label for="test36">Бортовой камень <span class="grey">(24)</span></label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <a href="" class="link js-filter-show-more">
-                                <span>Показать все</span>
-                                <img src="img/icons/arrow-blue-small.svg" alt="">
-                            </a>
-                        </div>
-                        <div class="filter-collapse__box">
-                            <div class="filter-collapse__row">
-                                <input type="radio" id="test37" name="radio-group2" class="category-radio" value="М-450">
-                                <label for="test37">М-450 <span class="grey">(24)</span></label>
-                            </div>
-                            <div class="filter-collapse__row">
-                                <input type="radio" id="test38" name="radio-group2" class="category-radio" value="М-550">
-                                <label for="test38">М-550 <span class="grey">(24)</span></label>
-                            </div>
-                            <div class="filter-collapse__row">
-                                <input type="radio" id="test39" name="radio-group2" class="category-radio" value="М-650">
-                                <label for="test39">М-650 <span class="grey">(24)</span></label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="modal fade base-modal modal-bottom" id="choose-category" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Выберите категорию</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
             </div>
-        </form>
-        <div class="base-modal__footer container-fluid pt-2 pb-2">
-            <button class="btn btn-primary block js-modal-close">Применить</button>
+            <div class="modal-body">
+                <form class="choose__content container-fluid">
+                    <div class="accordion filter-collapse" id="accordionExample">
+                        <div class="filter-collapse">
+                            <div class="filter-collapse__head" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                <strong>ЖБИ</strong>
+                                <span class="filter-collapse__arrow">
+                            <img src="img/icons/arrow.svg" alt="">
+                        </span>
+                            </div>
+                            <div id="collapseOne" class="filter-collapse__body collapse show" aria-labelledby="headingOne" >
+                                <div class="filter-collapse__row">
+                                    <label class="search-input">
+                                        <input type="text" class="form-control base-input js-category-search" placeholder="Поиск">
+                                    </label>
+                                </div>
+
+                                <div class="filter-collapse__row">
+                                    <input type="radio" id="test1" name="radio-group" class="category-radio" value="Балка">
+                                    <label for="test1">Балка <span class="grey">(24)</span></label>
+                                </div>
+                                <div class="filter-collapse__row">
+                                    <input type="radio" id="test2" name="radio-group" class="category-radio" value="Ограждения">
+                                    <label for="test2">Ограждения <span class="grey">(24)</span></label>
+                                </div>
+                                <div class="filter-collapse__row">
+                                    <input type="radio" id="test3" name="radio-group" class="category-radio" value="Плиты">
+                                    <label for="test3">Плиты <span class="grey">(24)</span></label>
+                                </div>
+                                <div class="filter-collapse__row">
+                                    <input type="radio" id="test4" name="radio-group" class="category-radio" value="Кабельные каналы">
+                                    <label for="test4">Кабельные каналы <span class="grey">(24)</span></label>
+                                </div>
+                                <div class="filter-collapse__row">
+                                    <input type="radio" id="test5" name="radio-group" class="category-radio" value="Блок">
+                                    <label for="test5">Блок <span class="grey">(24)</span></label>
+                                </div>
+                                <div class="filter-collapse__row">
+                                    <input type="radio" id="test6" name="radio-group" class="category-radio" value="Бортовой камень">
+                                    <label for="test6">Бортовой камень <span class="grey">(24)</span></label>
+                                </div>
+                                <div class="filter-collapse__row">
+                                    <a href="" class="link js-filter-show-more">
+                                        <span>Показать все</span>
+                                        <img src="img/icons/arrow-blue-small.svg" alt="">
+                                    </a>
+                                </div>
+                                <div class="filter-collapse__box">
+                                    <div class="filter-collapse__row">
+                                        <input type="radio" id="test7" name="radio-group" class="category-radio" value="М-450">
+                                        <label for="test7">М-450 <span class="grey">(24)</span></label>
+                                    </div>
+                                    <div class="filter-collapse__row">
+                                        <input type="radio" id="test8" name="radio-group" class="category-radio" value="М-550">
+                                        <label for="test8">М-550 <span class="grey">(24)</span></label>
+                                    </div>
+                                    <div class="filter-collapse__row">
+                                        <input type="radio" id="test9" name="radio-group" class="category-radio" value="М-650">
+                                        <label for="test9">М-650 <span class="grey">(24)</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-collapse">
+                            <div class="filter-collapse__head collapsed" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <strong>Фитинг для труб</strong>
+                                <span class="filter-collapse__arrow">
+                            <img src="img/icons/arrow.svg" alt="">
+                        </span>
+                            </div>
+                            <div id="collapseTwo" class="filter-collapse__body collapse" aria-labelledby="collapseTwo" >
+                                <div class="filter-collapse__row">
+                                    <label class="search-input">
+                                        <input type="text" class="form-control base-input js-category-search" placeholder="Поиск">
+                                    </label>
+                                </div>
+
+                                <div class="filter-collapse__row">
+                                    <input type="radio" id="test21" name="radio-group2" class="category-radio" value="Балка">
+                                    <label for="test21">Балка <span class="grey">(24)</span></label>
+                                </div>
+                                <div class="filter-collapse__row">
+                                    <input type="radio" id="test22" name="radio-group2" class="category-radio" value="Ограждения">
+                                    <label for="test22">Ограждения <span class="grey">(24)</span></label>
+                                </div>
+                                <div class="filter-collapse__row">
+                                    <input type="radio" id="test23" name="radio-group2" class="category-radio" value="Плиты">
+                                    <label for="test23">Плиты <span class="grey">(24)</span></label>
+                                </div>
+                                <div class="filter-collapse__row">
+                                    <input type="radio" id="test24" name="radio-group2" class="category-radio" value="Кабельные каналы">
+                                    <label for="test24">Кабельные каналы <span class="grey">(24)</span></label>
+                                </div>
+                                <div class="filter-collapse__row">
+                                    <input type="radio" id="test25" name="radio-group2" class="category-radio" value="Кабельные каналы">
+                                    <label for="test25">Блок <span class="grey">(24)</span></label>
+                                </div>
+                                <div class="filter-collapse__row">
+                                    <input type="radio" id="test26" name="radio-group2" class="category-radio" value="Бортовой камень">
+                                    <label for="test26">Бортовой камень <span class="grey">(24)</span></label>
+                                </div>
+                                <div class="filter-collapse__row">
+                                    <a href="" class="link js-filter-show-more">
+                                        <span>Показать все</span>
+                                        <img src="img/icons/arrow-blue-small.svg" alt="">
+                                    </a>
+                                </div>
+                                <div class="filter-collapse__box">
+                                    <div class="filter-collapse__row">
+                                        <input type="radio" id="test27" name="radio-group2" class="category-radio" value="М-450">
+                                        <label for="test27">М-450 <span class="grey">(24)</span></label>
+                                    </div>
+                                    <div class="filter-collapse__row">
+                                        <input type="radio" id="test28" name="radio-group2" class="category-radio" value="М-550">
+                                        <label for="test28">М-550 <span class="grey">(24)</span></label>
+                                    </div>
+                                    <div class="filter-collapse__row">
+                                        <input type="radio" id="test29" name="radio-group2" class="category-radio" value="М-650">
+                                        <label for="test29">М-650 <span class="grey">(24)</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-collapse">
+                            <div class="filter-collapse__head collapsed" id="headingTree" data-toggle="collapse" data-target="#collapseTree" aria-expanded="false" aria-controls="collapseTree">
+                                <strong>Цемент и бетон</strong>
+                                <span class="filter-collapse__arrow">
+                            <img src="img/icons/arrow.svg" alt="">
+                        </span>
+                            </div>
+                            <div id="collapseTree" class="filter-collapse__body collapse" aria-labelledby="collapseTree" >
+                                <div class="filter-collapse__row">
+                                    <label class="search-input">
+                                        <input type="text" class="form-control base-input js-category-search" placeholder="Поиск">
+                                    </label>
+                                </div>
+
+                                <div class="filter-collapse__row">
+                                    <input type="radio" id="test31" name="radio-group2" class="category-radio" value="Балка">
+                                    <label for="test31">Балка <span class="grey">(24)</span></label>
+                                </div>
+                                <div class="filter-collapse__row">
+                                    <input type="radio" id="test32" name="radio-group2" class="category-radio" value="Ограждения">
+                                    <label for="test32">Ограждения <span class="grey">(24)</span></label>
+                                </div>
+                                <div class="filter-collapse__row">
+                                    <input type="radio" id="test33" name="radio-group2" class="category-radio" value="Плиты">
+                                    <label for="test33">Плиты <span class="grey">(24)</span></label>
+                                </div>
+                                <div class="filter-collapse__row">
+                                    <input type="radio" id="test34" name="radio-group2" class="category-radio" value="Кабельные каналы">
+                                    <label for="test34">Кабельные каналы <span class="grey">(24)</span></label>
+                                </div>
+                                <div class="filter-collapse__row">
+                                    <input type="radio" id="test35" name="radio-group2" class="category-radio" value="Кабельные каналы">
+                                    <label for="test35">Блок <span class="grey">(24)</span></label>
+                                </div>
+                                <div class="filter-collapse__row">
+                                    <input type="radio" id="test36" name="radio-group2" class="category-radio" value="Бортовой камень">
+                                    <label for="test36">Бортовой камень <span class="grey">(24)</span></label>
+                                </div>
+                                <div class="filter-collapse__row">
+                                    <a href="" class="link js-filter-show-more">
+                                        <span>Показать все</span>
+                                        <img src="img/icons/arrow-blue-small.svg" alt="">
+                                    </a>
+                                </div>
+                                <div class="filter-collapse__box">
+                                    <div class="filter-collapse__row">
+                                        <input type="radio" id="test37" name="radio-group2" class="category-radio" value="М-450">
+                                        <label for="test37">М-450 <span class="grey">(24)</span></label>
+                                    </div>
+                                    <div class="filter-collapse__row">
+                                        <input type="radio" id="test38" name="radio-group2" class="category-radio" value="М-550">
+                                        <label for="test38">М-550 <span class="grey">(24)</span></label>
+                                    </div>
+                                    <div class="filter-collapse__row">
+                                        <input type="radio" id="test39" name="radio-group2" class="category-radio" value="М-650">
+                                        <label for="test39">М-650 <span class="grey">(24)</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary block" data-dismiss="modal">Применить</button>
+            </div>
         </div>
     </div>
 </div>

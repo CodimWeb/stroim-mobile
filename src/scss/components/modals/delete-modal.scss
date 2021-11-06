@@ -1,0 +1,26 @@
+.delete-modal{
+
+  .modal-content{
+    border-radius: 8px;
+    max-width: 360px;
+    height: auto;
+    padding: 0 24px 24px;
+    margin-top: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .modal-header {
+    border-bottom: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .modal-title {
+    text-align: left;
+  }
+
+  .close {
+    right: 0;
+  }
+}
