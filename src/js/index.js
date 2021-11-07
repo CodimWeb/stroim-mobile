@@ -96,6 +96,24 @@ $(document).ready(function(){
     positionModal();
     locationModal();
     categoryModal();
+
+    const tender = new Tender;
+    tender.render();
+
+    $('.btn-add-lot').on('click', function(e){
+        if(tender.lotList.length < 7) {
+            var lot = {
+                categories: [],
+                isShowTable: false,
+            }
+            tender.lotList.push(lot);
+            tender.activeLotIndex = tender.lotList.length -1;
+            tender.render();
+            tender.getSelectedCategories();
+            console.log(tender.lotList);
+        }
+    })
+
 });
 
 function initialDatePicker() {
