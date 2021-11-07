@@ -89,7 +89,6 @@ $(document).ready(function(){
     fileReader();
     phoneBtn();
     filterModal();
-    deleteAnnouncmentModal();
     collapseFilter();
     initHeader();
     initImageLoader();
@@ -219,139 +218,114 @@ function filterModal() {
 };
 
 function positionModal() {
-    const $link = $('.js-choose-position');
-    $link.length && $link.magnificPopup({
-        type: 'inline',
-        fixedContentPos: true,
-        callbacks: {
-            beforeOpen: function() {
 
-                const $search = $('.js-position-search');
-                const $showMore = $('.js-filter-show-more').closest('.filter-collapse__row');
-                const $box = $('.filter-collapse__box');
-                $search.on('input', function (e) {
-                    const substr = $(e.target).val().toLowerCase();
-                    const $checkbox = $(this).closest('.filter-collapse').find('input[type="checkbox"]');
-                    $box.is(':hidden') && $box.show();
-                    $showMore.is(':visible ') && $showMore.hide();
-                    $checkbox.each((_, item) => {
-                        const value = $(item).val().toLowerCase();
-                        if(!value.includes(substr)) {
-                            $(item).closest('.filter-collapse__row').hide()
-                        }else {
-                            $(item).closest('.filter-collapse__row').show()
-                        }
-                    })
-                });
+    $('#choose-position').on('show.bs.modal', function () {
+        const $search = $('.js-position-search');
+        const $showMore = $('.js-filter-show-more').closest('.filter-collapse__row');
+        const $box = $('.filter-collapse__box');
+        $search.on('input', function (e) {
+            const substr = $(e.target).val().toLowerCase();
+            const $checkbox = $(this).closest('.filter-collapse').find('input[type="checkbox"]');
+            $box.is(':hidden') && $box.show();
+            $showMore.is(':visible ') && $showMore.hide();
+            $checkbox.each((_, item) => {
+                const value = $(item).val().toLowerCase();
+                if(!value.includes(substr)) {
+                    $(item).closest('.filter-collapse__row').hide()
+                }else {
+                    $(item).closest('.filter-collapse__row').show()
+                }
+            })
+        });
+    });
+    $('#choose-position').on('hidden.bs.modal', function () {
+        const $resultsContainer = $('.js-choose-position-result');
+        const $currentCheck = $('.position-checkbox');
+        let accum = [];
 
-                //select checkbox
-                const $resultsContainer = $('.js-choose-position-result');
-                let accum = [];
-                $('.position-checkbox').on('input', function(e) {
-                    const $currentCheck = $(e.target);
-                    const checkedVal = $currentCheck.val();
-
-                    if($currentCheck.is(":checked")) {
-                        accum.push(checkedVal);
-                    }else {
-                        accum = accum.filter(item => item !== checkedVal);
-                    }
-                    $resultsContainer.text(accum.join(', '))
-                });
+        $currentCheck.each((i, el) => {
+            if($(el).is(":checked")) {
+                accum.push($(el).val());
             }
-        },
+        });
+        $resultsContainer.text(accum.join(', '))
     });
 };
 
 function locationModal() {
-    const $link = $('.js-choose-location');
-    $link.length && $link.magnificPopup({
-        type: 'inline',
-        fixedContentPos: true,
-        callbacks: {
-            beforeOpen: function() {
-
-                const $search = $('.js-location-search');
-                $search.on('input', function (e) {
-                    const substr = $(e.target).val().toLowerCase();
-                    $('.location-checkbox__input').each((_, item) => {
-                        const value = $(item).val().toLowerCase();
-                        console.log(value, 'value');
-                        if(!value.includes(substr)) {
-                            $(item).closest('.location-checkbox-wrap').hide()
-                        }else {
-                            $(item).closest('.location-checkbox-wrap').show()
-                        }
-                    })
-                });
-
-            },
-            close: function () {
-                const $resultsContainer = $('.js-choose-location-result');
-                const $currentCheck = $('.location-checkbox__input');
-                let accum = [];
-
-                $currentCheck.each((i, el) => {
-                    if($(el).is(":checked")) {
-                        accum.push($(el).val());
-                    }
-                });
-                if($resultsContainer.is("input")){
-                    $resultsContainer.val(accum.join(', '));
-                    $resultsContainer.focus();
+    $('#choose-location').on('show.bs.modal', function () {
+        const $search = $('.js-location-search');
+        $search.on('input', function (e) {
+            const substr = $(e.target).val().toLowerCase();
+            $('.location-checkbox__input').each((_, item) => {
+                const value = $(item).val().toLowerCase();
+                console.log(value, 'value');
+                if(!value.includes(substr)) {
+                    $(item).closest('.location-checkbox-wrap').hide()
                 }else {
-                    $resultsContainer.text(accum.join(', '));
+                    $(item).closest('.location-checkbox-wrap').show()
                 }
+            })
+        });
+    });
 
+    $('#choose-location').on('hidden.bs.modal', function () {
+        const $resultsContainer = $('.js-choose-location-result');
+        const $currentCheck = $('.location-checkbox__input');
+        let accum = [];
+
+        $currentCheck.each((i, el) => {
+            if($(el).is(":checked")) {
+                accum.push($(el).val());
             }
-        },
+        });
+        if($resultsContainer.is("input")){
+            $resultsContainer.val(accum.join(', '));
+            $resultsContainer.focus();
+        }else {
+            $resultsContainer.text(accum.join(', '));
+        }
     });
 };
 
 function categoryModal() {
-    const $link = $('.js-choose-category');
-    $link.length && $link.magnificPopup({
-        type: 'inline',
-        fixedContentPos: true,
-        callbacks: {
-            beforeOpen: function () {
 
-                const $search = $('.js-category-search');
-                const $showMore = $('.js-filter-show-more').closest('.filter-collapse__row');
-                const $box = $('.filter-collapse__box');
-                $search.on('input', function (e) {
-                    const substr = $(e.target).val().toLowerCase();
-                    const $checkbox = $(this).closest('.filter-collapse').find('input[type="radio"]');
-                    $box.is(':hidden') && $box.show();
-                    $showMore.is(':visible ') && $showMore.hide();
-                    $checkbox.each((_, item) => {
-                        const value = $(item).val().toLowerCase();
-                        if(!value.includes(substr)) {
-                            $(item).closest('.filter-collapse__row').hide()
-                        }else {
-                            $(item).closest('.filter-collapse__row').show()
-                        }
-                    })
-                });
+    $('#choose-category').on('show.bs.modal', function () {
+        const $search = $('.js-category-search');
+        const $showMore = $('.js-filter-show-more').closest('.filter-collapse__row');
+        const $box = $('.filter-collapse__box');
+        $search.on('input', function (e) {
+            const substr = $(e.target).val().toLowerCase();
+            const $checkbox = $(this).closest('.filter-collapse').find('input[type="radio"]');
+            $box.is(':hidden') && $box.show();
+            $showMore.is(':visible ') && $showMore.hide();
+            $checkbox.each((_, item) => {
+                const value = $(item).val().toLowerCase();
+                if(!value.includes(substr)) {
+                    $(item).closest('.filter-collapse__row').hide()
+                }else {
+                    $(item).closest('.filter-collapse__row').show()
+                }
+            })
+        });
 
-                //select checkbox
-                const $resultsContainer = $link.find('input[type="text"]');
-                let accum = [];
-                $('.category-radio').on('change', function(e) {
-                    const $currentCheck = $(e.target);
-                    const checkedVal = $currentCheck.val();
+        //select checkbox
+        const $resultsContainer = $('.js-choose-category-result');
+        let accum = [];
+        $('.category-radio').on('change', function(e) {
+            const $currentCheck = $(e.target);
+            const checkedVal = $currentCheck.val();
 
-                    if($currentCheck.is(":checked")) {
-                        accum.push(checkedVal);
-                    }else {
-                        accum = accum.filter(item => item !== checkedVal);
-                    }
-                    $resultsContainer.val(accum.join(', '))
-                });
-
+            if($currentCheck.is(":checked")) {
+                accum.push(checkedVal);
+            }else {
+                accum = accum.filter(item => item !== checkedVal);
             }
-        }
-    })
+            $resultsContainer.val(accum.join(', '));
+            $resultsContainer.focus();
+        });
+    });
+
 }
 
 function collapseFilter() {
@@ -399,24 +373,6 @@ function initHeader() {
         $searchInput.val('');
     });
 };
-
-function deleteAnnouncmentModal() {
-    const $links = $('.js-delete-announcement');
-    if(!$links.length) return;
-    $links.magnificPopup({
-        type: 'inline',
-        fixedContentPos: true,
-        callbacks: {
-            open: function() {
-                $('.js-close-btn').on('click',function(event){
-                    event.preventDefault();
-                    $.magnificPopup.close();
-                });
-            }
-        }
-    });
-};
-
 
 function initImageLoader() {
     const dropzone = document.getElementById('my-form');
