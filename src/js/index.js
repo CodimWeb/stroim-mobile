@@ -13,6 +13,7 @@ import daterangepicker from 'jquery-date-range-picker';
 import select2 from 'select2';
 import magnificPopup from 'magnific-popup/dist/jquery.magnific-popup';
 import Dropzone from "dropzone";
+import Tender from './Tender';
 
 
 //styles

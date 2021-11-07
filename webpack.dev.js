@@ -100,6 +100,11 @@ module.exports = {
             inject: 'body',
         }),
         new HtmlWebpackPlugin({
+            filename: 'create-tender-js.html',
+            template: './src/create-tender-js.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
             filename: 'proposals.html',
             template: './src/proposals.html',
             inject: 'body',
