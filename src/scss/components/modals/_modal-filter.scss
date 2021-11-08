@@ -81,43 +81,7 @@
   input[type="checkbox"] + span{
     font-size: 16px;
   }
-
-  &:nth-child(n + 5){
-    display: none;
-
-    .show-all & {
-      display: block;
-    }
-  }
 }
-
-.filter-collapse__toggler{
-  display: block;
-  margin-top: 12px;
-
-  &-show {
-    display: inline;
-  }
-
-  &-hide {
-    display: none;
-  }
-
-  .show-all & {
-    &-show {
-      display: none;
-    }
-
-    &-hide {
-      display: inline;
-    }
-
-    img {
-      transform: rotate(180deg);
-    }
-  }
-}
-
 
 .filter-collapse__box{
   display: none;

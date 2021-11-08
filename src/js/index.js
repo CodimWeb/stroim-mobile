@@ -30,7 +30,7 @@ $(document).ready(function(){
     if (phones) {
         Inputmask({ "mask": "+7(999) 999-99-99" }).mask(phones);
     }
-
+    
     $('.main-slider .slider').slick({
         dots: true,
         arrows: false,
@@ -236,37 +236,31 @@ function filterModal() {
 };
 
 function positionModal() {
+
     $('#choose-position').on('show.bs.modal', function () {
         const $search = $('.js-position-search');
+        const $showMore = $('.js-filter-show-more').closest('.filter-collapse__row');
+        const $box = $('.filter-collapse__box');
         $search.on('input', function (e) {
-            const $wrapper = $(e.target).closest('.filter-collapse__body')
-            const $showMore = $wrapper.find('.js-filter-show-more');
             const substr = $(e.target).val().toLowerCase();
-            const $checkbox = $wrapper.find('input[type="checkbox"]');
-            if(substr.length) {
-                $wrapper && $wrapper.removeClass('show-all');
-                $showMore.hide();
-                $checkbox.each((_, item) => {
-                    const value = $(item).data('value').toLowerCase();
-                    if(!value.includes(substr)) {
-                        $(item).closest('.filter-collapse__row').hide()
-                    }else {
-                        $(item).closest('.filter-collapse__row').show()
-                    }
-                })
-            }else {
-                $wrapper && $wrapper.addClass('show-all');
-                $showMore.show();
-                $checkbox.each((_, item) => {
-                    $(item).closest('.filter-collapse__row').css("display","");
-                })
-            }
+            const $checkbox = $(this).closest('.filter-collapse').find('input[type="checkbox"]');
+            $box.is(':hidden') && $box.show();
+            $showMore.is(':visible ') && $showMore.hide();
+            $checkbox.each((_, item) => {
+                const value = $(item).val().toLowerCase();
+                if(!value.includes(substr)) {
+                    $(item).closest('.filter-collapse__row').hide()
+                }else {
+                    $(item).closest('.filter-collapse__row').show()
+                }
+            })
         });
     });
     $('#choose-position').on('hidden.bs.modal', function () {
         const $resultsContainer = $('.js-choose-position-result');
         const $currentCheck = $('.position-checkbox');
         let accum = [];
+
         $currentCheck.each((i, el) => {
             if($(el).is(":checked")) {
                 accum.push($(el).val());
@@ -276,56 +270,14 @@ function positionModal() {
     });
 };
 
-function categoryModal() {
-    $('#choose-category').on('show.bs.modal', function () {
-        const $search = $('.js-category-search');
-        $search.on('input', function (e) {
-            const $wrapper = $(e.target).closest('.filter-collapse__body')
-            const $showMore = $wrapper.find('.js-filter-show-more');
-            const substr = $(e.target).val().toLowerCase();
-            const $checkbox = $wrapper.find('input[type="radio"]');
-            if(substr.length) {
-                $wrapper && $wrapper.removeClass('show-all');
-                $showMore.hide();
-                $checkbox.each((_, item) => {
-                    const value = $(item).data('value').toLowerCase();
-                    if(!value.includes(substr)) {
-                        $(item).closest('.filter-collapse__row').hide()
-                    }else {
-                        $(item).closest('.filter-collapse__row').show()
-                    }
-                })
-            }else {
-                $wrapper && $wrapper.addClass('show-all');
-                $showMore.show();
-                $checkbox.each((_, item) => {
-                    $(item).closest('.filter-collapse__row').css("display","");
-                })
-            };
-        });
-    });
-
-    $('#choose-category').on('hidden.bs.modal', function () {
-        const $resultsContainer = $('.js-choose-category-result');
-        const $currentCheck = $('.category-radio');
-        let accum = [];
-        $currentCheck.each((i, el) => {
-            if($(el).is(":checked")) {
-                accum.push($(el).val());
-            }
-        });
-        $resultsContainer.val(accum.join(', '))
-        $resultsContainer.focus();
-    });
-}
-
 function locationModal() {
     $('#choose-location').on('show.bs.modal', function () {
         const $search = $('.js-location-search');
         $search.on('input', function (e) {
             const substr = $(e.target).val().toLowerCase();
             $('.location-checkbox__input').each((_, item) => {
-                const value = $(item).data('value').toLowerCase();
+                const value = $(item).val().toLowerCase();
+                console.log(value, 'value');
                 if(!value.includes(substr)) {
                     $(item).closest('.location-checkbox-wrap').hide()
                 }else {
@@ -354,12 +306,53 @@ function locationModal() {
     });
 };
 
+function categoryModal() {
+
+    $('#choose-category').on('show.bs.modal', function () {
+        const $search = $('.js-category-search');
+        const $showMore = $('.js-filter-show-more').closest('.filter-collapse__row');
+        const $box = $('.filter-collapse__box');
+        $search.on('input', function (e) {
+            const substr = $(e.target).val().toLowerCase();
+            const $checkbox = $(this).closest('.filter-collapse').find('input[type="radio"]');
+            $box.is(':hidden') && $box.show();
+            $showMore.is(':visible ') && $showMore.hide();
+            $checkbox.each((_, item) => {
+                const value = $(item).val().toLowerCase();
+                if(!value.includes(substr)) {
+                    $(item).closest('.filter-collapse__row').hide()
+                }else {
+                    $(item).closest('.filter-collapse__row').show()
+                }
+            })
+        });
+
+        //select checkbox
+        const $resultsContainer = $('.js-choose-category-result');
+        let accum = [];
+        $('.category-radio').on('change', function(e) {
+            const $currentCheck = $(e.target);
+            const checkedVal = $currentCheck.val();
+
+            if($currentCheck.is(":checked")) {
+                accum.push(checkedVal);
+            }else {
+                accum = accum.filter(item => item !== checkedVal);
+            }
+            $resultsContainer.val(accum.join(', '));
+            $resultsContainer.focus();
+        });
+    });
+
+}
+
 function collapseFilter() {
     const $links = $('.js-filter-show-more');
     $links.on('click', function(e) {
         e.preventDefault();
         const $target = $(e.target);
-        $target.closest('.filter-collapse__body').toggleClass('show-all');
+        $target.closest('.filter-collapse').find('.filter-collapse__box').toggleClass('show');
+        $target.closest('.js-filter-show-more').hide();
     })
 };
 
