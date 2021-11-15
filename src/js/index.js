@@ -11,7 +11,7 @@ import moment from 'moment';
 import Inputmask from "inputmask";
 import daterangepicker from 'jquery-date-range-picker';
 import select2 from 'select2';
-import magnificPopup from 'magnific-popup/dist/jquery.magnific-popup';
+// import magnificPopup from 'magnific-popup/dist/jquery.magnific-popup';
 import Dropzone from "dropzone";
 import Tender from './Tender';
 
@@ -19,7 +19,7 @@ import Tender from './Tender';
 //styles
 import "jquery-date-range-picker/dist/daterangepicker.min.css"
 import 'slick-carousel';
-import 'magnific-popup/dist/magnific-popup.css';
+// import 'magnific-popup/dist/magnific-popup.css';
 import "dropzone/dist/dropzone.css";
 import '../scss/style.scss';
 
@@ -78,9 +78,27 @@ $(document).ready(function(){
         }
     });
 
-    $('.js-modal-close').on( "click", function() {
-        $.magnificPopup.close();
-    });
+    $('.js-header-menu').on('click', function() {
+        $('body').addClass('modal-open')
+        $('.header-menu').addClass('open');
+
+        setTimeout(function(){
+            $('.header-menu__content').addClass('open')
+        }, 50)
+    })
+
+    $('.header-menu__close').on('click', function(){
+        $('.header-menu__content').removeClass('open')
+
+        setTimeout(function(){
+            $('.header-menu').removeClass('open');
+            $('body').removeClass('modal-open')
+        }, 150)
+    })
+
+    // $('.js-modal-close').on( "click", function() {
+    //     $.magnificPopup.close();
+    // });
 
 
     initialDatePicker();
@@ -88,7 +106,7 @@ $(document).ready(function(){
     initProductsSlider();
     fileReader();
     phoneBtn();
-    filterModal();
+    // filterModal();
     collapseFilter();
     initHeader();
     initImageLoader();
@@ -398,19 +416,19 @@ function phoneBtn() {
     })
 };
 
-function filterModal() {
-    const $link = $('.js-filter');
-    $link.length && $link.magnificPopup({
-        type: 'inline',
-        fixedContentPos: true,
-        removalDelay: 500, //delay removal by X to allow out-animation
-        callbacks: {
-            beforeOpen: function() {
-                this.st.mainClass = this.st.el.attr('data-effect');
-            }
-        },
-    });
-};
+// function filterModal() {
+//     const $link = $('.js-filter');
+//     $link.length && $link.magnificPopup({
+//         type: 'inline',
+//         fixedContentPos: true,
+//         removalDelay: 500, //delay removal by X to allow out-animation
+//         callbacks: {
+//             beforeOpen: function() {
+//                 this.st.mainClass = this.st.el.attr('data-effect');
+//             }
+//         },
+//     });
+// };
 
 function positionModal() {
 
@@ -571,16 +589,16 @@ function initHeader() {
     const $backBtn = $header.find('.header__search-reset');
     const $searchInput = $header.find('.search-input__field');
 
-    $menuBtn.length && $menuBtn.magnificPopup({
-        type: 'inline',
-        fixedContentPos: true,
-        removalDelay: 500, //delay removal by X to allow out-animation
-        callbacks: {
-            beforeOpen: function() {
-                this.st.mainClass = this.st.el.attr('data-effect');
-            }
-        },
-    });
+    // $menuBtn.length && $menuBtn.magnificPopup({
+    //     type: 'inline',
+    //     fixedContentPos: true,
+    //     removalDelay: 500, //delay removal by X to allow out-animation
+    //     callbacks: {
+    //         beforeOpen: function() {
+    //             this.st.mainClass = this.st.el.attr('data-effect');
+    //         }
+    //     },
+    // });
 
     $searchInput.on('input', function (e) {
         const value = $(e.target).val();
