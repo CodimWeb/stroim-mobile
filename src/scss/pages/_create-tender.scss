@@ -1,0 +1,109 @@
+.create-tender__header {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.create-tender-nav {
+    flex-wrap: nowrap;
+    flex: 1;
+    min-width: 0;
+    margin-right: 16px;
+    padding-bottom: 20px;
+    margin-bottom: -20px;
+    overflow: scroll;
+}
+
+.create-tender-nav .nav-link {
+    border: none !important;
+    color: #646464;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 160%;
+    white-space: nowrap;
+    border-radius: 0;
+    width: 73px;
+    padding: 15px 0;
+    text-align: center;
+    position: relative;
+    
+    &:after {
+        content: '';
+        width: 100%;
+        height: 3px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        border-radius: 3px;
+    }
+}
+
+.create-tender-nav .nav-link.active {
+    color: #001D3A;
+
+    &:after {
+        background: #3275EE;
+    }
+}
+
+.btn-add-lot {
+    padding: 0;
+    line-height: 1;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-tender__body {
+    margin: 0 -16px;
+    padding: 0 16px;
+    background: #CCDCF7;
+    overflow: hidden;
+}
+
+.lot-empty {
+    padding: 84px 0;
+}
+
+.lot-empty__title {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.tender-select-category {
+    min-height: 254px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tender-select-category__title {
+    font-size: 14px;
+    line-height: 160%;
+    color: #646464;
+    text-align: center;
+}
+
+.tender-select-category__list {
+    font-size: 14px;
+    line-height: 160%;
+    font-weight: 500;
+    text-align: center;
+}
+
+.create-tender__data {
+    padding-top: 32px;
+    border-top: 1px solid #DFDEE2;
+}
+
+.create-tender__action {
+    display: flex;
+    justify-content: space-between;
+}
+
+.create-tender__footer {
+
+}

@@ -90,6 +90,21 @@ module.exports = {
             inject: 'body',
         }),
         new HtmlWebpackPlugin({
+            filename: 'announce-tender.html',
+            template: './src/announce-tender.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'create-tender.html',
+            template: './src/create-tender.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'create-tender-js.html',
+            template: './src/create-tender-js.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
             filename: 'proposals.html',
             template: './src/proposals.html',
             inject: 'body',
@@ -147,11 +162,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'proposal-success.html',
             template: './src/proposal-success.html',
-            inject: 'body',
-        }),
-        new HtmlWebpackPlugin({
-            filename: 'announce-tender.html',
-            template: './src/announce-tender.html',
             inject: 'body',
         }),
         new HtmlWebpackPlugin({

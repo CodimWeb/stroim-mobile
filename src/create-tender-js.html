@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Подписки на рассылки</title>
+    <title>Объявить тендер</title>
 </head>
 
 <body>
@@ -48,64 +48,144 @@
     <div class="announcement">
         <div class="container-fluid mb-12">
             <a href="/" class="move-back link mb-3">Личный кабинет</a>
-            <h4>Мои подписки на рассылки</h4>
+            <h4>Объявить тендер</h4>
         </div>
     </div>
 
-    <div class="pt-4 pb-4 pr-3 pl-3 bg-violet mb-4">
-        <h5 class="mb-2">Получайте на свой email самые свежие объявления и заявки</h5>
-        <p class="sm"><i>1. Выберите интересные Вам позиции (слева).</i></p>
-        <p class="sm"><i>2. Выберите интересные Вам регионы.</i></p>
-        <p class="sm"><i> 3. Получайте новые, актуальные заявки по мере их поступления прямо на Ваш электронный почтовый ящик.</i></p>
-    </div>
-
-    <div class="container-fluid mb-4">
-        <h5 class="mb-2">Выберите интересующие Вас рассылки:</h5>
-
-        <div class="bg-grey-light rounded-4 pt-3 pr-3 pl-3 pb-3 mb-4">
-            <label class="mb-3 d-block">
-                <input type="checkbox" name="check-one" value="check-one" />
-                <span class="text">Продам</span>
-            </label>
-            <label class="mb-3 d-block">
-                <input type="checkbox" name="check-one" value="check-one" />
-                <span class="text">Куплю</span>
-            </label>
-            <label class="mb-3 d-block">
-                <input type="checkbox" name="check-one" value="check-one" />
-                <span class="text">Предложение услуг</span>
-            </label>
-            <label class="d-block">
-                <input type="checkbox" name="check-one" value="check-one" />
-                <span class="text">Другое</span>
-            </label>
+    <div class="container-fluid tender-container">
+        <div class="create-tender__header">
+            <ul class="nav nav-tabs create-tender-nav" id="create-tender-nav" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="lot-1-tab" data-toggle="tab" href="#lot-1" role="tab" data-index="0">Лот 1</a>
+                </li>
+            </ul>
+            <button type="button" class="btn btn-add-lot">
+                <img src="img/icons/icon-plus.svg" alt="">
+            </button>
+        </div> 
+        <div class="create-tender__body">
+            <div class="tab-content" id="create-tender-content">
+                <div class="tab-pane fade show active" id="lot-1" role="tabpanel" aria-labelledby="lot-1-tab">
+                    <div class="lot-empty">
+                        <p class="lot-empty__title">Вы ещё не выбрали ни одну позицию.</p>
+                        <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#choose-position">Выберите позиции</button>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="create-tender__footer">
+            <h5 class="mt-4 mb-2">Тендерная документация</h5>
+            <p class="sm mb-3">Прикрепите файлы тендерной документации:</p>
+            <p class="sm gray mb-2">Состав тендера</p>
+            <div class="mb-3">
+                <a href="#" class="link sm ">
+                    <img src="img/icons/download-sm.svg" alt="">
+                    <span class="pl-1">Скачать пример состава тендера</span>
+                </a>
+            </div>
+            <div class="file-reader mb-32">
+                <div class="file-reader__return">
+                    <span class="file-reader__return-text"></span>
+                    <svg class="file-reader__icon-close" width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.3848 2.82857L3.82843 18.3849C3.4381 18.7752 2.64615 18.6168 2.06066 18.0314C1.47517 17.4459 1.31678 16.6539 1.70711 16.2636L17.2635 0.707247C17.6538 0.316923 18.4457 0.475314 19.0312 1.0608C19.6167 1.64629 19.7751 2.43824 19.3848 2.82857Z" fill="#001D3A"></path>
+                        <path d="M16.5562 18.3848L0.999849 2.82843C0.609525 2.4381 0.767916 1.64615 1.3534 1.06066C1.93889 0.475174 2.73084 0.316782 3.12117 0.707107L18.6775 16.2635C19.0678 16.6538 18.9095 17.4457 18.324 18.0312C17.7385 18.6167 16.9465 18.7751 16.5562 18.3848Z" fill="#001D3A"></path>
+                    </svg>
+                </div>
 
-        <h5 class="mb-2">Заполните форму</h5>
-        <p class="sm grey mb-1">Регион</p>
-        <p class="js-choose-location-result mb-12">
-            Не выбран
-        </p>
-        <a href="javascript:void(0)"  class="btn btn-grey mb-4"  data-toggle="modal" data-target="#choose-location">
-            <img src="img/icons/location.svg" alt="">
-            <span class="pl-2">Выбрать регионы</span>
-        </a>
+                <input class="file-reader__input" id="my-file-1" type="file">
+                <label tabindex="0" for="my-file-1" class="file-reader__label file-reader__label--inline">
+                    <svg class="file-reader__icon-clip" width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.6485 1.5L2.52475 12.6881C1.52512 13.792 0.978705 15.254 1.00064 16.7664C1.02257 18.2787 1.61112 19.7232 2.64232 20.7955C3.70234 21.8871 5.13724 22.5 6.63304 22.5C8.12884 22.5 9.56374 21.8871 10.6238 20.7955L19.3759 11.7017C19.7322 11.3351 20.0149 10.8993 20.2078 10.4192C20.4007 9.93924 20.5 9.42453 20.5 8.9047C20.5 8.38487 20.4007 7.87017 20.2078 7.39016C20.0149 6.91015 19.7322 6.47431 19.3759 6.10767C18.6583 5.36671 17.6858 4.95054 16.6719 4.95054C15.658 4.95054 14.6855 5.36671 13.9679 6.10767L7.43641 12.8638C7.04861 13.2545 6.81409 13.7796 6.77792 14.3383C6.74175 14.897 6.90649 15.4498 7.24047 15.8905C7.66534 16.2389 8.2004 16.4111 8.74135 16.3737C9.28231 16.3362 9.79039 16.0917 10.1666 15.6878L15.3917 10.283" stroke="#001D3A" stroke-opacity="0.9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    <div class="file-reader__loader loader loader--dark">Loading...</div>
+                    <span class="file-reader__input-text">Выбрать файлы</span>
+                </label>
+            </div>
+            <p class="sm gray mb-2">Ваши реквизиты<span class="red">*</span></p>
+            <div class="mb-3">
+                <a href="#" class="link sm ">
+                    <img src="img/icons/download-sm.svg" alt="">
+                    <span class="pl-1">Скачать пример реквизитов</span>
+                </a>
+            </div>
+            <div class="file-reader mb-32">
+                <div class="file-reader__return">
+                    <span class="file-reader__return-text"></span>
+                    <svg class="file-reader__icon-close" width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.3848 2.82857L3.82843 18.3849C3.4381 18.7752 2.64615 18.6168 2.06066 18.0314C1.47517 17.4459 1.31678 16.6539 1.70711 16.2636L17.2635 0.707247C17.6538 0.316923 18.4457 0.475314 19.0312 1.0608C19.6167 1.64629 19.7751 2.43824 19.3848 2.82857Z" fill="#001D3A"></path>
+                        <path d="M16.5562 18.3848L0.999849 2.82843C0.609525 2.4381 0.767916 1.64615 1.3534 1.06066C1.93889 0.475174 2.73084 0.316782 3.12117 0.707107L18.6775 16.2635C19.0678 16.6538 18.9095 17.4457 18.324 18.0312C17.7385 18.6167 16.9465 18.7751 16.5562 18.3848Z" fill="#001D3A"></path>
+                    </svg>
+                </div>
 
+                <input class="file-reader__input" id="my-file-1" type="file">
+                <label tabindex="0" for="my-file-1" class="file-reader__label file-reader__label--inline">
+                    <svg class="file-reader__icon-clip" width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.6485 1.5L2.52475 12.6881C1.52512 13.792 0.978705 15.254 1.00064 16.7664C1.02257 18.2787 1.61112 19.7232 2.64232 20.7955C3.70234 21.8871 5.13724 22.5 6.63304 22.5C8.12884 22.5 9.56374 21.8871 10.6238 20.7955L19.3759 11.7017C19.7322 11.3351 20.0149 10.8993 20.2078 10.4192C20.4007 9.93924 20.5 9.42453 20.5 8.9047C20.5 8.38487 20.4007 7.87017 20.2078 7.39016C20.0149 6.91015 19.7322 6.47431 19.3759 6.10767C18.6583 5.36671 17.6858 4.95054 16.6719 4.95054C15.658 4.95054 14.6855 5.36671 13.9679 6.10767L7.43641 12.8638C7.04861 13.2545 6.81409 13.7796 6.77792 14.3383C6.74175 14.897 6.90649 15.4498 7.24047 15.8905C7.66534 16.2389 8.2004 16.4111 8.74135 16.3737C9.28231 16.3362 9.79039 16.0917 10.1666 15.6878L15.3917 10.283" stroke="#001D3A" stroke-opacity="0.9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    <div class="file-reader__loader loader loader--dark">Loading...</div>
+                    <span class="file-reader__input-text">Выбрать файлы</span>
+                </label>
+            </div>
+            <div class="create-tender__data">
+                <label class="materil-group mb-4">
+                    <span class="materil-group__label">Наименование тендера<span class="red">*</span></span>
+                    <input type="text" class="form-control base-input materil-group__input lg">
+                </label>
 
-        <p class="sm grey mb-1">Категории (Выберите из списка слева)</p>
-        <p class="js-choose-position-result mb-12">
-            Не выбрана
-        </p>
-        <a href="javascript:void(0)" class="btn btn-grey mb-32" data-toggle="modal" data-target="#choose-position">
-            <span class="pl-2">Выбрать категории</span>
-        </a>
+                <label class="materil-group materil-group--with-icon basket__suppliers-field mb-4">
+                    <span class="materil-group__label">Период проведения конкурса<span class="red">*</span></span>
+                    <input type="text" name="daterange" class="form-control base-input materil-group__input" value="20.08.2021 - 30.08.2021" />
+                    <img class="materil-group__icon" src="img/icons/calendar.svg" alt="">
+                    <div class="materil-group__error-text">Укажите Период проведения конкурса</div>
+                </label>
 
+                <label class="materil-group mb-4">
+                    <span class="materil-group__label">Ваше имя<span class="red">*</span></span>
+                    <input type="text" class="form-control base-input materil-group__input lg">
+                </label>
 
-        <p class="text-center grey mb-3">
-            <a href="">Нажимите здесь</a>
-             чтобы отписаться от всех рассылок
-        </p>
-        <a href="" class="btn btn-primary block">Подписаться</a>
+                <label class="materil-group active mb-4">
+                    <span class="materil-group__label">Регион поставки<span class="red">*</span></span>
+                    <select name="" id="" class="select">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </label>
+
+                <label class="materil-group mb-4">
+                    <span class="materil-group__label">Ваша организация<span class="red">*</span></span>
+                    <input type="text" class="form-control base-input materil-group__input lg">
+                </label>
+
+                <label class="materil-group mb-4">
+                    <span class="materil-group__label">Email<span class="red">*</span></span>
+                    <input type="text" class="form-control base-input materil-group__input lg">
+                </label>
+
+                <label class="materil-group mb-4">
+                    <span class="materil-group__label">Телефон<span class="red">*</span></span>
+                    <input type="text" class="form-control base-input materil-group__input lg phone-input">
+                </label>
+
+                <a href="javascript:void(0)" class="materil-group mb-4" data-toggle="modal" data-target="#choose-location">
+                    <span class="materil-group__label">В каких регионах разместить тендер<span class="red">*</span></span>
+                    <input type="text" class="form-control base-input materil-group__input js-choose-location-result">
+                </a>
+
+                <label class="materil-group mb-32 active">
+                    <span class="materil-group__label">Комментарий к заявке</span>
+                    <textarea class="form-control base-input materil-group__input materil-group__textarea auto" style="height: 176px">Тяжёлые бетоны обладают большей удельной прочностью на сжатие в сравнении с лёгкими, из-за чего получили распространение в капитальном строительстве.
+                        </textarea>
+                    <span class="materil-group__label-backdrop"></span>
+                </label>
+
+                <button class="btn btn-primary block mb-5 pl-0 pr-0">Отправить тендер на модерацию</button>
+            </div>
+        </div>
     </div>
 
 </main>
@@ -296,7 +376,7 @@
                                     <p class="location-checkbox__text">Алматы</p>
                                 </label>
                             </div>
-                        </div>
+                        </div>    
                     </div>
                 </form>
             </div>
@@ -306,7 +386,6 @@
         </div>
     </div>
 </div>
-
 
 <div class="modal fade base-modal modal-bottom" id="choose-position" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
@@ -509,7 +588,6 @@
         </div>
     </div>
 </div>
-
 
 </body>
 </html>

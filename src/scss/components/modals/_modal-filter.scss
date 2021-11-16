@@ -53,17 +53,13 @@
 
 .filter-collapse{
   border-bottom: 1px solid #DFDEE2;
-
-  &:last-of-type{
-    border-bottom: none;
-  }
 }
 
 .filter-collapse__body {
   padding: 4px 0 16px;
 }
 
-.filter-collapse__head{
+.filter-collapse__head {
   display: flex;
   justify-content: space-between;
   padding: 12px 0;
@@ -77,13 +73,28 @@
   }
 }
 
-.filter-collapse__row{
+.filter-collapse__search {
+  margin-bottom: 14px;
+}
+
+.filter-collapse__list {
+  max-height: 280px;
+  overflow: hidden;
+  margin-bottom: 14px;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.filter-collapse__row {
   & + & {
     margin-top: 12px;
   }
 
   input[type="checkbox"] + span{
     font-size: 16px;
+  }
+
+  &.hidden {
+    display: none;
   }
 }
 
@@ -92,5 +103,16 @@
 
   &.show {
     display: block;
+  }
+}
+
+.filter-show-more {
+
+  &.active img {
+    transform: rotateZ(180deg);
+  }
+
+  &.hidden {
+    display: none;
   }
 }

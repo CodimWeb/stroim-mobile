@@ -1,42 +1,126 @@
+.base-modal .modal-dialog {
+  width: 100%;
+  height: 100%;
+  margin: 0;
 
-.base-modal{
-  background-color: #fff;
-  width: 100vw;
-  height: 100vh;
-  padding: 56px 0 63px;
+  @media (min-width: 576px) {
+    max-width: 100%;
+  }
+}
+
+.modal-bottom.fade .modal-dialog {
+  transform: translate(0, 200px);
+}
+
+.modal-bottom.show .modal-dialog {
+  transform: translate(0, 0);
+}
+
+.base-modal .modal-content {
+  height: 100%;
+  border-radius: 0;
+  border: none;
+}
+
+.base-modal .modal-header {
+  display: block;
+  height: 56px;
+  border-bottom: 1px solid #DFDEE2;
   position: relative;
 }
 
-.base-modal__head{
+.base-modal .close {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+  background-image: url(../img/icons/close.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.base-modal .modal-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 160%;
   text-align: center;
-  padding: 15px;
-  border-bottom: 1px solid #DFDEE2;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
 }
 
-.base-modal__footer{
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border-top: 1px solid #DFDEE2;
+.base-modal .modal-body {
+  padding: 0;
+  // overflow-y: auto;
+  overflow: hidden;
 }
 
-.base-modal__body{
+
+.choose__content {
   height: 100%;
   overflow-y: auto;
 }
 
-.base-modal__content{
-  display: block;
-  overflow-y: auto;
+.choose-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.mfp-container{
-  padding-right: 0!important;
-  padding-left: 0!important;
+.choose-list {
+  flex: 1;
+  overflow-y: auto;
+  margin-right: -16px;
+  padding-right: 16px;
 }
+
+.modal-footer > * {
+  margin: 0;
+}
+
+.base-modal .modal-footer {
+  height: 60px;
+  min-height: 60px;
+  justify-content: center;
+  padding: 0 16px;
+}
+
+
+// .base-modal__head{
+//   text-align: center;
+//   padding: 15px;
+//   border-bottom: 1px solid #DFDEE2;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+// }
+
+// .base-modal__footer{
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   border-top: 1px solid #DFDEE2;
+// }
+
+// .base-modal__body{
+//   height: 100%;
+//   overflow-y: auto;
+// }
+
+// .base-modal__content{
+//   display: block;
+//   overflow-y: auto;
+// }
+
+// .mfp-container{
+//   padding-right: 0!important;
+//   padding-left: 0!important;
+// }
+
+
 

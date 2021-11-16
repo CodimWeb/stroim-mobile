@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Цены поставщиков / Карточка</title>
+    <title>Цены поставщиков</title>
 </head>
 
 <body>
@@ -69,10 +69,11 @@
                 <img src="img/icons/sort-up.svg" alt="">
             </a>
         </div>
-        <a href="#filter-modal" class="link sm dark js-filter" data-effect="mfp-move-from-top">
+        <a href="javascript:void(0)" class="link sm dark" data-toggle="modal" data-target="#filter-modal">
             <img src="img/icons/filter.svg" alt="">
             <span class="pl-2">Фильтры</span>
         </a>
+
     </div>
 
     <div class="ceni-card container-fluid">
@@ -250,8 +251,11 @@
     </ul>
 </footer>
 
-<div id="header-menu" class="header-menu mfp-with-anim mfp-hide">
+<div id="header-menu" class="header-menu">
     <div class="header-menu__content">
+        <div class="header-menu__close">
+            <img src="img/icons/close.svg" alt="">
+        </div>
         <ul class="header-menu__list">
             <li class="header-menu__item">
                 <a href="" class="header-menu__link link dark">Объявления</a>
@@ -280,152 +284,284 @@
     </div>
 </div>
 
-<div id="filter-modal" class="base-modal mfp-with-anim mfp-hide">
-    <div class="base-modal__head">
-        <p><strong>Фильтр</strong></p>
-    </div>
-    <div class="base-modal__body">
-        <form class="base-modal__content container-fluid">
-            <div class="accordion filter-collapse" id="accordionExample">
-                <div class="filter-collapse">
-                    <div class="filter-collapse__head" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                        <strong>Размер</strong>
-                        <span class="filter-collapse__arrow">
-                            <img src="img/icons/arrow.svg" alt="">
-                        </span>
-                    </div>
-                    <div id="collapseOne" class="filter-collapse__body collapse show" aria-labelledby="headingOne" >
-                        <div class="filter-collapse__row">
-                            <label>
-                                <input type="checkbox" name="check-one" value="check-one" />
-                                <span class="text">М-100 <span class="grey">(24)</span></span>
-                            </label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <label>
-                                <input type="checkbox" name="check-one" value="check-one" />
-                                <span class="text">М-100 <span class="grey">(24)</span></span>
-                            </label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <label>
-                                <input type="checkbox" name="check-one" value="check-one" />
-                                <span class="text">М-100 <span class="grey">(24)</span></span>
-                            </label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <label>
-                                <input type="checkbox" name="check-one" value="check-one" />
-                                <span class="text">М-100 <span class="grey">(24)</span></span>
-                            </label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <a href="" class="link js-filter-show-more">
-                                <span>Показать все</span>
-                                <img src="img/icons/arrow-blue-small.svg" alt="">
-                            </a>
-                        </div>
-                        <div class="filter-collapse__box">
-                            <div class="filter-collapse__row">
-                                <label>
-                                    <input type="checkbox" name="check-one" value="check-one" />
-                                    <span class="text">М-100 <span class="grey">(24)</span></span>
-                                </label>
-                            </div>
-                            <div class="filter-collapse__row">
-                                <label>
-                                    <input type="checkbox" name="check-one" value="check-one" />
-                                    <span class="text">М-100 <span class="grey">(24)</span></span>
-                                </label>
-                            </div>
-                            <div class="filter-collapse__row">
-                                <label>
-                                    <input type="checkbox" name="check-one" value="check-one" />
-                                    <span class="text">М-100 <span class="grey">(24)</span></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="filter-collapse">
-                    <div class="filter-collapse__head" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        <strong>Сорт</strong>
-                        <span class="filter-collapse__arrow">
-                            <img src="img/icons/arrow.svg" alt="">
-                        </span>
-                    </div>
-
-                    <div id="collapseTwo" class="filter-collapse__body collapse show" aria-labelledby="collapseTwo" >
-                        <div class="filter-collapse__row">
-                            <label>
-                                <input type="checkbox" name="check-one" value="check-one" />
-                                <span class="checkbox__text">М-100 <span class="grey">(24)</span></span>
-                            </label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <label>
-                                <input type="checkbox" name="check-one" value="check-one" />
-                                <span class="checkbox__text">М-100 <span class="grey">(24)</span></span>
-                            </label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <label>
-                                <input type="checkbox" name="check-one" value="check-one" />
-                                <span class="checkbox__text">М-100 <span class="grey">(24)</span></span>
-                            </label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <label>
-                                <input type="checkbox" name="check-one" value="check-one" />
-                                <span class="checkbox__text">М-100 <span class="grey">(24)</span></span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="filter-collapse">
-                    <div class="filter-collapse__head" id="headingTree" data-toggle="collapse" data-target="#collapseTree" aria-expanded="false" aria-controls="collapseTree">
-                        <strong>Примечание</strong>
-                        <span class="filter-collapse__arrow">
-                            <img src="img/icons/arrow.svg" alt="">
-                        </span>
-                    </div>
-                    <div id="collapseTree" class="filter-collapse__body collapse show" aria-labelledby="collapseTree" >
-                        <div class="filter-collapse__row">
-                            <label>
-                                <input type="checkbox" name="check-one" value="check-one" />
-                                <span class="checkbox__text">М-100 <span class="grey">(24)</span></span>
-                            </label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <label>
-                                <input type="checkbox" name="check-one" value="check-one" />
-                                <span class="checkbox__text">М-100 <span class="grey">(24)</span></span>
-                            </label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <label>
-                                <input type="checkbox" name="check-one" value="check-one" />
-                                <span class="checkbox__text">М-100 <span class="grey">(24)</span></span>
-                            </label>
-                        </div>
-                        <div class="filter-collapse__row">
-                            <label>
-                                <input type="checkbox" name="check-one" value="check-one" />
-                                <span class="checkbox__text">М-100 <span class="grey">(24)</span></span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
+<div class="modal fade base-modal modal-bottom" id="filter-modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Фильтр</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
             </div>
-
-
-
-        </form>
-    </div>
-    <div class="base-modal__footer container-fluid pt-2 pb-2">
-        <button class="btn btn-primary block js-modal-close">Применить</button>
+            <div class="modal-body">
+                <form class="choose__content container-fluid">
+                    <div class="accordion">
+                        <div class="filter-collapse">
+                            <div class="filter-collapse__head collapsed" data-toggle="collapse" data-target="#position-collapse-1" aria-expanded="false" aria-controls="position-collapse-1">
+                                <strong>Размер</strong>
+                                <span class="filter-collapse__arrow">
+                                    <img src="img/icons/arrow.svg" alt="">
+                                </span>
+                            </div>
+                            <div id="position-collapse-1" class="collapse" >
+                                <div class="filter-collapse__body">
+                                    <div class="filter-collapse__list">
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="1" data-value="Балка" class="position-checkbox"/>
+                                                <span class="text">Балка <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="2" data-value="Ограждения" class="position-checkbox"/>
+                                                <span class="text">Ограждения <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="3" data-value="Плиты" class="position-checkbox"/>
+                                                <span class="text">Плиты <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="4" data-value="Кабельные каналы" class="position-checkbox"/>
+                                                <span class="text">Кабельные каналы <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="5" data-value="Блок" class="position-checkbox"/>
+                                                <span class="text">Блок <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="6" data-value="Бортовой камень" class="position-checkbox"/>
+                                                <span class="text">Бортовой камень <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="7" data-value="Бордюрный камень" class="position-checkbox"/>
+                                                <span class="text">Бордюрный камень<span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="8" data-value="Заборы" class="position-checkbox"/>
+                                                <span class="text">Заборы<span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="9" data-value="М-100" class="position-checkbox"/>
+                                                <span class="text">М-100 <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="10" data-value="М-100-2" class="position-checkbox"/>
+                                                <span class="text">М-100-2 <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="11" data-value="М-100-3" class="position-checkbox"/>
+                                                <span class="text">М-100-3 <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="filter-collapse__row">
+                                        <a href="" class="link filter-show-more js-filter-show-more">
+                                            <span>Показать все</span>
+                                            <img src="img/icons/arrow-blue-small.svg" alt="">
+                                        </a>
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="filter-collapse">
+                            <div class="filter-collapse__head collapsed" data-toggle="collapse" data-target="#position-collapse-2" aria-expanded="false" aria-controls="position-collapse-2">
+                                <strong>Сорт</strong>
+                                <span class="filter-collapse__arrow">
+                                    <img src="img/icons/arrow.svg" alt="">
+                                </span>
+                            </div>
+                            <div id="position-collapse-2" class="collapse" >
+                                <div class="filter-collapse__body">
+                                    <div class="filter-collapse__list">
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="1" data-value="Балка" class="position-checkbox"/>
+                                                <span class="text">Балка <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="2" data-value="Ограждения" class="position-checkbox"/>
+                                                <span class="text">Ограждения <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="3" data-value="Плиты" class="position-checkbox"/>
+                                                <span class="text">Плиты <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="4" data-value="Кабельные каналы" class="position-checkbox"/>
+                                                <span class="text">Кабельные каналы <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="5" data-value="Блок" class="position-checkbox"/>
+                                                <span class="text">Блок <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="6" data-value="Бортовой камень" class="position-checkbox"/>
+                                                <span class="text">Бортовой камень <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="7" data-value="Бордюрный камень" class="position-checkbox"/>
+                                                <span class="text">Бордюрный камень<span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="8" data-value="Заборы" class="position-checkbox"/>
+                                                <span class="text">Заборы<span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="9" data-value="М-100" class="position-checkbox"/>
+                                                <span class="text">М-100 <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="10" data-value="М-100-2" class="position-checkbox"/>
+                                                <span class="text">М-100-2 <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="11" data-value="М-100-3" class="position-checkbox"/>
+                                                <span class="text">М-100-3 <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="filter-collapse__row">
+                                        <a href="" class="link filter-show-more js-filter-show-more">
+                                            <span>Показать все</span>
+                                            <img src="img/icons/arrow-blue-small.svg" alt="">
+                                        </a>
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="filter-collapse">
+                            <div class="filter-collapse__head collapsed" data-toggle="collapse" data-target="#position-collapse-3" aria-expanded="false" aria-controls="position-collapse-3">
+                                <strong>Примечание</strong>
+                                <span class="filter-collapse__arrow">
+                                    <img src="img/icons/arrow.svg" alt="">
+                                </span>
+                            </div>
+                            <div id="position-collapse-3" class="collapse" >
+                                <div class="filter-collapse__body">
+                                    <div class="filter-collapse__list">
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="1" data-value="Балка" class="position-checkbox"/>
+                                                <span class="text">Балка <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="2" data-value="Ограждения" class="position-checkbox"/>
+                                                <span class="text">Ограждения <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="3" data-value="Плиты" class="position-checkbox"/>
+                                                <span class="text">Плиты <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="4" data-value="Кабельные каналы" class="position-checkbox"/>
+                                                <span class="text">Кабельные каналы <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="5" data-value="Блок" class="position-checkbox"/>
+                                                <span class="text">Блок <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="6" data-value="Бортовой камень" class="position-checkbox"/>
+                                                <span class="text">Бортовой камень <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="7" data-value="Бордюрный камень" class="position-checkbox"/>
+                                                <span class="text">Бордюрный камень<span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="8" data-value="Заборы" class="position-checkbox"/>
+                                                <span class="text">Заборы<span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="9" data-value="М-100" class="position-checkbox"/>
+                                                <span class="text">М-100 <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="10" data-value="М-100-2" class="position-checkbox"/>
+                                                <span class="text">М-100-2 <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                        <div class="filter-collapse__row">
+                                            <label>
+                                                <input type="checkbox" name="check-one" value="11" data-value="М-100-3" class="position-checkbox"/>
+                                                <span class="text">М-100-3 <span class="grey">(24)</span></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="filter-collapse__row">
+                                        <a href="" class="link filter-show-more js-filter-show-more">
+                                            <span>Показать все</span>
+                                            <img src="img/icons/arrow-blue-small.svg" alt="">
+                                        </a>
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary block" data-dismiss="modal">Применить</button>
+            </div>
+        </div>
     </div>
 </div>
+
 
 </body>
 </html>

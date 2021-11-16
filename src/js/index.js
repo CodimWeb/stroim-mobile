@@ -1,27 +1,35 @@
 'use strict'
 
-import $ from 'jquery';
+import JQuery from 'jquery';
+window.$ = window.JQuery = JQuery;
 
 import Util from 'bootstrap/js/dist/util.js'
 import Modal from 'bootstrap/js/dist/modal'
 import { Collapse } from 'bootstrap';
 import slick from 'slick-carousel';
 import moment from 'moment';
+import Inputmask from "inputmask";
 import daterangepicker from 'jquery-date-range-picker';
 import select2 from 'select2';
-import magnificPopup from 'magnific-popup/dist/jquery.magnific-popup';
+// import magnificPopup from 'magnific-popup/dist/jquery.magnific-popup';
 import Dropzone from "dropzone";
+import Tender from './Tender';
 
 
 //styles
 import "jquery-date-range-picker/dist/daterangepicker.min.css"
 import 'slick-carousel';
-import 'magnific-popup/dist/magnific-popup.css';
+// import 'magnific-popup/dist/magnific-popup.css';
 import "dropzone/dist/dropzone.css";
 import '../scss/style.scss';
 
 Dropzone.autoDiscover = false;
 $(document).ready(function(){
+
+    var phones = document.querySelectorAll('.phone-input')
+    if (phones) {
+        Inputmask({ "mask": "+7(999) 999-99-99" }).mask(phones);
+    }
     
     $('.main-slider .slider').slick({
         dots: true,
@@ -70,9 +78,27 @@ $(document).ready(function(){
         }
     });
 
-    $('.js-modal-close').on( "click", function() {
-        $.magnificPopup.close();
-    });
+    $('.js-header-menu').on('click', function() {
+        $('body').addClass('modal-open')
+        $('.header-menu').addClass('open');
+
+        setTimeout(function(){
+            $('.header-menu__content').addClass('open')
+        }, 50)
+    })
+
+    $('.header-menu__close').on('click', function(){
+        $('.header-menu__content').removeClass('open')
+
+        setTimeout(function(){
+            $('.header-menu').removeClass('open');
+            $('body').removeClass('modal-open')
+        }, 150)
+    })
+
+    // $('.js-modal-close').on( "click", function() {
+    //     $.magnificPopup.close();
+    // });
 
 
     initialDatePicker();
@@ -80,8 +106,7 @@ $(document).ready(function(){
     initProductsSlider();
     fileReader();
     phoneBtn();
-    filterModal();
-    deleteAnnouncmentModal();
+    // filterModal();
     collapseFilter();
     initHeader();
     initImageLoader();
@@ -89,6 +114,201 @@ $(document).ready(function(){
     positionModal();
     locationModal();
     categoryModal();
+
+    const tender = new Tender;
+    tender.render();
+
+    // добавление лотов
+    $('.btn-add-lot').on('click', function(e){
+        if(tender.lotList.length < 7) {
+            var lot = {
+                categories: [],
+                isShowTable: false,
+            }
+            tender.lotList.push(lot);
+            tender.activeLotIndex = tender.lotList.length -1;
+            tender.render();
+            tender.getSelectedCategories();
+            console.log(tender.lotList);
+        }
+    })
+
+    // переключение лотов
+    $(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (event) {
+        event.target // newly activated tab
+        event.relatedTarget // previous active tab
+        tender.activeLotIndex = event.target.getAttribute('data-index');
+        tender.getSelectedCategories();
+        console.log(tender.activeLotIndex);
+
+    });
+
+    // добавление категорий в лот
+    $('.filter-collapse__list input').on('change', function(e) {
+        console.log(tender.activeLotIndex, 'activeLotIndex')
+        var category = {
+            id: e.target.value,
+            name: e.target.getAttribute('data-value'),
+            isCloned: false,
+            quantity: '',
+            unitId: '',
+            size: '',
+            _length: '',
+            steel: '',
+            maxPrice: '',
+            comment: '',
+        }
+
+        if($(this).prop('checked') == true) {
+            tender.lotList[tender.activeLotIndex].categories.push(category)
+        }
+        else {
+            tender.lotList[tender.activeLotIndex].categories = tender.lotList[tender.activeLotIndex].categories.filter(item => item.id != category.id);
+        }
+        tender.render();
+
+        console.log(tender.lotList);
+    })
+
+    // показать таблицу
+    $(document).on('click', '.lot-show-table', function(e){
+        e.preventDefault();
+        var index = $(this).closest('.tab-pane').attr('data-index');
+        tender.lotList[index].isShowTable = true;
+        tender.render();
+    })
+
+    $(document).on('click', '.tender-add-file', function(e){
+        e.preventDefault();
+        console.log('scroll');
+        let offsetTop = $('.create-tender__footer').offset().top;
+        $('body,html').animate({scrollTop: offsetTop}, 500);
+    })
+
+    // дублировать категорию
+    $(document).on('click', '.lot-clone-category', function(e){
+        e.preventDefault();
+        let categoryIndex = $(this).closest('.basket-card').attr('lot-category-index');
+        let insertPosition = 0;
+        let categoryId = tender.lotList[tender.activeLotIndex].categories[categoryIndex].id;
+        // определение позиции вставки
+        for(let i = categoryIndex; i < tender.lotList[tender.activeLotIndex].categories.length; i++) {
+
+            if(tender.lotList[tender.activeLotIndex].categories[i].id == categoryId) {
+                insertPosition = i + 1;
+            }
+        }
+
+        let category = Object.assign({}, tender.lotList[tender.activeLotIndex].categories[categoryIndex]);
+        category.isCloned = true;
+        category.quantity = '';
+        category.unitId = '';
+        category.size = '';
+        category._length = '';
+        category.steel = '';
+        category.maxPrice = '';
+        category.comment = '';
+
+        tender.lotList[tender.activeLotIndex].categories.splice(insertPosition, 0, category)
+        tender.render();
+    })
+
+    // удалить дублированую категорию
+    $(document).on('click', '.lot-remove-category', function(e){
+        e.preventDefault();
+        let categoryIndex = $(this).closest('.basket-card').attr('lot-category-index');
+        let category = Object.assign({}, tender.lotList[tender.activeLotIndex].categories[categoryIndex]);
+        category.isCloned = true;
+        tender.lotList[tender.activeLotIndex].categories.splice(categoryIndex, 1)
+        tender.render();
+    })
+
+    // удалить лот
+    $(document).on('click', '.js-remove-lot', function(e){
+        e.preventDefault();
+        if(tender.lotList.length > 1) {
+            tender.lotList.splice(tender.activeLotIndex, 1);
+            if(tender.activeLotIndex != 0) {
+                tender.activeLotIndex--;
+            }
+            else {
+                tender.activeLotIndex = 0;
+            }
+            tender.render()
+            tender.getSelectedCategories();
+            console.log(tender.lotList);
+        }
+    })
+
+    // заполнение полей таблицы лота
+    $(document).on('input', '.lot-category-input', function(e){
+        let categoryIndex = $(this).closest('.basket-card').attr('lot-category-index');
+
+        if($(this).hasClass('quantity')) {
+            tender.lotList[tender.activeLotIndex].categories[categoryIndex].quantity = e.target.value;
+        }
+
+        if($(this).hasClass('size')) {
+            tender.lotList[tender.activeLotIndex].categories[categoryIndex].size = e.target.value;
+        }
+
+        if($(this).hasClass('length')) {
+            tender.lotList[tender.activeLotIndex].categories[categoryIndex]._length = e.target.value;
+        }
+
+        if($(this).hasClass('steel')) {
+            tender.lotList[tender.activeLotIndex].categories[categoryIndex].steel = e.target.value;
+        }
+
+        if($(this).hasClass('maxPrice')) {
+            tender.lotList[tender.activeLotIndex].categories[categoryIndex].maxPrice = e.target.value;
+        }
+
+        if($(this).hasClass('comment')) {
+            tender.lotList[tender.activeLotIndex].categories[categoryIndex].comment = e.target.value;
+        }
+    })
+
+    // заполнение селекта таблицы лота
+    $(document).on('select2:select', '.lot-category-select.unitId', function(e){
+        let categoryIndex = $(this).closest('.basket-card').attr('lot-category-index');
+        console.log(e.target.value)
+        tender.lotList[tender.activeLotIndex].categories[categoryIndex].unitId = e.target.value;
+
+    });
+
+    // заполнение описания лота
+    $(document).on('input', '.lot-description-input', function(e){
+        if($(this).hasClass('lot-input-title')) {
+            tender.lotList[tender.activeLotIndex].title = e.target.value;
+        }
+
+        if($(this).hasClass('lot-input-description')) {
+            tender.lotList[tender.activeLotIndex].description = e.target.value;
+        }
+
+        if($(this).hasClass('lot-input-note')) {
+            tender.lotList[tender.activeLotIndex].note = e.target.value;
+        }
+
+        if($(this).hasClass('lot-input-estimated')) {
+            tender.lotList[tender.activeLotIndex].estimated = e.target.value;
+        }
+
+        if($(this).hasClass('lot-input-address')) {
+            tender.lotList[tender.activeLotIndex].address = e.target.value;
+        }
+    })
+
+    $(document).on('change', '.lot-description-checkbox', function(e){
+        if($(this).prop('checked') == true) {
+            tender.lotList[tender.activeLotIndex].delivery = true;
+        }
+        else {
+            tender.lotList[tender.activeLotIndex].delivery = false;
+        }
+    });
+
 });
 
 function initialDatePicker() {
@@ -196,163 +416,168 @@ function phoneBtn() {
     })
 };
 
-function filterModal() {
-    const $link = $('.js-filter');
-    $link.length && $link.magnificPopup({
-        type: 'inline',
-        fixedContentPos: true,
-        removalDelay: 500, //delay removal by X to allow out-animation
-        callbacks: {
-            beforeOpen: function() {
-                this.st.mainClass = this.st.el.attr('data-effect');
-            }
-        },
-    });
-};
+// function filterModal() {
+//     const $link = $('.js-filter');
+//     $link.length && $link.magnificPopup({
+//         type: 'inline',
+//         fixedContentPos: true,
+//         removalDelay: 500, //delay removal by X to allow out-animation
+//         callbacks: {
+//             beforeOpen: function() {
+//                 this.st.mainClass = this.st.el.attr('data-effect');
+//             }
+//         },
+//     });
+// };
 
 function positionModal() {
-    const $link = $('.js-choose-position');
-    $link.length && $link.magnificPopup({
-        type: 'inline',
-        fixedContentPos: true,
-        callbacks: {
-            beforeOpen: function() {
 
-                const $search = $('.js-position-search');
-                const $showMore = $('.js-filter-show-more').closest('.filter-collapse__row');
-                const $box = $('.filter-collapse__box');
-                $search.on('input', function (e) {
-                    const substr = $(e.target).val().toLowerCase();
-                    const $checkbox = $(this).closest('.filter-collapse').find('input[type="checkbox"]');
-                    $box.is(':hidden') && $box.show();
-                    $showMore.is(':visible ') && $showMore.hide();
-                    $checkbox.each((_, item) => {
-                        const value = $(item).val().toLowerCase();
-                        if(!value.includes(substr)) {
-                            $(item).closest('.filter-collapse__row').hide()
-                        }else {
-                            $(item).closest('.filter-collapse__row').show()
-                        }
-                    })
-                });
-
-                //select checkbox
-                const $resultsContainer = $('.js-choose-position-result');
-                let accum = [];
-                $('.position-checkbox').on('input', function(e) {
-                    const $currentCheck = $(e.target);
-                    const checkedVal = $currentCheck.val();
-
-                    if($currentCheck.is(":checked")) {
-                        accum.push(checkedVal);
-                    }else {
-                        accum = accum.filter(item => item !== checkedVal);
-                    }
-                    $resultsContainer.text(accum.join(', '))
-                });
+    $('.js-position-search').on('input', function(e) {
+        console.log(e.target.value)
+        var searchtList = $(this).closest('.filter-collapse__body').find('.filter-collapse__list');
+        
+        var links = searchtList.find('.filter-collapse__row');
+        console.log(links)
+        links.each(function() {
+            console.log($(this).find('input').attr('data-value'));
+            console.log($(this).find('input').attr('data-value').toLowerCase().indexOf(e.target.value.toLowerCase()) == -1)
+            if ($(this).find('input').attr('data-value').toLowerCase().indexOf(e.target.value.toLowerCase()) == -1) {
+                $(this).addClass('hidden');
+            } else {
+                $(this).removeClass('hidden');
             }
-        },
+        })
+        var visibleLink = searchtList.find('.filter-collapse__row:not(.hidden)');
+        if (visibleLink.length < 9) {
+            $(this).closest('.collapse').find('.filter-show-more').addClass('hidden')
+        } else {
+            $(this).closest('.collapse').find('.filter-show-more').removeClass('hidden')
+        }
+    });
+
+    $('#choose-position').on('show.bs.modal', function () {
+        // const $search = $('.js-position-search');
+        // const $showMore = $('.js-filter-show-more').closest('.filter-collapse__row');
+        // const $box = $('.filter-collapse__box');
+        // $search.on('input', function (e) {
+        //     const substr = $(e.target).val().toLowerCase();
+        //     const $checkbox = $(this).closest('.filter-collapse').find('input[type="checkbox"]');
+        //     $box.is(':hidden') && $box.show();
+        //     $showMore.is(':visible ') && $showMore.hide();
+        //     $checkbox.each((_, item) => {
+        //         const value = $(item).attr('data-value').toLowerCase();
+        //         if(!value.includes(substr)) {
+        //             $(item).closest('.filter-collapse__row').hide()
+        //         }else {
+        //             $(item).closest('.filter-collapse__row').show()
+        //         }
+        //     })
+        // });
+        
+    });
+    $('#choose-position').on('hidden.bs.modal', function () {
+        const $resultsContainer = $('.js-choose-position-result');
+        const $currentCheck = $('.position-checkbox');
+        let accum = [];
+
+        $currentCheck.each((i, el) => {
+            if($(el).is(":checked")) {
+                accum.push($(el).attr('data-value'));
+            }
+        });
+        $resultsContainer.text(accum.join(', '))
     });
 };
 
 function locationModal() {
-    const $link = $('.js-choose-location');
-    $link.length && $link.magnificPopup({
-        type: 'inline',
-        fixedContentPos: true,
-        callbacks: {
-            beforeOpen: function() {
-
-                const $search = $('.js-location-search');
-                $search.on('input', function (e) {
-                    const substr = $(e.target).val().toLowerCase();
-                    $('.location-checkbox__input').each((_, item) => {
-                        const value = $(item).val().toLowerCase();
-                        console.log(value, 'value');
-                        if(!value.includes(substr)) {
-                            $(item).closest('.location-checkbox-wrap').hide()
-                        }else {
-                            $(item).closest('.location-checkbox-wrap').show()
-                        }
-                    })
-                });
-
-            },
-            close: function () {
-                const $resultsContainer = $('.js-choose-location-result');
-                const $currentCheck = $('.location-checkbox__input');
-                let accum = [];
-
-                $currentCheck.each((i, el) => {
-                    if($(el).is(":checked")) {
-                        accum.push($(el).val());
-                    }
-                });
-                if($resultsContainer.is("input")){
-                    $resultsContainer.val(accum.join(', '));
-                    $resultsContainer.focus();
+    $('#choose-location').on('show.bs.modal', function () {
+        const $search = $('.js-location-search');
+        $search.on('input', function (e) {
+            const substr = $(e.target).val().toLowerCase();
+            $('.location-checkbox__input').each((_, item) => {
+                const value = $(item).val().toLowerCase();
+                console.log(value, 'value');
+                if(!value.includes(substr)) {
+                    $(item).closest('.location-checkbox-wrap').hide()
                 }else {
-                    $resultsContainer.text(accum.join(', '));
+                    $(item).closest('.location-checkbox-wrap').show()
                 }
+            })
+        });
+    });
 
+    $('#choose-location').on('hidden.bs.modal', function () {
+        const $resultsContainer = $('.js-choose-location-result');
+        const $currentCheck = $('.location-checkbox__input');
+        let accum = [];
+
+        $currentCheck.each((i, el) => {
+            if($(el).is(":checked")) {
+                accum.push($(el).val());
             }
-        },
+        });
+        if($resultsContainer.is("input")){
+            $resultsContainer.val(accum.join(', '));
+            $resultsContainer.focus();
+        }else {
+            $resultsContainer.text(accum.join(', '));
+        }
     });
 };
 
 function categoryModal() {
-    const $link = $('.js-choose-category');
-    $link.length && $link.magnificPopup({
-        type: 'inline',
-        fixedContentPos: true,
-        callbacks: {
-            beforeOpen: function () {
 
-                const $search = $('.js-category-search');
-                const $showMore = $('.js-filter-show-more').closest('.filter-collapse__row');
-                const $box = $('.filter-collapse__box');
-                $search.on('input', function (e) {
-                    const substr = $(e.target).val().toLowerCase();
-                    const $checkbox = $(this).closest('.filter-collapse').find('input[type="radio"]');
-                    $box.is(':hidden') && $box.show();
-                    $showMore.is(':visible ') && $showMore.hide();
-                    $checkbox.each((_, item) => {
-                        const value = $(item).val().toLowerCase();
-                        if(!value.includes(substr)) {
-                            $(item).closest('.filter-collapse__row').hide()
-                        }else {
-                            $(item).closest('.filter-collapse__row').show()
-                        }
-                    })
-                });
+    $('#choose-category').on('show.bs.modal', function () {
+        // const $search = $('.js-category-search');
+        // const $showMore = $('.js-filter-show-more').closest('.filter-collapse__row');
+        // const $box = $('.filter-collapse__box');
+        // $search.on('input', function (e) {
+        //     const substr = $(e.target).val().toLowerCase();
+        //     const $checkbox = $(this).closest('.filter-collapse').find('input[type="radio"]');
+        //     $box.is(':hidden') && $box.show();
+        //     $showMore.is(':visible ') && $showMore.hide();
+        //     $checkbox.each((_, item) => {
+        //         const value = $(item).val().toLowerCase();
+        //         if(!value.includes(substr)) {
+        //             $(item).closest('.filter-collapse__row').hide()
+        //         }else {
+        //             $(item).closest('.filter-collapse__row').show()
+        //         }
+        //     })
+        // });
 
-                //select checkbox
-                const $resultsContainer = $link.find('input[type="text"]');
-                let accum = [];
-                $('.category-radio').on('change', function(e) {
-                    const $currentCheck = $(e.target);
-                    const checkedVal = $currentCheck.val();
+        //select checkbox
+        const $resultsContainer = $('.js-choose-category-result');
+        let accum = [];
+        $('.category-radio').on('change', function(e) {
+            const $currentCheck = $(e.target);
+            const checkedVal = $currentCheck.attr('data-value');
 
-                    if($currentCheck.is(":checked")) {
-                        accum.push(checkedVal);
-                    }else {
-                        accum = accum.filter(item => item !== checkedVal);
-                    }
-                    $resultsContainer.val(accum.join(', '))
-                });
-
+            if($currentCheck.is(":checked")) {
+                accum.push(checkedVal);
+            }else {
+                accum = accum.filter(item => item !== checkedVal);
             }
-        }
-    })
+            $resultsContainer.val(accum.join(', '));
+            $resultsContainer.focus();
+        });
+    });
+
 }
 
 function collapseFilter() {
-    const $links = $('.js-filter-show-more');
-    $links.on('click', function(e) {
+    $(document).on('click', '.js-filter-show-more', function(e) {
         e.preventDefault();
-        const $target = $(e.target);
-        $target.closest('.filter-collapse').find('.filter-collapse__box').toggleClass('show');
-        $target.closest('.js-filter-show-more').hide();
+        var links = $(this).closest('.filter-collapse__body').find('.filter-collapse__list .filter-collapse__row');
+        var linkHeight = links.outerHeight();
+        var maxHeight = (linkHeight + 12) * links.length;
+        if ($(this).hasClass('active')) {
+            $(this).closest('.filter-collapse__body').find('.filter-collapse__list').removeAttr('style')
+            $(this).removeClass('active');
+        } else {
+            $(this).closest('.filter-collapse__body').find('.filter-collapse__list').css('max-height', maxHeight + 'px');
+            $(this).addClass('active');
+        }
     })
 };
 
@@ -364,16 +589,16 @@ function initHeader() {
     const $backBtn = $header.find('.header__search-reset');
     const $searchInput = $header.find('.search-input__field');
 
-    $menuBtn.length && $menuBtn.magnificPopup({
-        type: 'inline',
-        fixedContentPos: true,
-        removalDelay: 500, //delay removal by X to allow out-animation
-        callbacks: {
-            beforeOpen: function() {
-                this.st.mainClass = this.st.el.attr('data-effect');
-            }
-        },
-    });
+    // $menuBtn.length && $menuBtn.magnificPopup({
+    //     type: 'inline',
+    //     fixedContentPos: true,
+    //     removalDelay: 500, //delay removal by X to allow out-animation
+    //     callbacks: {
+    //         beforeOpen: function() {
+    //             this.st.mainClass = this.st.el.attr('data-effect');
+    //         }
+    //     },
+    // });
 
     $searchInput.on('input', function (e) {
         const value = $(e.target).val();
@@ -391,24 +616,6 @@ function initHeader() {
         $searchInput.val('');
     });
 };
-
-function deleteAnnouncmentModal() {
-    const $links = $('.js-delete-announcement');
-    if(!$links.length) return;
-    $links.magnificPopup({
-        type: 'inline',
-        fixedContentPos: true,
-        callbacks: {
-            open: function() {
-                $('.js-close-btn').on('click',function(event){
-                    event.preventDefault();
-                    $.magnificPopup.close();
-                });
-            }
-        }
-    });
-};
-
 
 function initImageLoader() {
     const dropzone = document.getElementById('my-form');
