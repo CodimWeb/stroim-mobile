@@ -41,6 +41,7 @@
 @import "base/select";
 
 /*custom components*/
+@import "components/full-height";
 @import "components/grid";
 @import "components/loader";
 @import "components/main-slider";
@@ -74,6 +75,9 @@
 @import "components/advertising";
 @import "components/banner-advertising";
 @import "components/basket-card";
+@import "components/account-login";
+@import "components/password-recovery";
+@import "components/registration";
 
 @import "components/modals/base-mobal";
 @import "components/modals/modal-filter";

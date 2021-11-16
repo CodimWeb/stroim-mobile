@@ -261,6 +261,31 @@ module.exports = {
             inject: 'body',
         }),
         new HtmlWebpackPlugin({
+            filename: 'account-login.html',
+            template: './src/account-login.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'registration.html',
+            template: './src/registration.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'password-recovery.html',
+            template: './src/password-recovery.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'link-sent.html',
+            template: './src/link-sent.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'password-reset.html',
+            template: './src/password-reset.html',
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
             filename: 'basket.html',
             template: './src/basket.html',
             inject: 'body',

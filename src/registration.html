@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Каталог / Выбор подкатегории</title>
+</head>
+
+<body>
+
+<main class="content">
+    <div class="container-fluid">
+        <h2 class="account-login-body mt-3 mb-4">Регистрация</h2>
+        <ul class="nav nav-tabs mb-4 register-nav" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="individual-tab" data-toggle="tab" href="#individual" role="tab" aria-controls="individual"
+                    aria-selected="true">Физическое лицо</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="entity-tab" data-toggle="tab" href="#entity" role="tab" aria-controls="entity"
+                    aria-selected="false">Юридическое лицо</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="individual" role="tabpanel" aria-labelledby="individual-tab">
+                <form class="">
+                    <label class="materil-group personal-information-input">
+                        <span class="materil-group__label">Контактное лицо*</span>
+                        <input type="text" class="form-control base-input materil-group__input lg">
+                    </label>
+                    <label class="materil-group personal-information-input">
+                        <span class="materil-group__label">Email*</span>
+                        <input type="text" class="form-control base-input materil-group__input lg">
+                    </label>
+                    <label class="materil-group personal-information-input">
+                        <span class="materil-group__sublabel">Город*</span>
+                        <select name="" id="" class="select">
+                            <option value="1">Москва</option>
+                            <option value="2">Ростов</option>
+                            <option value="2">Казань</option>
+                        </select>
+                    </label>
+                    <label class="materil-group personal-information-input">
+                        <span class="materil-group__label">Пароль*</span>
+                        <input type="password" class="form-control base-input materil-group__input lg">
+                    </label>
+                    <label class="materil-group personal-information-input">
+                        <span class="materil-group__label">Повторите пароль*</span>
+                        <input type="password" class="form-control base-input materil-group__input lg">
+                    </label>
+                    <label class="materil-group personal-information-input">
+                        <span class="materil-group__label">Телефон</span>
+                        <input type="text" class="form-control base-input materil-group__input lg">
+                    </label>
+                    <label class="mb-4 d-block">
+                        <input type="checkbox" name="check-one" value="check-one" />
+                        <span class="text registration-conditions">Я принимаю условия <a href="#" class="link sm">договора оферты</a></span>
+                    </label>
+                    <div class="personal-information__btn">
+                        <div class="row">
+                            <button class="btn btn-primary btn-save-pi">Зарегистрироваться</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="tab-pane fade" id="entity" role="tabpanel" aria-labelledby="entity-tab">
+                <form class="">
+                    <label class="materil-group personal-information-input">
+                        <span class="materil-group__label">Контактное лицо*</span>
+                        <input type="text" class="form-control base-input materil-group__input lg">
+                    </label>
+                    <label class="materil-group personal-information-input">
+                        <span class="materil-group__label">Email*</span>
+                        <input type="text" class="form-control base-input materil-group__input lg">
+                    </label>
+                    <label class="materil-group personal-information-input">
+                        <span class="materil-group__sublabel">Город*</span>
+                        <select name="" id="" class="select">
+                            <option value="1">Москва</option>
+                            <option value="2">Ростов</option>
+                            <option value="2">Казань</option>
+                        </select>
+                    </label>
+                    <label class="materil-group personal-information-input">
+                        <span class="materil-group__label">Пароль*</span>
+                        <input type="password" class="form-control base-input materil-group__input lg">
+                    </label>
+                    <label class="materil-group personal-information-input">
+                        <span class="materil-group__label">Повторите пароль*</span>
+                        <input type="password" class="form-control base-input materil-group__input lg">
+                    </label>
+                    <label class="materil-group personal-information-input">
+                        <span class="materil-group__label">Телефон</span>
+                        <input type="text" class="form-control base-input materil-group__input lg">
+                    </label>
+                    <label class="materil-group personal-information-input">
+                        <span class="materil-group__label">Ваша организация*</span>
+                        <input type="text" class="form-control base-input materil-group__input lg">
+                    </label>
+                    <label class="materil-group personal-information-input">
+                        <span class="materil-group__label">Телефон для связи*</span>
+                        <input type="text" class="form-control base-input materil-group__input lg">
+                    </label>
+                    <label class="materil-group personal-information-input">
+                        <span class="materil-group__label">Почта для связи*</span>
+                        <input type="text" class="form-control base-input materil-group__input lg">
+                    </label>
+                    <label class="materil-group personal-information-input">
+                        <span class="materil-group__label">Адрес сайта вашей компании</span>
+                        <input type="text" class="form-control base-input materil-group__input lg">
+                    </label>
+                    <label class="mb-4 d-block">
+                        <input type="checkbox" name="check-one" value="check-one" />
+                        <span class="text registration-conditions">Я принимаю условия <a href="#" class="link sm">договора оферты</a></span>
+                    </label>
+                    <div class="personal-information__btn">
+                        <div class="row">
+                            <button class="btn btn-primary btn-save-pi">Зарегистрироваться</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+</main>
+<footer class="footer-menu">
+    <ul class="footer-menu__list">
+        <li class="footer-menu__item">
+            <a href="" class="footer-menu__link active">
+                <img src="img/icons/menu-main.svg" alt="" class="footer-menu__icon">
+                <img src="img/icons/menu-main-active.svg" alt="" class="footer-menu__icon footer-menu__icon--active">
+                <p class="footer-menu__name">
+                    Главная
+                </p>
+            </a>
+        </li>
+        <li class="footer-menu__item">
+            <a href="" class="footer-menu__link">
+                <img src="img/icons/menu-catalog.svg" alt="" class="footer-menu__icon">
+                <img src="img/icons/menu-catalog-active.svg" alt="" class="footer-menu__icon footer-menu__icon--active">
+                <p class="footer-menu__name">
+                    Каталог
+                </p>
+            </a>
+        </li>
+        <li class="footer-menu__item">
+            <a href="" class="footer-menu__link">
+                <img src="img/icons/menu-location.svg" alt="" class="footer-menu__icon">
+                <img src="img/icons/menu-location-active.svg" alt=""
+                     class="footer-menu__icon footer-menu__icon--active">
+                <p class="footer-menu__name">
+                    Москва
+                </p>
+            </a>
+        </li>
+        <li class="footer-menu__item">
+            <a href="" class="footer-menu__link">
+                <img src="img/icons/menu-basket.svg" alt="" class="footer-menu__icon">
+                <img src="img/icons/menu-basket-active.svg" alt="" class="footer-menu__icon footer-menu__icon--active">
+                <p class="footer-menu__name">
+                    Корзина
+                </p>
+            </a>
+        </li>
+        <li class="footer-menu__item">
+            <a href="" class="footer-menu__link">
+                <img src="img/icons/menu-profile.svg" alt="" class="footer-menu__icon">
+                <img src="img/icons/menu-profile-active.svg" alt="" class="footer-menu__icon footer-menu__icon--active">
+                <p class="footer-menu__name">
+                    Профиль
+                </p>
+            </a>
+        </li>
+    </ul>
+</footer>
+
+<div id="header-menu" class="header-menu mfp-with-anim mfp-hide">
+    <div class="header-menu__content">
+        <ul class="header-menu__list">
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Объявления</a>
+            </li>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Услуги</a>
+            </li>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Реклама</a>
+            </li>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Справочник</a>
+            </li>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Черный список</a>
+            </li>
+            <li class="header-menu__item">
+                <a href="" class="header-menu__link link dark">Контакты</a>
+            </li>
+        </ul>
+        <div class="header-menu__footer">
+            <p class="sm grey">Отдел Продаж:
+                <a href="tel:84992705845" class="link sm dark"><strong>8 (499) 270 58 45</strong></a>
+            </p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
