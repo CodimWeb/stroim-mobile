@@ -1,4 +1,4 @@
-.nav-tabs {
+.register-nav {
     border-bottom: none;
     justify-content: center;
 }
@@ -25,3 +25,10 @@ input[type="checkbox"] + .registration-conditions {
     }
 }
 
+
+@media (max-width: 370px) {
+    .register-nav .nav-link {
+        font-size: 14px;
+        padding: 0 8px 8px;
+    }
+}

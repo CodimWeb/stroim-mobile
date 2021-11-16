@@ -129,23 +129,19 @@ $(document).ready(function(){
             tender.activeLotIndex = tender.lotList.length -1;
             tender.render();
             tender.getSelectedCategories();
-            console.log(tender.lotList);
         }
     })
 
     // переключение лотов
-    $(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (event) {
+    $(document).on('shown.bs.tab', '.create-tender-nav .nav-link', function (event) {
         event.target // newly activated tab
         event.relatedTarget // previous active tab
         tender.activeLotIndex = event.target.getAttribute('data-index');
         tender.getSelectedCategories();
-        console.log(tender.activeLotIndex);
-
     });
 
     // добавление категорий в лот
     $('.filter-collapse__list input').on('change', function(e) {
-        console.log(tender.activeLotIndex, 'activeLotIndex')
         var category = {
             id: e.target.value,
             name: e.target.getAttribute('data-value'),
@@ -166,8 +162,6 @@ $(document).ready(function(){
             tender.lotList[tender.activeLotIndex].categories = tender.lotList[tender.activeLotIndex].categories.filter(item => item.id != category.id);
         }
         tender.render();
-
-        console.log(tender.lotList);
     })
 
     // показать таблицу
@@ -180,7 +174,6 @@ $(document).ready(function(){
 
     $(document).on('click', '.tender-add-file', function(e){
         e.preventDefault();
-        console.log('scroll');
         let offsetTop = $('.create-tender__footer').offset().top;
         $('body,html').animate({scrollTop: offsetTop}, 500);
     })
@@ -236,7 +229,6 @@ $(document).ready(function(){
             }
             tender.render()
             tender.getSelectedCategories();
-            console.log(tender.lotList);
         }
     })
 
@@ -272,7 +264,6 @@ $(document).ready(function(){
     // заполнение селекта таблицы лота
     $(document).on('select2:select', '.lot-category-select.unitId', function(e){
         let categoryIndex = $(this).closest('.basket-card').attr('lot-category-index');
-        console.log(e.target.value)
         tender.lotList[tender.activeLotIndex].categories[categoryIndex].unitId = e.target.value;
 
     });
@@ -433,14 +424,10 @@ function phoneBtn() {
 function positionModal() {
 
     $('.js-position-search').on('input', function(e) {
-        console.log(e.target.value)
         var searchtList = $(this).closest('.filter-collapse__body').find('.filter-collapse__list');
         
         var links = searchtList.find('.filter-collapse__row');
-        console.log(links)
         links.each(function() {
-            console.log($(this).find('input').attr('data-value'));
-            console.log($(this).find('input').attr('data-value').toLowerCase().indexOf(e.target.value.toLowerCase()) == -1)
             if ($(this).find('input').attr('data-value').toLowerCase().indexOf(e.target.value.toLowerCase()) == -1) {
                 $(this).addClass('hidden');
             } else {
@@ -496,7 +483,6 @@ function locationModal() {
             const substr = $(e.target).val().toLowerCase();
             $('.location-checkbox__input').each((_, item) => {
                 const value = $(item).val().toLowerCase();
-                console.log(value, 'value');
                 if(!value.includes(substr)) {
                     $(item).closest('.location-checkbox-wrap').hide()
                 }else {
